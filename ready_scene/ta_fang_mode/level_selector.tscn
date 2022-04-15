@@ -1,0 +1,95 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://fonts/xolonium/Xolonium.tres" type="DynamicFont" id=1]
+[ext_resource path="res://ready_scene/ta_fang_mode/level_1.gd" type="Script" id=2]
+[ext_resource path="res://fonts/font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/UI/lock.png" type="Texture" id=4]
+[ext_resource path="res://scripts/ta_fang_mode/layout/selector_anim.gd" type="Script" id=5]
+[ext_resource path="res://fonts/SIMLI.TTF" type="DynamicFontData" id=6]
+
+[sub_resource type="Animation" id=1]
+resource_name = "level_2"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:rect_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 0.25 ), Vector2( 1, 1.25 ) ]
+}
+
+[sub_resource type="DynamicFont" id=2]
+size = 90
+font_data = ExtResource( 6 )
+
+[node name="level_selector" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = 230.0
+margin_top = 490.0
+margin_right = 304.0
+margin_bottom = 730.0
+rect_rotation = -135.0
+rect_scale = Vector2( 1, 1.25 )
+
+[node name="level_1" type="Button" parent="."]
+margin_left = 120.0
+margin_top = 380.0
+margin_right = 300.0
+margin_bottom = 490.0
+custom_fonts/font = ExtResource( 1 )
+text = "level_1"
+script = ExtResource( 2 )
+
+[node name="level_2" type="Button" parent="."]
+margin_left = 410.0
+margin_top = 200.0
+margin_right = 590.0
+margin_bottom = 310.0
+custom_fonts/font = ExtResource( 1 )
+text = "level_2"
+script = ExtResource( 2 )
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 1320.0
+margin_top = 700.0
+margin_right = 1400.0
+margin_bottom = 741.0
+custom_fonts/font = ExtResource( 3 )
+text = "章节:"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 1420.0
+margin_top = 700.0
+margin_right = 1482.0
+margin_bottom = 739.0
+custom_fonts/font = ExtResource( 1 )
+text = "1/3"
+
+[node name="lock" type="Sprite" parent="."]
+position = Vector2( 350, 240 )
+scale = Vector2( 0.734375, 0.8125 )
+texture = ExtResource( 4 )
+
+[node name="anim" type="AnimationPlayer" parent="."]
+anims/level_2 = SubResource( 1 )
+script = ExtResource( 5 )
+
+[node name="coin_level" type="Button" parent="."]
+margin_left = 1290.0
+margin_top = 320.0
+margin_right = 1640.0
+margin_bottom = 520.0
+custom_fonts/font = SubResource( 2 )
+text = "金币关"
+script = ExtResource( 2 )
+[connection signal="pressed" from="level_1" to="level_1" method="_on_level_1_pressed"]
+[connection signal="pressed" from="level_2" to="level_2" method="_on_level_2_pressed"]
+[connection signal="pressed" from="coin_level" to="coin_level" method="_on_coin_level_pressed"]

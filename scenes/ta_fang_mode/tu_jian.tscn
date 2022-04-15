@@ -1,0 +1,92 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://fonts/SIMLI.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/UI/bag.png" type="Texture" id=2]
+[ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/UI/ai.png" type="Texture" id=4]
+[ext_resource path="res://scripts/ta_fang_mode/layout/tu_jian/gui.gd" type="Script" id=5]
+[ext_resource path="res://assets/UI/magic.png" type="Texture" id=6]
+[ext_resource path="res://fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Regular.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://scripts/ta_fang_mode/to_ta_fang_title.gd" type="Script" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 90
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.521569, 0.521569, 0.521569, 1 )
+shadow_size = 15
+
+[sub_resource type="DynamicFont" id=3]
+size = 90
+font_data = ExtResource( 7 )
+
+[node name="tu_jian" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 250.0
+margin_top = 860.0
+margin_right = 385.0
+margin_bottom = 951.0
+custom_fonts/font = SubResource( 1 )
+text = "gts"
+
+[node name="tip" type="Label" parent="."]
+margin_left = 990.0
+margin_top = 90.0
+margin_right = 1890.0
+margin_bottom = 920.0
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "普通的女巨人，很常见
+攻击力普通。"
+autowrap = true
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 280, 500 )
+scale = Vector2( 5.34375, 10.6563 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 750, 490 )
+scale = Vector2( 5.34375, 10.6563 )
+texture = ExtResource( 2 )
+
+[node name="sound" parent="." instance=ExtResource( 3 )]
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 670.0
+margin_top = 860.0
+margin_right = 805.0
+margin_bottom = 951.0
+custom_fonts/font = SubResource( 1 )
+text = "法师"
+
+[node name="gts_btn" type="TextureButton" parent="."]
+margin_left = -190.0
+margin_top = 190.0
+margin_right = 770.0
+margin_bottom = 730.0
+texture_normal = ExtResource( 4 )
+script = ExtResource( 5 )
+
+[node name="magic_btn" type="TextureButton" parent="."]
+margin_left = 550.0
+margin_top = 240.0
+margin_right = 927.0
+margin_bottom = 620.0
+texture_normal = ExtResource( 6 )
+script = ExtResource( 5 )
+
+[node name="back" type="Button" parent="."]
+margin_right = 270.0
+margin_bottom = 140.0
+custom_fonts/font = SubResource( 3 )
+text = "back"
+script = ExtResource( 8 )
+
+[node name="sound2" parent="." instance=ExtResource( 3 )]
+[connection signal="pressed" from="gts_btn" to="gts_btn" method="_on_gts_btn_pressed"]
+[connection signal="pressed" from="magic_btn" to="magic_btn" method="_on_magic_btn_pressed"]
+[connection signal="pressed" from="back" to="back" method="_on_back_pressed"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/abs-cancel-6-verbed.ogg-2bb6b4ca312d78f900ac9e5a213a514c.oggstr"
+
+[deps]
+
+source_file="res://sounds/abs-cancel-6-verbed.ogg"
+dest_files=[ "res://.import/abs-cancel-6-verbed.ogg-2bb6b4ca312d78f900ac9e5a213a514c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

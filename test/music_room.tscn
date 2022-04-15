@@ -1,0 +1,163 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://test/music_room.gd" type="Script" id=1]
+[ext_resource path="res://images/back6.jpg" type="Texture" id=2]
+[ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=3]
+[ext_resource path="res://fonts/xolonium/Xolonium.tres" type="DynamicFont" id=4]
+[ext_resource path="res://fonts/font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://assets/UI/jian_tou.png" type="Texture" id=6]
+[ext_resource path="res://scripts/ta_fang_mode/to_ta_fang_title.gd" type="Script" id=7]
+[ext_resource path="res://assets/UI/bag.png" type="Texture" id=8]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.639216, 0.584314, 0.584314, 1 )
+border_color = Color( 0.0862745, 0.0862745, 0.0862745, 1 )
+
+[sub_resource type="AnimationNodeAnimation" id=2]
+animation = "move"
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "rotate"
+
+[sub_resource type="AnimationNodeBlend2" id=4]
+
+[sub_resource type="AnimationNodeBlendTree" id=5]
+graph_offset = Vector2( 0, -11 )
+
+[sub_resource type="AnimationNodeBlendTree" id=6]
+graph_offset = Vector2( -160.61, 165 )
+nodes/Animation/node = SubResource( 3 )
+nodes/Animation/position = Vector2( -120, 220 )
+"nodes/Animation 2/node" = SubResource( 2 )
+"nodes/Animation 2/position" = Vector2( -140, 360 )
+nodes/Blend2/node = SubResource( 4 )
+nodes/Blend2/position = Vector2( 80, 260 )
+nodes/BlendTree/node = SubResource( 5 )
+nodes/BlendTree/position = Vector2( 400, -20 )
+nodes/output/position = Vector2( 340, 180 )
+node_connections = [ "output", 0, "Blend2", "Blend2", 0, "Animation", "Blend2", 1, "Animation 2" ]
+
+[sub_resource type="Animation" id=7]
+resource_name = "move"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("rect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.996645 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1000, 470 ), Vector2( 1470, 470 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("rect:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 110.8 ]
+}
+
+[node name="music" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="sp" type="Sprite" parent="."]
+position = Vector2( 955, 538.676 )
+scale = Vector2( 2.80882, 2.42647 )
+texture = ExtResource( 2 )
+
+[node name="sound" parent="." instance=ExtResource( 3 )]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 890.0
+margin_top = 60.0
+margin_right = 1010.0
+margin_bottom = 99.0
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "level_1"
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 890.0
+margin_top = 110.0
+margin_right = 1010.0
+margin_bottom = 149.0
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "level_2"
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 890.0
+margin_top = 160.0
+margin_right = 1010.0
+margin_bottom = 199.0
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "w"
+
+[node name="info" type="Label" parent="."]
+margin_left = 170.0
+margin_top = 220.0
+margin_right = 770.0
+margin_bottom = 720.0
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "这里是仿东方project的musicRoom"
+
+[node name="arrow" type="Sprite" parent="."]
+position = Vector2( 840, 80 )
+scale = Vector2( 0.158793, 0.158793 )
+texture = ExtResource( 6 )
+
+[node name="to_title" type="Button" parent="."]
+margin_right = 310.0
+margin_bottom = 160.0
+custom_fonts/font = ExtResource( 4 )
+text = "back"
+script = ExtResource( 7 )
+
+[node name="rect" type="Sprite" parent="."]
+position = Vector2( 1049, 470 )
+rotation = 0.200952
+scale = Vector2( 3.15625, 3.15625 )
+texture = ExtResource( 8 )
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource( 6 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/Blend2/blend_amount = 0.5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/move = SubResource( 7 )
+anims/rotate = SubResource( 8 )
+
+[node name="pos" type="Position2D" parent="." groups=[
+"bgm",
+]]
+position = Vector2( 840, 80 )
+
+[node name="pos2" type="Position2D" parent="." groups=[
+"bgm",
+]]
+position = Vector2( 840, 130 )
+
+[node name="pos3" type="Position2D" parent="." groups=[
+"bgm",
+]]
+position = Vector2( 840, 180 )
+[connection signal="pressed" from="to_title" to="to_title" method="_on_to_title_pressed"]

@@ -1,0 +1,108 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/UI/jian_tou.png" type="Texture" id=1]
+[ext_resource path="res://scripts/layout/ItemStack_pointer.gd" type="Script" id=2]
+[ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ready_scene/bag_block_root.tscn" type="PackedScene" id=4]
+
+
+[node name="item_stack_root" type="Node2D"]
+
+[node name="pointer" type="Sprite" parent="."]
+position = Vector2( 252.869, 491.561 )
+rotation = 1.5708
+scale = Vector2( 0.163511, 0.163511 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="sound" parent="." instance=ExtResource( 3 )]
+
+[node name="bag_block_root" parent="." groups=[
+"ItemStack",
+] instance=ExtResource( 4 )]
+position = Vector2( 220, 530 )
+
+[node name="bag_block_root2" parent="." groups=[
+"ItemStack",
+] instance=ExtResource( 4 )]
+position = Vector2( 284, 530 )
+
+[node name="bag_block_root3" parent="." groups=[
+"ItemStack",
+] instance=ExtResource( 4 )]
+position = Vector2( 348, 530 )
+
+[node name="bag_block_root4" parent="." groups=[
+"ItemStack",
+] instance=ExtResource( 4 )]
+position = Vector2( 410, 530 )
+
+[node name="bag_block_root5" parent="." groups=[
+"ItemStack",
+] instance=ExtResource( 4 )]
+position = Vector2( 474, 530 )
+
+[node name="bag_block_root6" parent="." groups=[
+"ItemStack",
+] instance=ExtResource( 4 )]
+position = Vector2( 538, 530 )
+
+[node name="bag_block_root7" parent="." groups=[
+"ItemStack",
+] instance=ExtResource( 4 )]
+position = Vector2( 602, 530 )
+
+[node name="bag_block_root8" parent="." groups=[
+"ItemStack",
+] instance=ExtResource( 4 )]
+position = Vector2( 666, 530 )
+
+[node name="bag_block_root9" parent="." groups=[
+"ItemStack",
+] instance=ExtResource( 4 )]
+position = Vector2( 730, 530 )
+
+[node name="Position2D" type="Position2D" parent="." groups=[
+"pointer_pos",
+]]
+position = Vector2( 250, 490 )
+
+[node name="Position2D2" type="Position2D" parent="." groups=[
+"pointer_pos",
+]]
+position = Vector2( 310, 490 )
+
+[node name="Position2D3" type="Position2D" parent="." groups=[
+"pointer_pos",
+]]
+position = Vector2( 370, 490 )
+
+[node name="Position2D4" type="Position2D" parent="." groups=[
+"pointer_pos",
+]]
+position = Vector2( 430, 490 )
+
+[node name="Position2D5" type="Position2D" parent="." groups=[
+"pointer_pos",
+]]
+position = Vector2( 490, 490 )
+
+[node name="Position2D6" type="Position2D" parent="." groups=[
+"pointer_pos",
+]]
+position = Vector2( 550, 490 )
+
+[node name="Position2D7" type="Position2D" parent="." groups=[
+"pointer_pos",
+]]
+position = Vector2( 610, 490 )
+
+[node name="Position2D8" type="Position2D" parent="." groups=[
+"pointer_pos",
+]]
+position = Vector2( 670, 490 )
+
+[node name="Position2D9" type="Position2D" parent="." groups=[
+"pointer_pos",
+]]
+position = Vector2( 730, 490 )

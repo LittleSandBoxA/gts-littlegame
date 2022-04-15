@@ -1,0 +1,122 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://ready_scene/models/buildings/attack_tower.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://fonts/font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=3]
+[ext_resource path="res://scripts/ta_fang_mode/layout/add_level_exp.gd" type="Script" id=4]
+[ext_resource path="res://assets/UI/life.png" type="Texture" id=5]
+[ext_resource path="res://assets/UI/wei_yi.png" type="Texture" id=6]
+[ext_resource path="res://level_back.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=8]
+
+[node name="ta_fang_level_up" type="Node2D"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+mesh = ExtResource( 1 )
+material/0 = null
+material/1 = null
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.057348, 1.18524, 6.52682 )
+
+[node name="Panel" type="Panel" parent="."]
+editor/display_folded = true
+margin_left = 1540.0
+margin_top = 20.0
+margin_right = 1870.0
+margin_bottom = 170.0
+
+[node name="Label" type="Label" parent="Panel"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "Lv 1/40 Max"
+
+[node name="exp" type="Label" parent="Panel"]
+margin_left = 40.0
+margin_top = 104.0
+margin_right = 220.0
+margin_bottom = 145.0
+custom_fonts/font = ExtResource( 2 )
+text = "Exp 0/100"
+
+[node name="TextureProgress" type="TextureProgress" parent="Panel"]
+margin_left = 30.0
+margin_top = 41.0
+margin_right = 150.0
+margin_bottom = 105.0
+texture_under = ExtResource( 3 )
+
+[node name="level_up" type="Button" parent="Panel"]
+margin_left = 240.0
+margin_top = 49.0
+margin_right = 310.0
+margin_bottom = 114.0
+custom_fonts/font = ExtResource( 2 )
+text = "+"
+script = ExtResource( 4 )
+
+[node name="sold" type="Label" parent="."]
+margin_left = 1549.25
+margin_top = 300.0
+margin_right = 1789.25
+margin_bottom = 341.0
+custom_fonts/font = ExtResource( 2 )
+text = "防御力:1000"
+
+[node name="attack" type="Label" parent="."]
+margin_left = 1549.25
+margin_top = 254.0
+margin_right = 1749.25
+margin_bottom = 295.0
+custom_fonts/font = ExtResource( 2 )
+text = "攻击力:100"
+
+[node name="Label" type="Label" parent="."]
+margin_left = 1573.0
+margin_top = 230.0
+margin_right = 1673.0
+margin_bottom = 271.0
+custom_fonts/font = ExtResource( 2 )
+text = "1000"
+
+[node name="life" type="Sprite" parent="."]
+position = Vector2( 1553, 250 )
+scale = Vector2( 0.0866664, 0.0791666 )
+texture = ExtResource( 5 )
+
+[node name="Panel2" type="Panel" parent="."]
+margin_left = 1573.0
+margin_top = 350.0
+margin_right = 1873.0
+margin_bottom = 630.0
+
+[node name="Label" type="Label" parent="Panel2"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 2 )
+text = "技能：推动"
+
+[node name="Sprite" type="Sprite" parent="Panel2"]
+position = Vector2( 50, 80 )
+scale = Vector2( 0.0932617, 0.0761719 )
+texture = ExtResource( 6 )
+
+[node name="Label2" type="Label" parent="Panel2"]
+margin_left = 10.0
+margin_top = 130.0
+margin_right = 290.0
+margin_bottom = 215.0
+custom_fonts/font = ExtResource( 2 )
+text = "充能时间：20s 
+类型：自动回复"
+
+[node name="back" parent="." instance=ExtResource( 7 )]
+margin_right = 140.0
+margin_bottom = 100.0
+
+[node name="sound" parent="." instance=ExtResource( 8 )]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.67151, 4.22721 )
+[connection signal="pressed" from="Panel/level_up" to="Panel/level_up" method="_on_level_up_pressed"]

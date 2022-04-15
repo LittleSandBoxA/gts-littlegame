@@ -1,0 +1,249 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://scenes/layout/bag_root.gd" type="Script" id=1]
+[ext_resource path="res://fonts/font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scenes/layout/bag_close.gd" type="Script" id=3]
+[ext_resource path="res://assets/UI/bag.png" type="Texture" id=4]
+[ext_resource path="res://scenes/layout/TextureButton.gd" type="Script" id=5]
+[ext_resource path="res://images/jin_ke_la.jpg" type="Texture" id=6]
+[ext_resource path="res://assets/UI/gong.png" type="Texture" id=7]
+[ext_resource path="res://assets/UI/arrow.png" type="Texture" id=8]
+[ext_resource path="res://assets/UI/egg.png" type="Texture" id=9]
+[ext_resource path="res://assets/UI/diao_yu_gan.png" type="Texture" id=10]
+[ext_resource path="res://assets/UI/apple.png" type="Texture" id=11]
+[ext_resource path="res://assets/UI/small.png" type="Texture" id=12]
+[ext_resource path="res://assets/UI/lian_yao_tai.png" type="Texture" id=13]
+[ext_resource path="res://assets/UI/stone.png" type="Texture" id=14]
+[ext_resource path="res://assets/UI/gao_zi.png" type="Texture" id=15]
+[ext_resource path="res://assets/UI/coin.png" type="Texture" id=16]
+[ext_resource path="res://fonts/SIMLI.TTF" type="DynamicFontData" id=17]
+[ext_resource path="res://assets/UI/build_block.png" type="Texture" id=18]
+[ext_resource path="res://assets/UI/tool.png" type="Texture" id=19]
+[ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=20]
+
+[sub_resource type="DynamicFont" id=1]
+size = 20
+font_data = ExtResource( 17 )
+
+[node name="bag_root" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 680.0 ]
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 170.0
+margin_top = 60.0
+margin_right = 970.0
+margin_bottom = 570.0
+
+[node name="close" type="Button" parent="Panel"]
+margin_left = 720.0
+margin_right = 800.0
+margin_bottom = 70.0
+custom_fonts/font = ExtResource( 2 )
+text = "x"
+script = ExtResource( 3 )
+
+[node name="TextureButton" type="TextureButton" parent="Panel"]
+margin_left = 20.0
+margin_top = 40.0
+margin_right = 84.0
+margin_bottom = 104.0
+toggle_mode = true
+texture_normal = ExtResource( 4 )
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="Panel/TextureButton"]
+position = Vector2( 32, 30 )
+scale = Vector2( 0.1, 0.133013 )
+texture = ExtResource( 6 )
+
+[node name="LinkButton" type="LinkButton" parent="Panel"]
+margin_left = 10.0
+margin_top = 490.0
+margin_right = 52.0
+margin_bottom = 504.0
+text = "dsdad "
+
+[node name="TextureButton2" type="TextureButton" parent="Panel" groups=[
+"ItemStack",
+]]
+margin_left = 90.0
+margin_top = 40.0
+margin_right = 154.0
+margin_bottom = 104.0
+texture_normal = ExtResource( 4 )
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="Panel/TextureButton2"]
+position = Vector2( 30, 30 )
+scale = Vector2( 3.25, 3 )
+texture = ExtResource( 7 )
+
+[node name="TextureButton3" type="TextureButton" parent="Panel" groups=[
+"ItemStack",
+]]
+margin_left = 160.0
+margin_top = 40.0
+margin_right = 224.0
+margin_bottom = 104.0
+texture_normal = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Panel/TextureButton3"]
+position = Vector2( 30, 30 )
+scale = Vector2( 3.125, 2.75 )
+texture = ExtResource( 8 )
+
+[node name="TextureButton4" type="TextureButton" parent="Panel" groups=[
+"ItemStack",
+]]
+margin_left = 230.0
+margin_top = 40.0
+margin_right = 294.0
+margin_bottom = 104.0
+texture_normal = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Panel/TextureButton4"]
+position = Vector2( 31, 33 )
+scale = Vector2( 2.375, 2.625 )
+texture = ExtResource( 9 )
+
+[node name="TextureButton5" type="TextureButton" parent="Panel" groups=[
+"ItemStack",
+]]
+margin_left = 300.0
+margin_top = 40.0
+margin_right = 364.0
+margin_bottom = 104.0
+texture_normal = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Panel/TextureButton5"]
+position = Vector2( 30, 32 )
+scale = Vector2( 3.75, 4 )
+texture = ExtResource( 10 )
+
+[node name="TextureButton6" type="TextureButton" parent="Panel" groups=[
+"ItemStack",
+]]
+margin_left = 20.0
+margin_top = 110.0
+margin_right = 84.0
+margin_bottom = 174.0
+texture_normal = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Panel/TextureButton6"]
+position = Vector2( 30, 32 )
+scale = Vector2( 3.75, 4 )
+texture = ExtResource( 11 )
+
+[node name="TextureButton7" type="TextureButton" parent="Panel" groups=[
+"ItemStack",
+]]
+margin_left = 90.0
+margin_top = 110.0
+margin_right = 154.0
+margin_bottom = 174.0
+texture_normal = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Panel/TextureButton7"]
+position = Vector2( 30, 32 )
+scale = Vector2( 3.75, 4 )
+texture = ExtResource( 12 )
+
+[node name="TextureButton8" type="TextureButton" parent="Panel" groups=[
+"ItemStack",
+]]
+margin_left = 160.0
+margin_top = 110.0
+margin_right = 224.0
+margin_bottom = 174.0
+texture_normal = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Panel/TextureButton8"]
+position = Vector2( 32, 32 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 13 )
+
+[node name="TextureButton9" type="TextureButton" parent="Panel" groups=[
+"ItemStack",
+]]
+margin_left = 230.0
+margin_top = 110.0
+margin_right = 294.0
+margin_bottom = 174.0
+texture_normal = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Panel/TextureButton9"]
+position = Vector2( 32, 32 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 14 )
+
+[node name="TextureButton10" type="TextureButton" parent="Panel" groups=[
+"ItemStack",
+]]
+margin_left = 300.0
+margin_top = 110.0
+margin_right = 364.0
+margin_bottom = 174.0
+texture_normal = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Panel/TextureButton10"]
+position = Vector2( 32, 32 )
+scale = Vector2( 4, 4 )
+texture = ExtResource( 15 )
+
+[node name="TextureButton11" type="TextureButton" parent="Panel" groups=[
+"ItemStack",
+]]
+margin_left = 20.0
+margin_top = 180.0
+margin_right = 84.0
+margin_bottom = 244.0
+texture_normal = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Panel/TextureButton11"]
+position = Vector2( 32, 30 )
+scale = Vector2( 0.675, 0.6375 )
+texture = ExtResource( 16 )
+
+[node name="blocks" type="Button" parent="Panel"]
+margin_right = 92.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 1 )
+text = "建筑方块"
+
+[node name="Sprite" type="Sprite" parent="Panel/blocks"]
+position = Vector2( 121, 21 )
+scale = Vector2( 3.625, 2.375 )
+texture = ExtResource( 18 )
+
+[node name="items" type="Button" parent="Panel"]
+margin_left = 160.0
+margin_right = 252.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 1 )
+text = "工具"
+
+[node name="Sprite" type="Sprite" parent="Panel/items"]
+position = Vector2( 111, 20 )
+scale = Vector2( 2.375, 2.5 )
+texture = ExtResource( 19 )
+
+[node name="Button3" type="Button" parent="Panel"]
+margin_left = 310.0
+margin_right = 402.0
+margin_bottom = 40.0
+custom_fonts/font = SubResource( 1 )
+text = "食物"
+
+[node name="Sprite" type="Sprite" parent="Panel/Button3"]
+position = Vector2( 111, 21 )
+scale = Vector2( 2.375, 2.375 )
+texture = ExtResource( 11 )
+
+[node name="sound" parent="." instance=ExtResource( 20 )]
+[connection signal="pressed" from="Panel/close" to="Panel/close" method="_on_close_pressed"]
+[connection signal="mouse_entered" from="Panel/TextureButton" to="Panel/TextureButton" method="_on_TextureButton_mouse_entered"]
+[connection signal="mouse_exited" from="Panel/TextureButton" to="Panel/TextureButton" method="_on_TextureButton_mouse_exited"]
+[connection signal="pressed" from="Panel/TextureButton" to="Panel/TextureButton" method="_on_TextureButton_pressed"]

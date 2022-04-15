@@ -1,0 +1,198 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://fonts/SIMLI.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/ta_fang_mode/to_ta_fang_title.gd" type="Script" id=2]
+[ext_resource path="res://fonts/ninety.tres" type="DynamicFont" id=3]
+[ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 90
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.72549, 0.72549, 0.72549, 1 )
+
+[node name="task" type="Node2D"]
+
+[node name="Button" type="Button" parent="."]
+margin_left = 620.0
+margin_top = 10.0
+margin_right = 992.0
+margin_bottom = 130.0
+custom_fonts/font = SubResource( 1 )
+text = "日常任务"
+
+[node name="zhang_jie" type="Button" parent="."]
+margin_left = 1450.0
+margin_top = 10.0
+margin_right = 1822.0
+margin_bottom = 130.0
+custom_fonts/font = SubResource( 1 )
+text = "主线任务"
+
+[node name="back" type="Button" parent="."]
+margin_right = 372.0
+margin_bottom = 120.0
+custom_fonts/font = SubResource( 1 )
+text = "back"
+script = ExtResource( 2 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 10.0
+margin_top = 290.0
+margin_right = 550.0
+margin_bottom = 482.0
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+editor/display_folded = true
+margin_right = 1276.0
+margin_bottom = 97.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+margin_top = 3.0
+margin_right = 540.0
+margin_bottom = 94.0
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "击杀20个敌人"
+
+[node name="lin_qu" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 544.0
+margin_right = 916.0
+margin_bottom = 97.0
+custom_fonts/font = SubResource( 1 )
+text = "领取奖励"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+editor/display_folded = true
+margin_top = 101.0
+margin_right = 1276.0
+margin_bottom = 198.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2"]
+margin_top = 3.0
+margin_right = 540.0
+margin_bottom = 94.0
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "击杀40个敌人"
+
+[node name="lin_qu" type="Button" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 544.0
+margin_right = 916.0
+margin_bottom = 97.0
+custom_fonts/font = SubResource( 1 )
+text = "领取奖励"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
+editor/display_folded = true
+margin_top = 202.0
+margin_right = 1276.0
+margin_bottom = 299.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer3"]
+margin_top = 3.0
+margin_right = 585.0
+margin_bottom = 94.0
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "击杀100个敌人"
+
+[node name="lin_qu" type="Button" parent="VBoxContainer/HBoxContainer3"]
+margin_left = 589.0
+margin_right = 961.0
+margin_bottom = 97.0
+custom_fonts/font = SubResource( 1 )
+text = "领取奖励"
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
+editor/display_folded = true
+margin_top = 303.0
+margin_right = 1276.0
+margin_bottom = 400.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer4"]
+margin_top = 3.0
+margin_right = 900.0
+margin_bottom = 94.0
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "给任意防御塔升级一次"
+
+[node name="lin_qu" type="Button" parent="VBoxContainer/HBoxContainer4"]
+margin_left = 904.0
+margin_right = 1276.0
+margin_bottom = 97.0
+custom_fonts/font = SubResource( 1 )
+text = "领取奖励"
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 404.0
+margin_right = 1276.0
+margin_bottom = 501.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer5"]
+margin_top = 3.0
+margin_right = 450.0
+margin_bottom = 94.0
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "通关第一章"
+
+[node name="lin_qu" type="Button" parent="VBoxContainer/HBoxContainer5"]
+margin_left = 454.0
+margin_right = 826.0
+margin_bottom = 97.0
+custom_fonts/font = SubResource( 1 )
+text = "领取奖励"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 505.0
+margin_right = 1276.0
+margin_bottom = 602.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer6"]
+margin_top = 3.0
+margin_right = 450.0
+margin_bottom = 94.0
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "通关第二章"
+
+[node name="lin_qu" type="Button" parent="VBoxContainer/HBoxContainer6"]
+margin_left = 454.0
+margin_right = 826.0
+margin_bottom = 97.0
+custom_fonts/font = SubResource( 1 )
+text = "领取奖励"
+
+[node name="HBoxContainer7" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 606.0
+margin_right = 1276.0
+margin_bottom = 703.0
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer7"]
+margin_top = 3.0
+margin_right = 450.0
+margin_bottom = 94.0
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "通关第三章"
+
+[node name="lin_qu" type="Button" parent="VBoxContainer/HBoxContainer7"]
+margin_left = 454.0
+margin_right = 826.0
+margin_bottom = 97.0
+custom_fonts/font = SubResource( 1 )
+text = "领取奖励"
+
+[node name="sound" parent="." instance=ExtResource( 4 )]
+[connection signal="pressed" from="back" to="back" method="_on_back_pressed"]

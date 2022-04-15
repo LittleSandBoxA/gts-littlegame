@@ -1,0 +1,227 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://scenes/test_creating.gd" type="Script" id=1]
+[ext_resource path="res://scenes/base_block_root.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/maujoe.camera_control/scripts/camera_control.gd" type="Script" id=3]
+[ext_resource path="res://scenes/RayCast.gd" type="Script" id=4]
+[ext_resource path="res://scenes/layout/zhunXin_root.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scripts/snad_box_mode/add_gts.gd" type="Script" id=7]
+[ext_resource path="res://scenes/sha_mo.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scripts/snad_box_mode/gts_prototype.gd" type="Script" id=9]
+[ext_resource path="res://fonts/droid-sans/DroidSans.tres" type="DynamicFont" id=10]
+[ext_resource path="res://scripts/ta_fang_mode/layout/HSlider.gd" type="Script" id=11]
+[ext_resource path="res://scripts/snad_box_mode/select_gts_walk.gd" type="Script" id=12]
+[ext_resource path="res://ready_scene/slime.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scripts/snad_box_mode/slime_walk.gd" type="Script" id=14]
+[ext_resource path="res://ready_scene/zombie.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scripts/snad_box_mode/zombie.gd" type="Script" id=16]
+[ext_resource path="res://scripts/snad_box_mode/ji_walk.gd" type="Script" id=17]
+[ext_resource path="res://ready_scene/chicken.tscn" type="PackedScene" id=18]
+[ext_resource path="res://ready_scene/sand_box_gts.tscn" type="PackedScene" id=19]
+[ext_resource path="res://fonts/font.tres" type="DynamicFont" id=20]
+[ext_resource path="res://scenes/title.gd" type="Script" id=21]
+[ext_resource path="res://fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Regular.ttf" type="DynamicFontData" id=22]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.428916, 0.5309, 0.409121 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.0196078, 0.0196078, 0.0196078, 0.160784 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+
+[sub_resource type="DynamicFont" id=4]
+size = 90
+font_data = ExtResource( 22 )
+
+[node name="test_creating" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="base_block_root" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 0 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.68261 )
+script = ExtResource( 3 )
+
+[node name="RayCast" type="RayCast" parent="Camera"]
+enabled = true
+cast_to = Vector3( 0, 0, -4 )
+script = ExtResource( 4 )
+
+[node name="zhunXin_root" parent="." instance=ExtResource( 5 )]
+
+[node name="sound" parent="." instance=ExtResource( 6 )]
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 1479.24
+margin_top = 112.071
+margin_right = 1656.24
+margin_bottom = 166.071
+
+[node name="add_gts" type="Button" parent="Panel"]
+margin_left = 2.82391
+margin_top = 3.31489
+margin_right = 160.824
+margin_bottom = 55.3149
+text = "add_gts+"
+script = ExtResource( 7 )
+
+[node name="sand_root" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
+
+[node name="gts_prototype" type="Panel" parent="."]
+margin_left = 1709.21
+margin_top = 183.757
+margin_right = 1887.21
+margin_bottom = 610.757
+script = ExtResource( 9 )
+
+[node name="size" type="Label" parent="gts_prototype"]
+margin_left = -0.814575
+margin_right = 122.185
+margin_bottom = 35.0
+custom_fonts/font = ExtResource( 10 )
+text = "scale:1m"
+
+[node name="Label2" type="Label" parent="gts_prototype"]
+margin_left = 4.88708
+margin_top = 31.7657
+margin_right = 44.8871
+margin_bottom = 45.7657
+
+[node name="size_bar" type="HSlider" parent="gts_prototype"]
+margin_left = 5.0
+margin_top = 33.0
+margin_right = 172.0
+margin_bottom = 79.0
+ticks_on_borders = true
+script = ExtResource( 11 )
+
+[node name="rotate_x" type="Label" parent="gts_prototype"]
+margin_left = 7.32684
+margin_top = 53.6829
+margin_right = 132.327
+margin_bottom = 91.6829
+custom_fonts/font = ExtResource( 10 )
+text = "rotate_x:1"
+
+[node name="rotate_y" type="Label" parent="gts_prototype"]
+margin_left = 4.35614
+margin_top = 122.169
+margin_right = 147.356
+margin_bottom = 160.169
+custom_fonts/font = ExtResource( 10 )
+text = "rotate_y:1"
+
+[node name="rotate_z" type="Label" parent="gts_prototype"]
+margin_left = 2.38281
+margin_top = 204.446
+margin_right = 143.383
+margin_bottom = 242.446
+custom_fonts/font = ExtResource( 10 )
+text = "rotate_z:1"
+
+[node name="rotate_x_bar" type="HSlider" parent="gts_prototype"]
+margin_left = 8.62451
+margin_top = 86.2446
+margin_right = 151.625
+margin_bottom = 142.245
+ticks_on_borders = true
+
+[node name="rotate_y_bar" type="HSlider" parent="gts_prototype"]
+margin_left = 1.0
+margin_top = 173.0
+margin_right = 171.0
+margin_bottom = 212.0
+ticks_on_borders = true
+
+[node name="rotate_z_bar" type="HSlider" parent="gts_prototype"]
+margin_left = 8.0
+margin_top = 240.0
+margin_right = 158.0
+margin_bottom = 285.0
+ticks_on_borders = true
+
+[node name="gts_things" type="Panel" parent="."]
+margin_left = 663.044
+margin_top = 990.447
+margin_right = 1287.04
+margin_bottom = 1034.45
+
+[node name="Label" type="Label" parent="gts_things"]
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 10 )
+text = "Animation"
+
+[node name="walk" type="Button" parent="gts_things"]
+margin_left = 162.9
+margin_top = -0.0999756
+margin_right = 271.9
+margin_bottom = 43.9
+custom_fonts/font = ExtResource( 10 )
+text = "walk"
+script = ExtResource( 12 )
+
+[node name="slime_root" parent="." instance=ExtResource( 13 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4, -2, 0 )
+script = ExtResource( 14 )
+
+[node name="zombie" parent="." instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, 1 )
+script = ExtResource( 16 )
+
+[node name="RigidBody" type="RigidBody" parent="."]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2, -1, 1 )
+mode = 2
+script = ExtResource( 17 )
+
+[node name="ji_root" parent="RigidBody" instance=ExtResource( 18 )]
+
+[node name="CollisionShape" type="CollisionShape" parent="RigidBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+shape = SubResource( 1 )
+
+[node name="sand_box_gts" parent="." instance=ExtResource( 19 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -2 )
+
+[node name="to_title" type="Panel" parent="."]
+visible = false
+margin_left = 375.0
+margin_top = 147.0
+margin_right = 707.0
+margin_bottom = 450.0
+
+[node name="title" type="Button" parent="to_title"]
+margin_left = 30.0
+margin_top = 48.0
+margin_right = 295.0
+margin_bottom = 197.0
+custom_fonts/font = ExtResource( 20 )
+text = "返回主界面"
+script = ExtResource( 21 )
+
+[node name="objects" type="Panel" parent="."]
+margin_right = 520.0
+margin_bottom = 1060.0
+custom_styles/panel = SubResource( 2 )
+
+[node name="Label" type="Label" parent="objects"]
+margin_left = 20.0
+margin_top = 10.0
+margin_right = 500.0
+margin_bottom = 119.0
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+text = "gts"
+align = 1
+[connection signal="pressed" from="Panel/add_gts" to="Panel/add_gts" method="_on_add_gts_pressed"]
+[connection signal="focus_entered" from="gts_prototype" to="gts_prototype" method="_on_gts_prototype_focus_entered"]
+[connection signal="mouse_entered" from="gts_prototype" to="gts_prototype" method="_on_gts_prototype_mouse_entered"]
+[connection signal="mouse_exited" from="gts_prototype" to="gts_prototype" method="_on_gts_prototype_mouse_exited"]
+[connection signal="value_changed" from="gts_prototype/size_bar" to="gts_prototype/size_bar" method="_on_HSlider_value_changed"]
+[connection signal="pressed" from="gts_things/walk" to="gts_things/walk" method="_on_walk_pressed"]
+[connection signal="pressed" from="to_title/title" to="to_title/title" method="_on_title_pressed"]

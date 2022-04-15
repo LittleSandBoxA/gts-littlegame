@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/bite-mordisco.ogg-f04d69915a56b1ed22ed68c47dc12bb5.oggstr"
+
+[deps]
+
+source_file="res://sounds/bite-mordisco.ogg"
+dest_files=[ "res://.import/bite-mordisco.ogg-f04d69915a56b1ed22ed68c47dc12bb5.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/command/LineEdit.gd" type="Script" id=1]
+[ext_resource path="res://fonts/SIMLI.TTF" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 22
+font_data = ExtResource( 2 )
+
+[node name="command_root" type="Node2D"]
+
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_top = 580.0
+margin_right = 230.0
+margin_bottom = 604.0
+script = ExtResource( 1 )
+
+[node name="tips" type="Label" parent="."]
+visible = false
+margin_top = 560.0
+margin_right = 66.0
+margin_bottom = 583.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "/time set [day,night,second(s)]"
+[connection signal="text_changed" from="LineEdit" to="LineEdit" method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="LineEdit" to="LineEdit" method="_on_LineEdit_text_entered"]

@@ -1,0 +1,63 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fonts/font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/layout/win_back.gd" type="Script" id=2]
+[ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=3]
+
+[node name="win" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="."]
+margin_left = 359.425
+margin_top = 140.333
+margin_right = 599.425
+margin_bottom = 181.333
+custom_fonts/font = ExtResource( 1 )
+text = "你打败了电脑"
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 260.619
+margin_top = 216.228
+margin_right = 500.619
+margin_bottom = 257.228
+custom_fonts/font = ExtResource( 1 )
+text = "分数：xxx
+体重：xxx千克
+吞噬：20人"
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 638.0
+margin_top = 148.0
+margin_right = 982.0
+margin_bottom = 490.0
+
+[node name="Label3" type="Label" parent="Panel"]
+margin_left = 74.386
+margin_top = 42.3286
+margin_right = 234.386
+margin_bottom = 83.3286
+custom_fonts/font = ExtResource( 1 )
+text = "历史高分"
+
+[node name="Label4" type="Label" parent="Panel"]
+margin_left = 53.3334
+margin_top = 91.082
+margin_right = 293.333
+margin_bottom = 220.082
+custom_fonts/font = ExtResource( 1 )
+text = "1.556分
+2.333分
+3.454分"
+
+[node name="back" type="Button" parent="."]
+margin_left = 391.842
+margin_top = 497.684
+margin_right = 636.842
+margin_bottom = 562.684
+custom_fonts/font = ExtResource( 1 )
+text = "返回主菜单"
+script = ExtResource( 2 )
+
+[node name="sound" parent="." instance=ExtResource( 3 )]
+[connection signal="pressed" from="back" to="back" method="_on_back_pressed"]

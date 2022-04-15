@@ -1,0 +1,88 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://fonts/font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/ta_fang_mode/to_ta_fang_title.gd" type="Script" id=2]
+[ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/character/cang_ku_manager.png" type="Texture" id=4]
+[ext_resource path="res://fonts/xolonium/Xolonium.tres" type="DynamicFont" id=5]
+[ext_resource path="res://ready_scene/card.tscn" type="PackedScene" id=6]
+[ext_resource path="res://assets/UI/coin.png" type="Texture" id=7]
+[ext_resource path="res://scripts/ta_fang_mode/layout/cang_ku_gui.gd" type="Script" id=8]
+[ext_resource path="res://sounds/abs-confirm-2.wav" type="AudioStream" id=9]
+
+[sub_resource type="StyleBoxFlat" id=1]
+shadow_size = 12
+
+[node name="store" type="Node2D"]
+
+[node name="to_title" type="Button" parent="."]
+margin_right = 160.0
+margin_bottom = 70.0
+custom_fonts/font = ExtResource( 1 )
+text = "←"
+script = ExtResource( 2 )
+
+[node name="sound" parent="." instance=ExtResource( 3 )]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1690, 310 )
+scale = Vector2( 0.180566, 0.180566 )
+texture = ExtResource( 4 )
+
+[node name="text" type="Label" parent="."]
+margin_left = 260.0
+margin_top = 10.0
+margin_right = 555.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 5 )
+text = "welcome to store."
+
+[node name="Sprite2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 160, 190 )
+
+[node name="Sprite3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 290, 190 )
+
+[node name="Sprite4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 430, 190 )
+
+[node name="Sprite5" parent="." instance=ExtResource( 6 )]
+position = Vector2( 160, 430 )
+
+[node name="Sprite6" parent="." instance=ExtResource( 6 )]
+position = Vector2( 290, 430 )
+
+[node name="Sprite7" parent="." instance=ExtResource( 6 )]
+position = Vector2( 430, 430 )
+
+[node name="coin" type="TextureButton" parent="."]
+margin_left = 120.0
+margin_top = 130.0
+margin_right = 200.0
+margin_bottom = 210.0
+toggle_mode = true
+texture_normal = ExtResource( 7 )
+script = ExtResource( 8 )
+
+[node name="tip" type="Label" parent="coin"]
+margin_left = -10.0
+margin_top = 80.0
+margin_right = 82.0
+margin_bottom = 121.0
+custom_fonts/font = ExtResource( 5 )
+text = "1000"
+
+[node name="click" type="AudioStreamPlayer" parent="coin"]
+stream = ExtResource( 9 )
+
+[node name="tip" type="Label" parent="."]
+visible = false
+margin_left = 210.0
+margin_top = 140.0
+margin_right = 560.0
+margin_bottom = 191.0
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "用于升级的金币"
+[connection signal="pressed" from="to_title" to="to_title" method="_on_to_title_pressed"]
+[connection signal="pressed" from="coin" to="coin" method="_on_coin_pressed"]

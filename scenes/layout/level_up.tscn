@@ -1,0 +1,220 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://fonts/font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/UI/coin.png" type="Texture" id=2]
+[ext_resource path="res://fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/UI/book_5.png" type="Texture" id=4]
+[ext_resource path="res://scripts/ta_fang_mode/layout/back.gd" type="Script" id=5]
+[ext_resource path="res://scripts/ta_fang_mode/layout/x.gd" type="Script" id=6]
+[ext_resource path="res://scripts/ta_fang_mode/layout/level_up_right.gd" type="Script" id=7]
+[ext_resource path="res://scripts/ta_fang_mode/layout/add_book.gd" type="Script" id=8]
+[ext_resource path="res://fonts/SIMLI.TTF" type="DynamicFontData" id=9]
+[ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=10]
+
+[sub_resource type="DynamicFont" id=3]
+size = 80
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 80
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 80
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 80
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 80
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 80
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 60
+font_data = ExtResource( 9 )
+
+[sub_resource type="Animation" id=1]
+resource_name = "coin_not_enough"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("coin_not_enough:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 2.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="StyleBoxFlat" id=2]
+shadow_size = 18
+
+[node name="level_up" type="Node2D"]
+
+[node name="Panel2" type="Panel" parent="."]
+margin_left = 70.0
+margin_top = 100.0
+margin_right = 270.0
+margin_bottom = 160.0
+
+[node name="Label" type="Label" parent="Panel2"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 90.0
+margin_bottom = 70.0
+custom_fonts/font = ExtResource( 1 )
+text = "Lv1-"
+
+[node name="to_level" type="Label" parent="Panel2"]
+margin_left = 100.0
+margin_top = 10.0
+margin_right = 180.0
+margin_bottom = 70.0
+custom_fonts/font = ExtResource( 1 )
+text = "Lv20"
+
+[node name="coin" type="Sprite" parent="."]
+position = Vector2( 150, 40 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="coin"]
+margin_left = 20.0
+margin_top = -50.0
+margin_right = 276.0
+margin_bottom = 59.0
+custom_fonts/font = SubResource( 3 )
+text = "1000"
+
+[node name="books_add" type="Panel" parent="."]
+margin_left = 1130.0
+margin_top = 15.0
+margin_right = 1420.0
+margin_bottom = 450.0
+
+[node name="Sprite" type="Sprite" parent="books_add"]
+position = Vector2( 140, 85 )
+scale = Vector2( 1.39303, 1.55556 )
+texture = ExtResource( 4 )
+
+[node name="books" type="Label" parent="books_add"]
+margin_left = 110.0
+margin_top = 185.0
+margin_right = 150.0
+margin_bottom = 226.0
+custom_fonts/font = SubResource( 4 )
+text = "1"
+
+[node name="back" type="Button" parent="."]
+margin_right = 90.0
+margin_bottom = 90.0
+custom_fonts/font = ExtResource( 1 )
+text = "←"
+script = ExtResource( 5 )
+
+[node name="x" type="Button" parent="."]
+margin_left = 1200.0
+margin_top = 480.0
+margin_right = 1280.0
+margin_bottom = 540.0
+custom_fonts/font = ExtResource( 1 )
+custom_constants/hseparation = 0
+text = "x"
+script = ExtResource( 6 )
+
+[node name="right" type="Button" parent="."]
+margin_left = 1340.0
+margin_top = 480.0
+margin_right = 1420.0
+margin_bottom = 540.0
+custom_fonts/font = ExtResource( 1 )
+text = "√"
+script = ExtResource( 7 )
+
+[node name="book_root" type="Panel" parent="."]
+margin_left = 530.0
+margin_top = 170.0
+margin_right = 1060.0
+margin_bottom = 980.0
+
+[node name="Sprite" type="Sprite" parent="book_root"]
+position = Vector2( 244.75, 103 )
+scale = Vector2( 2.14179, 1.95556 )
+texture = ExtResource( 4 )
+region_rect = Rect2( 13.4931, 28.3381, 22.1533, 2.39495 )
+script = ExtResource( 8 )
+
+[node name="need_coin" type="Label" parent="book_root"]
+margin_left = 30.0
+margin_top = 210.0
+margin_right = 430.0
+margin_bottom = 291.0
+custom_fonts/font = SubResource( 6 )
+text = "消耗金币:0"
+
+[node name="books" type="Label" parent="book_root"]
+margin_left = 40.0
+margin_top = 290.0
+margin_right = 320.0
+margin_bottom = 371.0
+custom_fonts/font = SubResource( 7 )
+text = "数量:50"
+
+[node name="Panel3" type="Panel" parent="."]
+margin_left = 20.0
+margin_top = 180.0
+margin_right = 470.0
+margin_bottom = 1000.0
+
+[node name="attack" type="Label" parent="Panel3"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 90.0
+margin_bottom = 70.0
+custom_fonts/font = SubResource( 5 )
+text = "攻:20→100"
+
+[node name="sold" type="Label" parent="Panel3"]
+margin_left = 20.0
+margin_top = 120.0
+margin_right = 420.0
+margin_bottom = 201.0
+custom_fonts/font = SubResource( 8 )
+text = "防:20→100"
+
+[node name="life" type="Label" parent="Panel3"]
+margin_left = 10.0
+margin_top = 210.0
+margin_right = 570.0
+margin_bottom = 291.0
+custom_fonts/font = SubResource( 9 )
+text = "生命力:20→100"
+
+[node name="sound" parent="." instance=ExtResource( 10 )]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/coin_not_enough = SubResource( 1 )
+
+[node name="coin_not_enough" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 1440.0
+margin_top = 50.0
+margin_right = 1890.0
+margin_bottom = 170.0
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = ExtResource( 1 )
+text = "金币不足！"
+align = 1
+valign = 1
+percent_visible = -0.2
+[connection signal="pressed" from="back" to="back" method="_on_back_pressed"]
+[connection signal="pressed" from="x" to="x" method="_on_x_pressed"]
+[connection signal="pressed" from="right" to="right" method="_on_right_pressed"]

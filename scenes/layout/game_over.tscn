@@ -1,0 +1,54 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://fonts/font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/layout/rebrown.gd" type="Script" id=2]
+[ext_resource path="res://scenes/layout/back_to_title.gd" type="Script" id=3]
+[ext_resource path="res://scenes/layout/x.gd" type="Script" id=4]
+[ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=5]
+
+[node name="Game_over_root" type="Node2D"]
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 130.0
+margin_top = 60.0
+margin_right = 870.0
+margin_bottom = 510.0
+
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 270.0
+margin_top = 40.0
+margin_right = 430.0
+margin_bottom = 81.0
+custom_fonts/font = ExtResource( 1 )
+text = "满身创伤"
+
+[node name="rebrown" type="Button" parent="Panel"]
+margin_left = 230.0
+margin_top = 280.0
+margin_right = 310.0
+margin_bottom = 350.0
+custom_fonts/font = ExtResource( 1 )
+text = "重生"
+script = ExtResource( 2 )
+
+[node name="back_to_title" type="Button" parent="Panel"]
+margin_left = 340.0
+margin_top = 280.0
+margin_right = 480.0
+margin_bottom = 350.0
+custom_fonts/font = ExtResource( 1 )
+text = "返回主页"
+script = ExtResource( 3 )
+
+[node name="x" type="Button" parent="Panel"]
+margin_left = 630.0
+margin_right = 730.0
+margin_bottom = 50.0
+custom_fonts/font = ExtResource( 1 )
+text = "X"
+script = ExtResource( 4 )
+
+[node name="sound" parent="." instance=ExtResource( 5 )]
+[connection signal="pressed" from="Panel/rebrown" to="Panel/rebrown" method="_on_rebrown_pressed"]
+[connection signal="pressed" from="Panel/back_to_title" to="Panel/back_to_title" method="_on_back_to_title_pressed"]
+[connection signal="pressed" from="Panel/x" to="Panel/x" method="_on_x_pressed"]

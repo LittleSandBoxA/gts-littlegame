@@ -1,0 +1,777 @@
+[gd_scene load_steps=45 format=2]
+
+[ext_resource path="res://scripts/ccontrol.gd" type="Script" id=1]
+[ext_resource path="res://scenes/test_ai_miku.gd" type="Script" id=2]
+[ext_resource path="res://scenes/miku.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/misc/Area_miku.gd" type="Script" id=4]
+[ext_resource path="res://newAI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://newAI.gd" type="Script" id=6]
+[ext_resource path="res://new_AI_grabed_by_player.gd" type="Script" id=7]
+[ext_resource path="res://scenes/tree.tscn" type="PackedScene" id=8]
+[ext_resource path="res://images/gts_background.jpg" type="Texture" id=9]
+[ext_resource path="res://scenes/layout/win.tscn" type="PackedScene" id=10]
+[ext_resource path="res://images/jin_ke_la.jpg" type="Texture" id=11]
+[ext_resource path="res://images/pixiv.jpg" type="Texture" id=12]
+[ext_resource path="res://animation/rotate_misc_things.tres" type="Animation" id=13]
+[ext_resource path="res://scripts/misc/gold.gd" type="Script" id=14]
+[ext_resource path="res://scripts/misc/pixiv.gd" type="Script" id=15]
+[ext_resource path="res://newTiny.tscn" type="PackedScene" id=16]
+[ext_resource path="res://newTiny.gd" type="Script" id=17]
+[ext_resource path="res://scripts/Area.gd" type="Script" id=18]
+[ext_resource path="res://scenes/layout/game_over.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/layout/score_root.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Timer.gd" type="Script" id=21]
+[ext_resource path="res://scenes/loli.tscn" type="PackedScene" id=22]
+[ext_resource path="res://fonts/font.tres" type="DynamicFont" id=23]
+[ext_resource path="res://scripts/AI_test_Android/open_bag.gd" type="Script" id=24]
+[ext_resource path="res://scenes/layout/bag_root.tscn" type="PackedScene" id=25]
+[ext_resource path="res://scenes/layout/command.tscn" type="PackedScene" id=26]
+[ext_resource path="res://piano.tscn" type="PackedScene" id=27]
+[ext_resource path="res://piano_Area.gd" type="Script" id=28]
+[ext_resource path="res://scenes/layout/zhunXin_root.tscn" type="PackedScene" id=29]
+[ext_resource path="res://scenes/city_root.tscn" type="PackedScene" id=30]
+[ext_resource path="res://scenes/base_block_root.tscn" type="PackedScene" id=31]
+[ext_resource path="res://building.tscn" type="PackedScene" id=32]
+[ext_resource path="res://scenes/sha_mo.tscn" type="PackedScene" id=33]
+[ext_resource path="res://scripts/AI_test_Android/up.gd" type="Script" id=34]
+[ext_resource path="res://fonts/xolonium/Xolonium.tres" type="DynamicFont" id=35]
+[ext_resource path="res://scripts/AI_test_Android/grab.gd" type="Script" id=36]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.483452, 1.97335, 0.286268 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 0.324452, 1.62729, 0.581771 )
+
+[sub_resource type="BoxShape" id=3]
+extents = Vector3( 30.7784, 1, 25.4036 )
+
+[sub_resource type="Animation" id=4]
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("gold:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 180, 0 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("gold:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 1, 7.401 ), Vector3( 0, 2, 7.401 ), Vector3( 0, 1, 7.401 ) ]
+}
+
+[sub_resource type="BoxShape" id=5]
+extents = Vector3( 0.28794, 1, 0.215037 )
+
+[sub_resource type="BoxShape" id=6]
+extents = Vector3( 20, 20, 20 )
+
+[sub_resource type="ProceduralSky" id=7]
+
+[sub_resource type="Environment" id=8]
+background_mode = 2
+background_sky = SubResource( 7 )
+
+[node name="root" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="KinematicBody" type="RigidBody" parent="."]
+transform = Transform( 0.0598501, 0, -0.998207, 0, 1, 0, 0.998207, 0, 0.0598501, 4.1763, 0, -2.73098 )
+mode = 3
+script = ExtResource( 2 )
+
+[node name="miku" parent="KinematicBody" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 3.72529e-009, 0, 1, 0, -3.72529e-009, 0, 1, 0, 0, 0 )
+
+[node name="fps" type="Camera" parent="KinematicBody/miku"]
+transform = Transform( -1, 0, -1.00583e-007, 0, 1, 0, 1.00583e-007, 0, -1, -0.0457163, 3.99258, 0.762507 )
+
+[node name="Camera2" type="Camera" parent="KinematicBody/miku"]
+transform = Transform( -1, 0, 8.74228e-008, 2.05254e-008, 0.972048, 0.234783, -8.49791e-008, 0.234783, -0.972048, 0.357867, 4.19914, -3.80124 )
+current = true
+
+[node name="behand" type="Camera" parent="KinematicBody/miku"]
+transform = Transform( 1, 0, 1.49012e-008, 0, 1, 0, -1.49012e-008, 0, 1, 0, 4.81832, 0 )
+
+[node name="Area_miku" type="Area" parent="KinematicBody"]
+script = ExtResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody/Area_miku"]
+transform = Transform( 1, 0, 2.98023e-008, 0, 1, 0, -2.98023e-008, 0, 1, 0, 2.04344, 0 )
+shape = SubResource( 1 )
+
+[node name="newAI" parent="." instance=ExtResource( 5 )]
+editor/display_folded = true
+script = ExtResource( 6 )
+
+[node name="AI" type="Area" parent="newAI"]
+script = ExtResource( 7 )
+
+[node name="CollisionShape" type="CollisionShape" parent="newAI/AI"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.129515, 2.00534, 0 )
+shape = SubResource( 2 )
+
+[node name="treeSceneRoot" parent="." instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9343, 2.39092, 0 )
+
+[node name="StaticBody" type="StaticBody" parent="."]
+editor/display_folded = true
+
+[node name="Sprite3D" type="Sprite3D" parent="StaticBody"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0 )
+pixel_size = 0.125
+texture = ExtResource( 9 )
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource( 3 )
+
+[node name="win" parent="." instance=ExtResource( 10 )]
+visible = false
+
+[node name="gold" type="Sprite3D" parent="."]
+pause_mode = 2
+transform = Transform( 0.670154, 0, 0.742221, 0, 1, 0, -0.742221, 0, 0.670154, -34.6313, 1.26623, 7.401 )
+texture = ExtResource( 11 )
+
+[node name="pixiv" type="Sprite3D" parent="."]
+pause_mode = 2
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 24.8931, 3.64571, 6.2987 )
+visible = false
+texture = ExtResource( 12 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+pause_mode = 2
+anims/gold = SubResource( 4 )
+anims/pixiv = ExtResource( 13 )
+script = ExtResource( 14 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+anims/rotate_misc_things = ExtResource( 13 )
+script = ExtResource( 15 )
+
+[node name="newTiny" parent="." groups=[
+"tinys",
+] instance=ExtResource( 16 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0668, 0, 9.18194 )
+script = ExtResource( 17 )
+
+[node name="tiny" type="Area" parent="newTiny" groups=[
+"tinyArea",
+]]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17452, 0 )
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="newTiny/tiny"]
+shape = SubResource( 5 )
+
+[node name="newTiny2" parent="." groups=[
+"tinys",
+] instance=ExtResource( 16 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4855, 0, -9.6091 )
+script = ExtResource( 17 )
+
+[node name="tiny2" type="Area" parent="newTiny2" groups=[
+"tinyArea",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.971749, 0 )
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="newTiny2/tiny2"]
+shape = SubResource( 5 )
+
+[node name="newTiny3" parent="." groups=[
+"tinys",
+] instance=ExtResource( 16 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.52652, 0, 13.7869 )
+script = ExtResource( 17 )
+
+[node name="tiny3" type="Area" parent="newTiny3" groups=[
+"tinyArea",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="newTiny3/tiny3"]
+shape = SubResource( 5 )
+
+[node name="newTiny4" parent="." groups=[
+"tinys",
+] instance=ExtResource( 16 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.47753, 0, -15.6548 )
+script = ExtResource( 17 )
+
+[node name="tiny3" type="Area" parent="newTiny4" groups=[
+"tinyArea",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="newTiny4/tiny3"]
+shape = SubResource( 5 )
+
+[node name="newTiny5" parent="." groups=[
+"tinys",
+] instance=ExtResource( 16 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.34076, 0, -25.631 )
+script = ExtResource( 17 )
+
+[node name="tiny3" type="Area" parent="newTiny5" groups=[
+"tinyArea",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="newTiny5/tiny3"]
+shape = SubResource( 5 )
+
+[node name="newTiny6" parent="." groups=[
+"tinys",
+] instance=ExtResource( 16 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.86377, 0, -31.166 )
+script = ExtResource( 17 )
+
+[node name="tiny3" type="Area" parent="newTiny6" groups=[
+"tinyArea",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="newTiny6/tiny3"]
+shape = SubResource( 5 )
+
+[node name="newTiny7" parent="." groups=[
+"tinys",
+] instance=ExtResource( 16 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3253, 0, -39.947 )
+script = ExtResource( 17 )
+
+[node name="tiny3" type="Area" parent="newTiny7" groups=[
+"tinyArea",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="newTiny7/tiny3"]
+shape = SubResource( 5 )
+
+[node name="newTiny8" parent="." groups=[
+"tinys",
+] instance=ExtResource( 16 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3253, 0, -52.8452 )
+script = ExtResource( 17 )
+
+[node name="tiny3" type="Area" parent="newTiny8" groups=[
+"tinyArea",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="newTiny8/tiny3"]
+shape = SubResource( 5 )
+
+[node name="newTiny9" parent="." groups=[
+"tinys",
+] instance=ExtResource( 16 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8362, 0, -57.7904 )
+script = ExtResource( 17 )
+
+[node name="tiny3" type="Area" parent="newTiny9" groups=[
+"tinyArea",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="newTiny9/tiny3"]
+shape = SubResource( 5 )
+
+[node name="newTiny10" parent="." groups=[
+"tinys",
+] instance=ExtResource( 16 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37895, 0, -67.5097 )
+script = ExtResource( 17 )
+
+[node name="tiny3" type="Area" parent="newTiny10" groups=[
+"tinyArea",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="newTiny10/tiny3"]
+shape = SubResource( 5 )
+
+[node name="newTiny11" parent="." groups=[
+"tinys",
+] instance=ExtResource( 16 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.95716, 0, -19.0605 )
+script = ExtResource( 17 )
+
+[node name="tiny3" type="Area" parent="newTiny11" groups=[
+"tinyArea",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="newTiny11/tiny3"]
+shape = SubResource( 5 )
+
+[node name="newTiny12" parent="." groups=[
+"tinys",
+] instance=ExtResource( 16 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.495, 0, -19.0605 )
+script = ExtResource( 17 )
+
+[node name="tiny3" type="Area" parent="newTiny12" groups=[
+"tinyArea",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="newTiny12/tiny3"]
+shape = SubResource( 5 )
+
+[node name="newTiny13" parent="." groups=[
+"tinys",
+] instance=ExtResource( 16 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.196, 0, -17.4957 )
+script = ExtResource( 17 )
+
+[node name="tiny3" type="Area" parent="newTiny13" groups=[
+"tinyArea",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="newTiny13/tiny3"]
+shape = SubResource( 5 )
+
+[node name="newTiny14" parent="." groups=[
+"tinys",
+] instance=ExtResource( 16 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.8937, 0, -15.9336 )
+script = ExtResource( 17 )
+
+[node name="tiny3" type="Area" parent="newTiny14" groups=[
+"tinyArea",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="newTiny14/tiny3"]
+shape = SubResource( 5 )
+
+[node name="newTiny15" parent="." groups=[
+"tinys",
+] instance=ExtResource( 16 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.1738, 0, -14.2297 )
+script = ExtResource( 17 )
+
+[node name="tiny3" type="Area" parent="newTiny15" groups=[
+"tinyArea",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="newTiny15/tiny3"]
+shape = SubResource( 5 )
+
+[node name="newTiny16" parent="." groups=[
+"tinys",
+] instance=ExtResource( 16 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.54615, 0, -14.2297 )
+script = ExtResource( 17 )
+
+[node name="tiny3" type="Area" parent="newTiny16" groups=[
+"tinyArea",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="newTiny16/tiny3"]
+shape = SubResource( 5 )
+
+[node name="newTiny17" parent="." groups=[
+"tinys",
+] instance=ExtResource( 16 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.34315, 0, -14.2297 )
+script = ExtResource( 17 )
+
+[node name="tiny3" type="Area" parent="newTiny17" groups=[
+"tinyArea",
+]]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="newTiny17/tiny3"]
+shape = SubResource( 5 )
+
+[node name="Game_over_root" parent="." instance=ExtResource( 19 )]
+visible = false
+
+[node name="score_root" parent="." instance=ExtResource( 20 )]
+position = Vector2( 690, 26.2124 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 600.0
+autostart = true
+script = ExtResource( 21 )
+
+[node name="loli_root" parent="." instance=ExtResource( 22 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.09991, 0, -9.34885 )
+
+[node name="tiny4" type="Area" parent="loli_root"]
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="loli_root/tiny4"]
+shape = SubResource( 5 )
+
+[node name="loli_root2" parent="." instance=ExtResource( 22 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.40021, 0, -9.34885 )
+
+[node name="tiny4" type="Area" parent="loli_root2"]
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="loli_root2/tiny4"]
+shape = SubResource( 5 )
+
+[node name="loli_root3" parent="." instance=ExtResource( 22 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0194581, 0, -9.34885 )
+
+[node name="tiny4" type="Area" parent="loli_root3"]
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="loli_root3/tiny4"]
+shape = SubResource( 5 )
+
+[node name="loli_root4" parent="." instance=ExtResource( 22 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0168, 0, -9.34885 )
+
+[node name="tiny4" type="Area" parent="loli_root4"]
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="loli_root4/tiny4"]
+shape = SubResource( 5 )
+
+[node name="loli_root5" parent="." instance=ExtResource( 22 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.77944, 0, -9.34885 )
+
+[node name="tiny4" type="Area" parent="loli_root5"]
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="loli_root5/tiny4"]
+shape = SubResource( 5 )
+
+[node name="loli_root6" parent="." instance=ExtResource( 22 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.34208, 0, -9.34885 )
+
+[node name="tiny4" type="Area" parent="loli_root6"]
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="loli_root6/tiny4"]
+shape = SubResource( 5 )
+
+[node name="loli_root7" parent="." instance=ExtResource( 22 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7391, 0, -9.34885 )
+
+[node name="tiny4" type="Area" parent="loli_root7"]
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="loli_root7/tiny4"]
+shape = SubResource( 5 )
+
+[node name="loli_root8" parent="." instance=ExtResource( 22 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.98725, 0, -9.34885 )
+
+[node name="tiny4" type="Area" parent="loli_root8"]
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="loli_root8/tiny4"]
+shape = SubResource( 5 )
+
+[node name="loli_root9" parent="." instance=ExtResource( 22 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4605, 0, -9.34885 )
+
+[node name="tiny4" type="Area" parent="loli_root9"]
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="loli_root9/tiny4"]
+shape = SubResource( 5 )
+
+[node name="loli_root10" parent="." instance=ExtResource( 22 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8678, 0, -9.34885 )
+
+[node name="tiny4" type="Area" parent="loli_root10"]
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="loli_root10/tiny4"]
+shape = SubResource( 5 )
+
+[node name="loli_root11" parent="." instance=ExtResource( 22 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.58, 0, -9.34885 )
+
+[node name="tiny4" type="Area" parent="loli_root11"]
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="loli_root11/tiny4"]
+shape = SubResource( 5 )
+
+[node name="loli_root12" parent="." instance=ExtResource( 22 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5344, 0, -9.34885 )
+
+[node name="tiny4" type="Area" parent="loli_root12"]
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="loli_root12/tiny4"]
+shape = SubResource( 5 )
+
+[node name="loli_root13" parent="." instance=ExtResource( 22 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.624, 0, -9.34885 )
+
+[node name="tiny4" type="Area" parent="loli_root13"]
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="loli_root13/tiny4"]
+shape = SubResource( 5 )
+
+[node name="loli_root14" parent="." instance=ExtResource( 22 )]
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6552, 0, -9.34885 )
+
+[node name="tiny4" type="Area" parent="loli_root14"]
+script = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="loli_root14/tiny4"]
+shape = SubResource( 5 )
+
+[node name="loli_root16" parent="." instance=ExtResource( 22 )]
+transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 20, -17.8278, 0, -29.1797 )
+
+[node name="loli_root17" parent="." instance=ExtResource( 22 )]
+transform = Transform( 4.06044, 0, 9.13853, 0, 10, 0, -9.13853, 0, 4.06044, -21.9643, 0, -0.396725 )
+
+[node name="btn_bag" type="Button" parent="."]
+margin_left = 230.0
+margin_top = 69.0
+margin_right = 360.0
+margin_bottom = 160.0
+custom_fonts/font = ExtResource( 23 )
+text = "背包"
+script = ExtResource( 24 )
+
+[node name="bag_root" parent="." instance=ExtResource( 25 )]
+visible = false
+
+[node name="command_root" parent="." instance=ExtResource( 26 )]
+visible = false
+
+[node name="piano_root" parent="." instance=ExtResource( 27 )]
+editor/display_folded = true
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -17.2178, 0, -17.4423 )
+
+[node name="piano_Area" type="Area" parent="piano_root"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 19.1495, 0 )
+script = ExtResource( 28 )
+
+[node name="CollisionShape" type="CollisionShape" parent="piano_root/piano_Area"]
+shape = SubResource( 6 )
+
+[node name="zhunXin_root" parent="." instance=ExtResource( 29 )]
+position = Vector2( -250, -70 )
+
+[node name="city_root" parent="." instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.55145, 0, 0 )
+
+[node name="city_root2" parent="." instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.07217, 0, 0 )
+
+[node name="city_root3" parent="." instance=ExtResource( 30 )]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, -12.4842, 2.41858, 28.8305 )
+
+[node name="city_root4" parent="." instance=ExtResource( 30 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.8536, 0, 0 )
+
+[node name="base_block_root" parent="." instance=ExtResource( 31 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.27886, 0, -4.04603 )
+
+[node name="building" parent="." instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0928, 3.15154, 5.29744 )
+
+[node name="building2" parent="." instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0928, 3.15154, 15.5755 )
+
+[node name="building3" parent="." instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5223, 3.15154, 15.5755 )
+
+[node name="building4" parent="." instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5223, 3.15154, 11.4209 )
+
+[node name="building5" parent="." instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6246, 3.15154, 11.4209 )
+
+[node name="building6" parent="." instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6246, 3.15154, 5.84924 )
+
+[node name="building7" parent="." instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6246, 3.15154, -0.37711 )
+
+[node name="building8" parent="." instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6246, 3.15154, -5.9044 )
+
+[node name="building9" parent="." instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6246, 3.15154, -9.99625 )
+
+[node name="building10" parent="." instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6246, 3.15154, -13.5804 )
+
+[node name="building11" parent="." instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.6246, 3.15154, -18.8932 )
+
+[node name="building12" parent="." instance=ExtResource( 32 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -159.006, 4.77921, -18.8932 )
+
+[node name="building13" parent="." instance=ExtResource( 32 )]
+transform = Transform( 10, 0, 0, 0, 9.89109, 1.47185, 0, -1.47185, 9.89109, -121.234, 8.16854, 34.2236 )
+
+[node name="sand_root" parent="." instance=ExtResource( 33 )]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, -137.47, 0, 49.0272 )
+
+[node name="up" type="Button" parent="."]
+margin_left = 120.0
+margin_top = 620.0
+margin_right = 264.0
+margin_bottom = 790.0
+custom_fonts/font = ExtResource( 23 )
+text = "↑"
+script = ExtResource( 34 )
+
+[node name="down" type="Button" parent="."]
+margin_left = 128.829
+margin_top = 910.0
+margin_right = 258.829
+margin_bottom = 1070.0
+custom_fonts/font = ExtResource( 23 )
+text = "↓"
+script = ExtResource( 34 )
+
+[node name="left" type="Button" parent="."]
+margin_left = 10.0
+margin_top = 760.0
+margin_right = 130.0
+margin_bottom = 890.0
+custom_fonts/font = ExtResource( 23 )
+text = "←"
+script = ExtResource( 34 )
+
+[node name="right" type="Button" parent="."]
+margin_left = 264.0
+margin_top = 750.0
+margin_right = 420.0
+margin_bottom = 890.0
+custom_fonts/font = ExtResource( 23 )
+text = "→"
+script = ExtResource( 34 )
+
+[node name="back_to_android" type="Button" parent="."]
+margin_left = 10.0
+margin_top = 69.0
+margin_right = 160.0
+margin_bottom = 133.0
+custom_fonts/font = ExtResource( 23 )
+text = "←"
+script = ExtResource( 34 )
+
+[node name="grab" type="Button" parent="."]
+margin_left = 1480.0
+margin_top = 770.0
+margin_right = 1681.0
+margin_bottom = 870.0
+custom_fonts/font = ExtResource( 35 )
+text = "grab"
+script = ExtResource( 36 )
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 8 )
+[connection signal="area_entered" from="KinematicBody/Area_miku" to="KinematicBody/Area_miku" method="_on_Area_miku_area_entered"]
+[connection signal="area_shape_entered" from="newAI/AI" to="newAI/AI" method="_on_Area_area_shape_entered"]
+[connection signal="area_entered" from="newTiny/tiny" to="newTiny/tiny" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="newTiny2/tiny2" to="newTiny2/tiny2" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="newTiny3/tiny3" to="newTiny3/tiny3" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="newTiny4/tiny3" to="newTiny4/tiny3" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="newTiny5/tiny3" to="newTiny5/tiny3" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="newTiny6/tiny3" to="newTiny6/tiny3" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="newTiny7/tiny3" to="newTiny7/tiny3" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="newTiny8/tiny3" to="newTiny8/tiny3" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="newTiny9/tiny3" to="newTiny9/tiny3" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="newTiny10/tiny3" to="newTiny10/tiny3" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="newTiny11/tiny3" to="newTiny11/tiny3" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="newTiny12/tiny3" to="newTiny12/tiny3" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="newTiny13/tiny3" to="newTiny13/tiny3" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="newTiny14/tiny3" to="newTiny14/tiny3" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="newTiny15/tiny3" to="newTiny15/tiny3" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="newTiny16/tiny3" to="newTiny16/tiny3" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="newTiny17/tiny3" to="newTiny17/tiny3" method="_on_Area_area_entered"]
+[connection signal="timeout" from="Timer" to="Timer" method="_on_Timer_timeout"]
+[connection signal="area_entered" from="loli_root/tiny4" to="loli_root/tiny4" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="loli_root2/tiny4" to="loli_root2/tiny4" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="loli_root3/tiny4" to="loli_root3/tiny4" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="loli_root4/tiny4" to="loli_root4/tiny4" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="loli_root5/tiny4" to="loli_root5/tiny4" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="loli_root6/tiny4" to="loli_root6/tiny4" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="loli_root7/tiny4" to="loli_root7/tiny4" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="loli_root8/tiny4" to="loli_root8/tiny4" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="loli_root9/tiny4" to="loli_root9/tiny4" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="loli_root10/tiny4" to="loli_root10/tiny4" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="loli_root11/tiny4" to="loli_root11/tiny4" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="loli_root12/tiny4" to="loli_root12/tiny4" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="loli_root13/tiny4" to="loli_root13/tiny4" method="_on_Area_area_entered"]
+[connection signal="area_entered" from="loli_root14/tiny4" to="loli_root14/tiny4" method="_on_Area_area_entered"]
+[connection signal="pressed" from="btn_bag" to="btn_bag" method="_on_btn_bag_pressed"]
+[connection signal="area_entered" from="piano_root/piano_Area" to="piano_root/piano_Area" method="_on_piano_Area_area_entered"]
+[connection signal="area_exited" from="piano_root/piano_Area" to="piano_root/piano_Area" method="_on_piano_Area_area_exited"]
+[connection signal="pressed" from="back_to_android" to="back_to_android" method="_on_back_to_android_pressed"]
+[connection signal="pressed" from="grab" to="grab" method="_on_grab_pressed"]

@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://test/savee.gd" type="Script" id=2]
+[ext_resource path="res://fonts/SIMLI.TTF" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 90
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 70
+font_data = ExtResource( 3 )
+
+[node name="save" type="Node2D"]
+
+[node name="savee" type="Button" parent="."]
+margin_left = 1420.0
+margin_top = 290.0
+margin_right = 1720.0
+margin_bottom = 510.0
+custom_fonts/font = SubResource( 1 )
+text = "save"
+script = ExtResource( 2 )
+
+[node name="load" type="Button" parent="."]
+margin_left = 800.0
+margin_top = 290.0
+margin_right = 1100.0
+margin_bottom = 510.0
+custom_fonts/font = SubResource( 1 )
+text = "load"
+script = ExtResource( 2 )
+
+[node name="clear" type="Button" parent="."]
+margin_left = 210.0
+margin_top = 310.0
+margin_right = 510.0
+margin_bottom = 530.0
+custom_fonts/font = SubResource( 1 )
+text = "clear"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_left = 520.0
+margin_top = 60.0
+margin_right = 1350.0
+margin_bottom = 250.0
+hint_tooltip = "value"
+custom_fonts/font = SubResource( 2 )
+text = "测试"
+
+[node name="display" type="Label" parent="."]
+margin_left = 50.0
+margin_top = 570.0
+margin_right = 320.0
+margin_bottom = 700.0
+hint_tooltip = "value"
+custom_fonts/font = SubResource( 2 )
+text = "不存在"
+[connection signal="pressed" from="savee" to="savee" method="_on_savee_pressed"]
+[connection signal="pressed" from="load" to="load" method="_on_load_pressed"]

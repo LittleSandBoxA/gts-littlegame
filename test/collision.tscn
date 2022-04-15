@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://test/StaticBody2D1.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 252.389
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D1" type="StaticBody2D" parent="."]
+position = Vector2( 680, 660 )
+input_pickable = true
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D1"]
+shape = SubResource( 1 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 1350, 630 )
+input_pickable = true
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1000, 190 )
+scale = Vector2( 7.21875, 5.1875 )
+texture = ExtResource( 2 )
+[connection signal="input_event" from="StaticBody2D1" to="StaticBody2D1" method="_on_StaticBody2D1_input_event"]
+[connection signal="mouse_exited" from="StaticBody2D1" to="StaticBody2D1" method="_on_StaticBody2D1_mouse_exited"]
+[connection signal="input_event" from="StaticBody2D2" to="StaticBody2D2" method="_on_StaticBody2D1_input_event"]
+[connection signal="mouse_exited" from="StaticBody2D2" to="StaticBody2D2" method="_on_StaticBody2D1_mouse_exited"]

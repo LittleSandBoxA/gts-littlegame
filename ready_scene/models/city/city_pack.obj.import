@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/city_pack.obj-71230177e3f6b786a1b019030c1fb4b2.mesh"
+
+[deps]
+
+files=[ "res://.import/city_pack.obj-71230177e3f6b786a1b019030c1fb4b2.mesh" ]
+
+source_file="res://ready_scene/models/city/city_pack.obj"
+dest_files=[ "res://.import/city_pack.obj-71230177e3f6b786a1b019030c1fb4b2.mesh", "res://.import/city_pack.obj-71230177e3f6b786a1b019030c1fb4b2.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/loli.obj-e332162c35b508405cac95e52bae74d6.mesh"
+
+[deps]
+
+files=[ "res://.import/loli.obj-e332162c35b508405cac95e52bae74d6.mesh" ]
+
+source_file="res://ready_scene/models/character/loli.obj"
+dest_files=[ "res://.import/loli.obj-e332162c35b508405cac95e52bae74d6.mesh", "res://.import/loli.obj-e332162c35b508405cac95e52bae74d6.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

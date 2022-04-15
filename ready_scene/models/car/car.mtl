@@ -1,0 +1,13 @@
+# Blender MTL File: 'None'
+# Material Count: 1
+
+newmtl wheel
+Ns 100.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.000000
+d 0.000000
+illum 7
+map_Kd C:\Users\Administrator\Desktop\游戏素材\3d\模型\【游美网】45229-30321-低面数的卡通吉普越野赛车模型\低面数的卡通吉普越野赛车模型\Low_Poly_Jeep_SUV_obj\tex.jpg

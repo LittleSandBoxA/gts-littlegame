@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/void - Harbinger.mp3-b3257c34b3a8a37da0b4cf95815ad9b8.mp3str"
+
+[deps]
+
+source_file="res://sounds/level/void - Harbinger.mp3"
+dest_files=[ "res://.import/void - Harbinger.mp3-b3257c34b3a8a37da0b4cf95815ad9b8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

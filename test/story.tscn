@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://fonts/font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/xolonium/Xolonium.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scripts/ta_fang_mode/to_ta_fang_title.gd" type="Script" id=3]
+[ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/ta_fang_mode/layout/story_anim.gd" type="Script" id=5]
+
+[sub_resource type="Animation" id=1]
+resource_name = "text"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:visible_characters")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0, 196 ]
+}
+
+[node name="story" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Label" type="Label" parent="."]
+margin_left = 20.0
+margin_top = 210.0
+margin_right = 1900.0
+margin_bottom = 909.0
+custom_fonts/font = ExtResource( 1 )
+text = "公元2033年，出现了一种名为巨大化奇怪疾病
+。得了这个病的人体型会变得巨大化，并且会
+失去理智，此病多发于女性，患病者会踩踏比
+她小的东西。
+
+为了防止女巨人继续破坏，产生了对抗女巨人的组织，他们使用特质的武器
+来攻击女巨人。
+
+你是这个组织的领袖，需要合理指挥武器的位置，来防御女巨人。
+
+需要使用幻书来升级塔
+
+幻书在关卡结束时随机掉落"
+percent_visible = 1.2327
+
+[node name="to_title" type="Button" parent="."]
+margin_right = 240.0
+margin_bottom = 160.0
+custom_fonts/font = ExtResource( 2 )
+text = "back"
+script = ExtResource( 3 )
+
+[node name="sound" parent="." instance=ExtResource( 4 )]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/text = SubResource( 1 )
+script = ExtResource( 5 )
+[connection signal="pressed" from="to_title" to="to_title" method="_on_to_title_pressed"]

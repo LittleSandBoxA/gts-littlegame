@@ -1,0 +1,127 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://fonts/font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scenes/layout/CheckButton.gd" type="Script" id=2]
+[ext_resource path="res://scenes/layout/back.gd" type="Script" id=3]
+[ext_resource path="res://scenes/layout/update.gd" type="Script" id=4]
+[ext_resource path="res://fonts/xolonium/Xolonium.tres" type="DynamicFont" id=5]
+[ext_resource path="res://scenes/layout/LinkButton.gd" type="Script" id=6]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 220.0
+margin_top = 90.0
+margin_right = 420.0
+margin_bottom = 131.0
+custom_fonts/font = ExtResource( 1 )
+text = "鼠标灵敏度"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+margin_left = 430.0
+margin_top = 100.0
+margin_right = 488.0
+margin_bottom = 124.0
+hint_tooltip = "请输入数字"
+
+[node name="save" type="Button" parent="."]
+margin_left = 500.0
+margin_top = 360.0
+margin_right = 740.0
+margin_bottom = 420.0
+custom_fonts/font = ExtResource( 1 )
+text = "保存设置"
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 720.0
+margin_top = 210.0
+margin_right = 880.0
+margin_bottom = 251.0
+custom_fonts/font = ExtResource( 1 )
+text = "←制作中"
+
+[node name="Check_SFX" type="CheckButton" parent="."]
+margin_left = 210.0
+margin_top = 140.0
+margin_right = 380.0
+margin_bottom = 180.0
+custom_fonts/font = ExtResource( 1 )
+pressed = true
+text = "音效"
+script = ExtResource( 2 )
+
+[node name="Check_bgm" type="CheckButton" parent="."]
+margin_left = 210.0
+margin_top = 190.0
+margin_right = 370.0
+margin_bottom = 239.0
+custom_fonts/font = ExtResource( 1 )
+pressed = true
+text = "音乐"
+script = ExtResource( 2 )
+
+[node name="back" type="Button" parent="."]
+margin_left = 230.0
+margin_top = 360.0
+margin_right = 470.0
+margin_bottom = 420.0
+custom_fonts/font = ExtResource( 1 )
+text = "返回"
+script = ExtResource( 3 )
+
+[node name="update" type="Button" parent="."]
+margin_left = 220.0
+margin_top = 239.0
+margin_right = 400.0
+margin_bottom = 280.0
+custom_fonts/font = ExtResource( 1 )
+text = "检查更新"
+script = ExtResource( 4 )
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="userName" type="Label" parent="."]
+margin_left = 220.0
+margin_top = 50.0
+margin_right = 400.0
+margin_bottom = 91.0
+custom_fonts/font = ExtResource( 1 )
+text = "用户名称:"
+
+[node name="LineEdit" type="LineEdit" parent="userName"]
+margin_left = 200.0
+margin_right = 390.0
+margin_bottom = 44.0
+custom_fonts/font = ExtResource( 1 )
+clear_button_enabled = true
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 230.0
+margin_top = 460.0
+margin_right = 510.0
+margin_bottom = 501.0
+custom_fonts/font = ExtResource( 5 )
+text = "made by 1288hh"
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 230.0
+margin_top = 510.0
+margin_right = 687.0
+margin_bottom = 591.0
+custom_fonts/font = ExtResource( 5 )
+text = "special thanks to godot 
+a open source game engine"
+
+[node name="LinkButton" type="LinkButton" parent="."]
+margin_left = 560.0
+margin_top = 460.0
+margin_right = 680.0
+margin_bottom = 501.0
+custom_fonts/font = ExtResource( 1 )
+text = "联系我"
+script = ExtResource( 6 )
+[connection signal="toggled" from="Check_SFX" to="Check_SFX" method="_on_CheckButton_toggled"]
+[connection signal="toggled" from="Check_bgm" to="Check_bgm" method="_on_Check_bgm_toggled"]
+[connection signal="pressed" from="back" to="back" method="_on_back_pressed"]
+[connection signal="pressed" from="update" to="update" method="_on_update_pressed"]
+[connection signal="pressed" from="LinkButton" to="LinkButton" method="_on_LinkButton_pressed"]

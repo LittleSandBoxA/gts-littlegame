@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://fonts/xolonium/Xolonium.tres" type="DynamicFont" id=1]
+
+[node name="pause_label" type="Label"]
+margin_left = 650.0
+margin_top = 398.0
+margin_right = 690.0
+margin_bottom = 412.0
+custom_fonts/font = ExtResource( 1 )
+text = "Game Paused"

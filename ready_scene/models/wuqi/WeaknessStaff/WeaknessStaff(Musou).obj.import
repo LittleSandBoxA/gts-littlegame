@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/WeaknessStaff(Musou).obj-d2d64e9cd752527ce02a090422f3171f.mesh"
+
+[deps]
+
+files=[ "res://.import/WeaknessStaff(Musou).obj-d2d64e9cd752527ce02a090422f3171f.mesh" ]
+
+source_file="res://ready_scene/models/wuqi/WeaknessStaff/WeaknessStaff(Musou).obj"
+dest_files=[ "res://.import/WeaknessStaff(Musou).obj-d2d64e9cd752527ce02a090422f3171f.mesh", "res://.import/WeaknessStaff(Musou).obj-d2d64e9cd752527ce02a090422f3171f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

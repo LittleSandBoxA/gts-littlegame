@@ -1,0 +1,18 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/wei_yi_ta.obj-f5c94a86aef6fcd4754c9a43f051c1f4.mesh"
+
+[deps]
+
+files=[ "res://.import/wei_yi_ta.obj-f5c94a86aef6fcd4754c9a43f051c1f4.mesh" ]
+
+source_file="res://ready_scene/models/buildings/wei_yi_ta.obj"
+dest_files=[ "res://.import/wei_yi_ta.obj-f5c94a86aef6fcd4754c9a43f051c1f4.mesh", "res://.import/wei_yi_ta.obj-f5c94a86aef6fcd4754c9a43f051c1f4.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+optimize_mesh=true

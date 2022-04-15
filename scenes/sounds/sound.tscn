@@ -1,0 +1,122 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://sounds/abs-confirm-2.wav" type="AudioStream" id=1]
+[ext_resource path="res://sounds/abs-cancel-6-verbed.wav" type="AudioStream" id=2]
+[ext_resource path="res://bigger.wav" type="AudioStream" id=3]
+[ext_resource path="res://sounds/bite-mordisco.ogg" type="AudioStream" id=4]
+[ext_resource path="res://sounds/med.ogg" type="AudioStream" id=5]
+[ext_resource path="res://sounds/abs-pointer-1.ogg" type="AudioStream" id=6]
+[ext_resource path="res://sounds/level/Juhani Junkala [Chiptune Adventures] 1. Stage 1.ogg" type="AudioStream" id=7]
+[ext_resource path="res://sounds/slide_down.wav" type="AudioStream" id=8]
+[ext_resource path="res://sounds/back_style_2_001.ogg" type="AudioStream" id=9]
+[ext_resource path="res://sounds/piano/piano_1.wav" type="AudioStream" id=10]
+[ext_resource path="res://sounds/piano/piano_2.wav" type="AudioStream" id=11]
+[ext_resource path="res://sounds/piano/piano_3.wav" type="AudioStream" id=12]
+[ext_resource path="res://sounds/piano/piano_4.wav" type="AudioStream" id=13]
+[ext_resource path="res://sounds/piano/piano_5.wav" type="AudioStream" id=14]
+[ext_resource path="res://sounds/piano/piano_6.wav" type="AudioStream" id=15]
+[ext_resource path="res://sounds/piano/piano_7.wav" type="AudioStream" id=16]
+[ext_resource path="res://sounds/piano/piano_8.wav" type="AudioStream" id=17]
+[ext_resource path="res://sounds/stone.wav" type="AudioStream" id=18]
+[ext_resource path="res://sounds/walking-on-pavement-looping.wav" type="AudioStream" id=19]
+[ext_resource path="res://sounds/level/Juhani Junkala [Chiptune Adventures] 2. Stage 2.ogg" type="AudioStream" id=20]
+[ext_resource path="res://sounds/shoot/mutantdie.wav" type="AudioStream" id=21]
+[ext_resource path="res://sounds/gun.wav" type="AudioStream" id=22]
+[ext_resource path="res://sounds/level/void - Harbinger.wav" type="AudioStream" id=23]
+[ext_resource path="res://sounds/level/W.wav" type="AudioStream" id=24]
+[ext_resource path="res://sounds/level/Gts.wav" type="AudioStream" id=25]
+[ext_resource path="res://sounds/yinxiao-523.wav" type="AudioStream" id=26]
+[ext_resource path="res://sounds/shot/place2.wav" type="AudioStream" id=27]
+[ext_resource path="res://sounds/Win.ogg" type="AudioStream" id=28]
+
+[node name="sound" type="Node"]
+
+[node name="EnterSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+
+[node name="CancelSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="grow" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="eat" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="title" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="pointer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="level" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+bus = "level"
+
+[node name="catched" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+
+[node name="pointer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="piano_1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+
+[node name="piano_2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
+
+[node name="piano_3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 12 )
+
+[node name="piano_4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 13 )
+
+[node name="piano_5" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+
+[node name="piano_6" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+
+[node name="piano_7" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 16 )
+
+[node name="piano_8" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+
+[node name="placeBlock" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+
+[node name="walk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )
+
+[node name="level2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
+bus = "level"
+
+[node name="die" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 21 )
+bus = "die"
+
+[node name="gun" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 22 )
+bus = "gun"
+
+[node name="ta_fang" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 23 )
+bus = "ta_fang"
+
+[node name="bgm2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 24 )
+
+[node name="bgm3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 25 )
+
+[node name="magic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 26 )
+
+[node name="place_2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 27 )
+bus = "place_2"
+
+[node name="win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 28 )

@@ -1,0 +1,87 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://fonts/font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/little_map.gd" type="Script" id=2]
+[ext_resource path="res://assets/UI/gts.png" type="Texture" id=3]
+[ext_resource path="res://assets/UI/enemy.png" type="Texture" id=4]
+[ext_resource path="res://assets/UI/tiny.png" type="Texture" id=5]
+[ext_resource path="res://assets/UI/life.png" type="Texture" id=6]
+
+[node name="score_root" type="Node2D"]
+
+[node name="score_display" type="Label" parent="."]
+margin_left = 880.445
+margin_top = 6.21242
+margin_right = 980.445
+margin_bottom = 47.2124
+custom_fonts/font = ExtResource( 1 )
+text = "分数:"
+
+[node name="weight_display" type="Label" parent="."]
+margin_left = 879.23
+margin_top = 47.255
+margin_right = 1079.23
+margin_bottom = 88.255
+custom_fonts/font = ExtResource( 1 )
+text = "体重："
+
+[node name="height_display" type="Label" parent="."]
+margin_left = 876.658
+margin_top = 93.5532
+margin_right = 1076.66
+margin_bottom = 134.553
+custom_fonts/font = ExtResource( 1 )
+text = "身高："
+
+[node name="time_display" type="Label" parent="."]
+margin_left = 458.842
+margin_top = 22.6234
+margin_right = 560.842
+margin_bottom = 63.6234
+custom_fonts/font = ExtResource( 1 )
+text = "10:00"
+
+[node name="Label5" type="Label" parent="."]
+visible = false
+margin_left = 702.0
+margin_top = 280.0
+margin_right = 1002.0
+margin_bottom = 326.0
+custom_fonts/font = ExtResource( 1 )
+text = "↑小地图,制作中"
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 885.0
+margin_top = 150.0
+margin_right = 1005.0
+margin_bottom = 252.0
+script = ExtResource( 2 )
+
+[node name="gts" type="Sprite" parent="Panel"]
+position = Vector2( 54.4367, 48.1796 )
+scale = Vector2( 1.99956, 1.70649 )
+texture = ExtResource( 3 )
+
+[node name="enemy" type="Sprite" parent="Panel"]
+position = Vector2( 97.6072, 18.4421 )
+scale = Vector2( 1.41575, 1.20825 )
+texture = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="Panel"]
+scale = Vector2( 0.423161, 0.423161 )
+texture = ExtResource( 5 )
+
+[node name="life" type="Sprite" parent="."]
+position = Vector2( 34.1161, 37.8686 )
+scale = Vector2( 0.208577, 0.208577 )
+texture = ExtResource( 6 )
+
+[node name="life2" type="Sprite" parent="."]
+position = Vector2( 97.1161, 37.8686 )
+scale = Vector2( 0.208577, 0.208577 )
+texture = ExtResource( 6 )
+
+[node name="life3" type="Sprite" parent="."]
+position = Vector2( 160.116, 37.8686 )
+scale = Vector2( 0.208577, 0.208577 )
+texture = ExtResource( 6 )

@@ -1,0 +1,110 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://scripts/Android_title_exit.gd" type="Script" id=1]
+[ext_resource path="res://assets/selectSceneUI/city.png" type="Texture" id=2]
+[ext_resource path="res://fonts/xolonium/Xolonium.tres" type="DynamicFont" id=3]
+[ext_resource path="res://test/To_hand_test.gd" type="Script" id=4]
+[ext_resource path="res://assets/UI/treasure.png" type="Texture" id=5]
+[ext_resource path="res://assets/UI/coin.png" type="Texture" id=6]
+[ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/sounds/sound.gd" type="Script" id=8]
+[ext_resource path="res://scripts/ta_fang_mode/to_ta_fang_title.gd" type="Script" id=9]
+[ext_resource path="res://assets/icon/icon_72x.png" type="Texture" id=10]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "New Anim",
+"speed": 1.0
+} ]
+
+[node name="Android" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 962.353, 544.265 )
+scale = Vector2( 1.9951, 1.98421 )
+texture = ExtResource( 2 )
+
+[node name="hand" type="Button" parent="."]
+margin_left = 1440.0
+margin_top = 60.0
+margin_right = 1658.0
+margin_bottom = 130.0
+custom_fonts/font = ExtResource( 3 )
+text = "hand_test"
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="save" type="Button" parent="."]
+margin_left = 1450.0
+margin_top = 480.0
+margin_right = 1668.0
+margin_bottom = 550.0
+custom_fonts/font = ExtResource( 3 )
+text = "save_test"
+script = ExtResource( 4 )
+
+[node name="tower" type="Button" parent="."]
+margin_left = 1440.0
+margin_top = 150.0
+margin_right = 1658.0
+margin_bottom = 220.0
+custom_fonts/font = ExtResource( 3 )
+text = "tower_test"
+script = ExtResource( 4 )
+
+[node name="AI" type="Button" parent="."]
+margin_left = 1440.0
+margin_top = 230.0
+margin_right = 1658.0
+margin_bottom = 300.0
+custom_fonts/font = ExtResource( 3 )
+text = "AI_test"
+script = ExtResource( 4 )
+
+[node name="music" type="Button" parent="."]
+margin_left = 1440.0
+margin_top = 310.0
+margin_right = 1658.0
+margin_bottom = 380.0
+custom_fonts/font = ExtResource( 3 )
+text = "music_room"
+script = ExtResource( 4 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 210, 520 )
+scale = Vector2( 2.14688, 1.94151 )
+frames = SubResource( 1 )
+animation = "New Anim"
+frame = 1
+playing = true
+
+[node name="sound" parent="." instance=ExtResource( 7 )]
+script = ExtResource( 8 )
+
+[node name="image" type="Button" parent="."]
+margin_left = 1440.0
+margin_top = 390.0
+margin_right = 1658.0
+margin_bottom = 470.0
+custom_fonts/font = ExtResource( 3 )
+text = "image_room"
+script = ExtResource( 9 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 886.75, 170 )
+scale = Vector2( 4.53472, 3.93056 )
+texture = ExtResource( 10 )
+
+[connection signal="pressed" from="hand" to="hand" method="_on_hand_pressed"]
+[connection signal="pressed" from="save" to="save" method="_on_save_pressed"]
+[connection signal="pressed" from="tower" to="tower" method="_on_tower_pressed"]
+[connection signal="pressed" from="AI" to="AI" method="_on_AI_pressed"]
+[connection signal="pressed" from="music" to="music" method="_on_music_pressed"]
+[connection signal="pressed" from="image" to="image" method="_on_image_pressed"]

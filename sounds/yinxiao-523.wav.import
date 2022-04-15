@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/yinxiao-523.wav-93eb089a4c087da214dfdaea7154e9eb.sample"
+
+[deps]
+
+source_file="res://sounds/yinxiao-523.wav"
+dest_files=[ "res://.import/yinxiao-523.wav-93eb089a4c087da214dfdaea7154e9eb.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

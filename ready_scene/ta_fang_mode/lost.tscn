@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://ready_scene/ta_fang_mode/lost.gd" type="Script" id=2]
+[ext_resource path="res://fonts/SIMLI.TTF" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 90
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 90
+font_data = ExtResource( 3 )
+
+[node name="lost" type="Panel"]
+pause_mode = 2
+margin_left = 320.0
+margin_top = 210.0
+margin_right = 1540.0
+margin_bottom = 920.0
+
+[node name="back" type="Button" parent="."]
+margin_left = 330.0
+margin_top = 410.0
+margin_right = 870.0
+margin_bottom = 525.0
+custom_fonts/font = SubResource( 1 )
+text = "back"
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 390.0
+margin_top = 60.0
+margin_right = 750.0
+margin_bottom = 151.0
+custom_fonts/font = SubResource( 2 )
+text = "作战失败"
+[connection signal="pressed" from="back" to="back" method="_on_back_pressed"]
