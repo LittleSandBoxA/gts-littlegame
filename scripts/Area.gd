@@ -4,16 +4,17 @@ extends Area
 # var a = 2
 # var b = "text"
 var is_catched_by_gts=false
+#onready player = 
 var player
 var anim
 var tiny
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var root=find_parent("root")
-	player=root.get_node("KinematicBody/miku")
-	anim=player.get_node("AnimationPlayer")
-	tiny=get_parent()
-	is_catched_by_gts=false
+#	var root=find_parent("root")
+#	player = root.get_node("Player/miku")
+#	anim = player.get_node("AnimationPlayer")
+#	tiny = get_parent()
+#	is_catched_by_gts=false
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

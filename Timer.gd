@@ -13,8 +13,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	time_Left=get_time_left()
-	time_display.text=str(floor(time_Left))
+	#time_Left=get_time_left()
+	#time_display.text=str(floor(time_Left))
 	pass
 
 

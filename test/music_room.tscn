@@ -83,9 +83,9 @@ margin_left = 890.0
 margin_top = 60.0
 margin_right = 1010.0
 margin_bottom = 99.0
-custom_styles/normal = SubResource( 1 )
-custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+custom_styles/normal = SubResource( 1 )
 text = "level_1"
 
 [node name="Label2" type="Label" parent="."]
@@ -93,9 +93,9 @@ margin_left = 890.0
 margin_top = 110.0
 margin_right = 1010.0
 margin_bottom = 149.0
-custom_styles/normal = SubResource( 1 )
-custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+custom_styles/normal = SubResource( 1 )
 text = "level_2"
 
 [node name="Label3" type="Label" parent="."]
@@ -103,9 +103,9 @@ margin_left = 890.0
 margin_top = 160.0
 margin_right = 1010.0
 margin_bottom = 199.0
-custom_styles/normal = SubResource( 1 )
-custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 4 )
+custom_styles/normal = SubResource( 1 )
 text = "w"
 
 [node name="info" type="Label" parent="."]
@@ -113,9 +113,9 @@ margin_left = 170.0
 margin_top = 220.0
 margin_right = 770.0
 margin_bottom = 720.0
-custom_styles/normal = SubResource( 1 )
-custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 5 )
+custom_styles/normal = SubResource( 1 )
 text = "这里是仿东方project的musicRoom"
 
 [node name="arrow" type="Sprite" parent="."]
@@ -131,8 +131,8 @@ text = "back"
 script = ExtResource( 7 )
 
 [node name="rect" type="Sprite" parent="."]
-position = Vector2( 1049, 470 )
-rotation = 0.200952
+position = Vector2( 1406.14, 470 )
+rotation = 1.66545
 scale = Vector2( 3.15625, 3.15625 )
 texture = ExtResource( 8 )
 
@@ -146,18 +146,13 @@ parameters/Blend2/blend_amount = 0.5
 anims/move = SubResource( 7 )
 anims/rotate = SubResource( 8 )
 
-[node name="pos" type="Position2D" parent="." groups=[
-"bgm",
-]]
+[node name="pos" type="Position2D" parent="." groups=["bgm"]]
 position = Vector2( 840, 80 )
 
-[node name="pos2" type="Position2D" parent="." groups=[
-"bgm",
-]]
+[node name="pos2" type="Position2D" parent="." groups=["bgm"]]
 position = Vector2( 840, 130 )
 
-[node name="pos3" type="Position2D" parent="." groups=[
-"bgm",
-]]
+[node name="pos3" type="Position2D" parent="." groups=["bgm"]]
 position = Vector2( 840, 180 )
+
 [connection signal="pressed" from="to_title" to="to_title" method="_on_to_title_pressed"]

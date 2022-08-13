@@ -22,18 +22,18 @@ func _ready():
 
 
 func _on_Area_miku_area_entered(area):
-	if area.name=="AI":
-		var AI=area.get_parent()
-		print("AI"+str(AI.get_scale()))
-		print("miku"+str(miku.get_scale()))
-		AI.anim.play("grabB")
-		if AI.get_scale().y>miku.get_scale().y:
-			print("AI比miku大")
-			sound_catched.play()
-			gameOver.show()
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		elif AI.get_scale().y<miku.get_scale().y:
-			print("miku比AI大")
-			win.show()
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+#	if area.name=="AI":
+#		var AI=area.get_parent()
+#		print("AI"+str(AI.get_scale()))
+#		print("miku"+str(miku.get_scale()))
+#		AI.anim.play("grabB")
+#		if AI.get_scale().y>miku.get_scale().y:
+#			print("AI比miku大")
+#			sound_catched.play()
+#			gameOver.show()
+#			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+#		elif AI.get_scale().y<miku.get_scale().y:
+#			print("miku比AI大")
+#			win.show()
+#			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	pass # Replace with function body.

@@ -42,4 +42,5 @@ custom_fonts/font = SubResource( 1 )
 text = "choose your platflom"
 
 [node name="Sprite2" type="Sprite" parent="."]
+
 [connection signal="pressed" from="Android" to="Android" method="_on_Android_pressed"]

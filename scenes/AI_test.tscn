@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://scripts/ccontrol.gd" type="Script" id=1]
 [ext_resource path="res://scenes/test_ai_miku.gd" type="Script" id=2]
@@ -39,6 +39,9 @@
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.483452, 1.97335, 0.286268 )
+
+[sub_resource type="BoxShape" id=9]
+extents = Vector3( 1, 1.72193, 0.45589 )
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 0.324452, 1.62729, 0.581771 )
@@ -86,36 +89,40 @@ extents = Vector3( 20, 20, 20 )
 background_mode = 2
 background_sky = SubResource( 7 )
 
-[node name="root" type="Spatial"]
+[node name="AI_test" type="Spatial"]
 script = ExtResource( 1 )
 
-[node name="KinematicBody" type="RigidBody" parent="."]
+[node name="Player" type="KinematicBody" parent="."]
 transform = Transform( 0.0598501, 0, -0.998207, 0, 1, 0, 0.998207, 0, 0.0598501, 4.1763, 0, -2.73098 )
-mode = 3
 script = ExtResource( 2 )
 
-[node name="miku" parent="KinematicBody" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 3.72529e-009, 0, 1, 0, -3.72529e-009, 0, 1, 0, 0, 0 )
+[node name="Tween" type="Tween" parent="Player"]
 
-[node name="fps" type="Camera" parent="KinematicBody/miku"]
-transform = Transform( -1, 0, -1.00583e-007, 0, 1, 0, 1.00583e-007, 0, -1, -0.0457163, 3.99258, 0.762507 )
+[node name="miku" parent="Player" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, 0, 0, 0 )
 
-[node name="Camera2" type="Camera" parent="KinematicBody/miku"]
-transform = Transform( -1, 0, 8.74228e-008, 2.05254e-008, 0.972048, 0.234783, -8.49791e-008, 0.234783, -0.972048, 0.357867, 4.19914, -3.80124 )
+[node name="fps" type="Camera" parent="Player/miku"]
+transform = Transform( -0.111851, 0, -0.993725, 0, 1, 0, 0.993725, 0, -0.111851, 0.421247, 3.52758, 0.150373 )
+
+[node name="Camera2" type="Camera" parent="Player/miku"]
+transform = Transform( -1, 0, 8.74228e-08, 2.05254e-08, 0.972048, 0.234783, -8.49791e-08, 0.234783, -0.972048, 0.357867, 4.19914, -3.80124 )
+
+[node name="behand" type="Camera" parent="Player/miku"]
+transform = Transform( 7.45058e-09, 0, -1, 0, 1, 0, 1, 0, 7.45058e-09, -5.34832, 3.56998, 0.513118 )
 current = true
 
-[node name="behand" type="Camera" parent="KinematicBody/miku"]
-transform = Transform( 1, 0, 1.49012e-008, 0, 1, 0, -1.49012e-008, 0, 1, 0, 4.81832, 0 )
-
-[node name="Area_miku" type="Area" parent="KinematicBody"]
+[node name="Area_miku" type="Area" parent="Player"]
 script = ExtResource( 4 )
 
-[node name="CollisionShape" type="CollisionShape" parent="KinematicBody/Area_miku"]
-transform = Transform( 1, 0, 2.98023e-008, 0, 1, 0, -2.98023e-008, 0, 1, 0, 2.04344, 0 )
+[node name="CollisionShape" type="CollisionShape" parent="Player/Area_miku"]
+transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, 2.04344, 0 )
 shape = SubResource( 1 )
 
+[node name="CollisionShape" type="CollisionShape" parent="Player"]
+transform = Transform( 1, 0, 7.07805e-08, 0, 1, 0, -7.07805e-08, 0, 1, -0.00617099, 2.31367, 0.00767469 )
+shape = SubResource( 9 )
+
 [node name="newAI" parent="." instance=ExtResource( 5 )]
-editor/display_folded = true
 script = ExtResource( 6 )
 
 [node name="AI" type="Area" parent="newAI"]
@@ -129,11 +136,9 @@ shape = SubResource( 2 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.9343, 2.39092, 0 )
 
 [node name="StaticBody" type="StaticBody" parent="."]
-editor/display_folded = true
 
 [node name="Sprite3D" type="Sprite3D" parent="StaticBody"]
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0 )
-pixel_size = 0.125
+transform = Transform( 5, 0, 0, 0, -2.18557e-07, -5, 0, 5, -2.18557e-07, 0, 0, 0 )
 texture = ExtResource( 9 )
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
@@ -163,274 +168,187 @@ script = ExtResource( 14 )
 anims/rotate_misc_things = ExtResource( 13 )
 script = ExtResource( 15 )
 
-[node name="newTiny" parent="." groups=[
-"tinys",
-] instance=ExtResource( 16 )]
-editor/display_folded = true
+[node name="newTiny" parent="." groups=["tinys"] instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0668, 0, 9.18194 )
 script = ExtResource( 17 )
 
-[node name="tiny" type="Area" parent="newTiny" groups=[
-"tinyArea",
-]]
-editor/display_folded = true
+[node name="tiny" type="Area" parent="newTiny" groups=["tinyArea"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.17452, 0 )
 script = ExtResource( 18 )
 
 [node name="CollisionShape" type="CollisionShape" parent="newTiny/tiny"]
 shape = SubResource( 5 )
 
-[node name="newTiny2" parent="." groups=[
-"tinys",
-] instance=ExtResource( 16 )]
-editor/display_folded = true
+[node name="newTiny2" parent="." groups=["tinys"] instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.4855, 0, -9.6091 )
 script = ExtResource( 17 )
 
-[node name="tiny2" type="Area" parent="newTiny2" groups=[
-"tinyArea",
-]]
+[node name="tiny2" type="Area" parent="newTiny2" groups=["tinyArea"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.971749, 0 )
 script = ExtResource( 18 )
 
 [node name="CollisionShape" type="CollisionShape" parent="newTiny2/tiny2"]
 shape = SubResource( 5 )
 
-[node name="newTiny3" parent="." groups=[
-"tinys",
-] instance=ExtResource( 16 )]
-editor/display_folded = true
+[node name="newTiny3" parent="." groups=["tinys"] instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.52652, 0, 13.7869 )
 script = ExtResource( 17 )
 
-[node name="tiny3" type="Area" parent="newTiny3" groups=[
-"tinyArea",
-]]
+[node name="tiny3" type="Area" parent="newTiny3" groups=["tinyArea"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
 script = ExtResource( 18 )
 
 [node name="CollisionShape" type="CollisionShape" parent="newTiny3/tiny3"]
 shape = SubResource( 5 )
 
-[node name="newTiny4" parent="." groups=[
-"tinys",
-] instance=ExtResource( 16 )]
-editor/display_folded = true
+[node name="newTiny4" parent="." groups=["tinys"] instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.47753, 0, -15.6548 )
 script = ExtResource( 17 )
 
-[node name="tiny3" type="Area" parent="newTiny4" groups=[
-"tinyArea",
-]]
+[node name="tiny3" type="Area" parent="newTiny4" groups=["tinyArea"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
 script = ExtResource( 18 )
 
 [node name="CollisionShape" type="CollisionShape" parent="newTiny4/tiny3"]
 shape = SubResource( 5 )
 
-[node name="newTiny5" parent="." groups=[
-"tinys",
-] instance=ExtResource( 16 )]
-editor/display_folded = true
+[node name="newTiny5" parent="." groups=["tinys"] instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.34076, 0, -25.631 )
 script = ExtResource( 17 )
 
-[node name="tiny3" type="Area" parent="newTiny5" groups=[
-"tinyArea",
-]]
+[node name="tiny3" type="Area" parent="newTiny5" groups=["tinyArea"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
 script = ExtResource( 18 )
 
 [node name="CollisionShape" type="CollisionShape" parent="newTiny5/tiny3"]
 shape = SubResource( 5 )
 
-[node name="newTiny6" parent="." groups=[
-"tinys",
-] instance=ExtResource( 16 )]
-editor/display_folded = true
+[node name="newTiny6" parent="." groups=["tinys"] instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.86377, 0, -31.166 )
 script = ExtResource( 17 )
 
-[node name="tiny3" type="Area" parent="newTiny6" groups=[
-"tinyArea",
-]]
+[node name="tiny3" type="Area" parent="newTiny6" groups=["tinyArea"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
 script = ExtResource( 18 )
 
 [node name="CollisionShape" type="CollisionShape" parent="newTiny6/tiny3"]
 shape = SubResource( 5 )
 
-[node name="newTiny7" parent="." groups=[
-"tinys",
-] instance=ExtResource( 16 )]
-editor/display_folded = true
+[node name="newTiny7" parent="." groups=["tinys"] instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3253, 0, -39.947 )
 script = ExtResource( 17 )
 
-[node name="tiny3" type="Area" parent="newTiny7" groups=[
-"tinyArea",
-]]
+[node name="tiny3" type="Area" parent="newTiny7" groups=["tinyArea"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
 script = ExtResource( 18 )
 
 [node name="CollisionShape" type="CollisionShape" parent="newTiny7/tiny3"]
 shape = SubResource( 5 )
 
-[node name="newTiny8" parent="." groups=[
-"tinys",
-] instance=ExtResource( 16 )]
-editor/display_folded = true
+[node name="newTiny8" parent="." groups=["tinys"] instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3253, 0, -52.8452 )
 script = ExtResource( 17 )
 
-[node name="tiny3" type="Area" parent="newTiny8" groups=[
-"tinyArea",
-]]
+[node name="tiny3" type="Area" parent="newTiny8" groups=["tinyArea"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
 script = ExtResource( 18 )
 
 [node name="CollisionShape" type="CollisionShape" parent="newTiny8/tiny3"]
 shape = SubResource( 5 )
 
-[node name="newTiny9" parent="." groups=[
-"tinys",
-] instance=ExtResource( 16 )]
-editor/display_folded = true
+[node name="newTiny9" parent="." groups=["tinys"] instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.8362, 0, -57.7904 )
 script = ExtResource( 17 )
 
-[node name="tiny3" type="Area" parent="newTiny9" groups=[
-"tinyArea",
-]]
+[node name="tiny3" type="Area" parent="newTiny9" groups=["tinyArea"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
 script = ExtResource( 18 )
 
 [node name="CollisionShape" type="CollisionShape" parent="newTiny9/tiny3"]
 shape = SubResource( 5 )
 
-[node name="newTiny10" parent="." groups=[
-"tinys",
-] instance=ExtResource( 16 )]
-editor/display_folded = true
+[node name="newTiny10" parent="." groups=["tinys"] instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.37895, 0, -67.5097 )
 script = ExtResource( 17 )
 
-[node name="tiny3" type="Area" parent="newTiny10" groups=[
-"tinyArea",
-]]
+[node name="tiny3" type="Area" parent="newTiny10" groups=["tinyArea"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
 script = ExtResource( 18 )
 
 [node name="CollisionShape" type="CollisionShape" parent="newTiny10/tiny3"]
 shape = SubResource( 5 )
 
-[node name="newTiny11" parent="." groups=[
-"tinys",
-] instance=ExtResource( 16 )]
-editor/display_folded = true
+[node name="newTiny11" parent="." groups=["tinys"] instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.95716, 0, -19.0605 )
 script = ExtResource( 17 )
 
-[node name="tiny3" type="Area" parent="newTiny11" groups=[
-"tinyArea",
-]]
+[node name="tiny3" type="Area" parent="newTiny11" groups=["tinyArea"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
 script = ExtResource( 18 )
 
 [node name="CollisionShape" type="CollisionShape" parent="newTiny11/tiny3"]
 shape = SubResource( 5 )
 
-[node name="newTiny12" parent="." groups=[
-"tinys",
-] instance=ExtResource( 16 )]
-editor/display_folded = true
+[node name="newTiny12" parent="." groups=["tinys"] instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.495, 0, -19.0605 )
 script = ExtResource( 17 )
 
-[node name="tiny3" type="Area" parent="newTiny12" groups=[
-"tinyArea",
-]]
+[node name="tiny3" type="Area" parent="newTiny12" groups=["tinyArea"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
 script = ExtResource( 18 )
 
 [node name="CollisionShape" type="CollisionShape" parent="newTiny12/tiny3"]
 shape = SubResource( 5 )
 
-[node name="newTiny13" parent="." groups=[
-"tinys",
-] instance=ExtResource( 16 )]
-editor/display_folded = true
+[node name="newTiny13" parent="." groups=["tinys"] instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.196, 0, -17.4957 )
 script = ExtResource( 17 )
 
-[node name="tiny3" type="Area" parent="newTiny13" groups=[
-"tinyArea",
-]]
+[node name="tiny3" type="Area" parent="newTiny13" groups=["tinyArea"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
 script = ExtResource( 18 )
 
 [node name="CollisionShape" type="CollisionShape" parent="newTiny13/tiny3"]
 shape = SubResource( 5 )
 
-[node name="newTiny14" parent="." groups=[
-"tinys",
-] instance=ExtResource( 16 )]
-editor/display_folded = true
+[node name="newTiny14" parent="." groups=["tinys"] instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.8937, 0, -15.9336 )
 script = ExtResource( 17 )
 
-[node name="tiny3" type="Area" parent="newTiny14" groups=[
-"tinyArea",
-]]
+[node name="tiny3" type="Area" parent="newTiny14" groups=["tinyArea"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
 script = ExtResource( 18 )
 
 [node name="CollisionShape" type="CollisionShape" parent="newTiny14/tiny3"]
 shape = SubResource( 5 )
 
-[node name="newTiny15" parent="." groups=[
-"tinys",
-] instance=ExtResource( 16 )]
-editor/display_folded = true
+[node name="newTiny15" parent="." groups=["tinys"] instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.1738, 0, -14.2297 )
 script = ExtResource( 17 )
 
-[node name="tiny3" type="Area" parent="newTiny15" groups=[
-"tinyArea",
-]]
+[node name="tiny3" type="Area" parent="newTiny15" groups=["tinyArea"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
 script = ExtResource( 18 )
 
 [node name="CollisionShape" type="CollisionShape" parent="newTiny15/tiny3"]
 shape = SubResource( 5 )
 
-[node name="newTiny16" parent="." groups=[
-"tinys",
-] instance=ExtResource( 16 )]
-editor/display_folded = true
+[node name="newTiny16" parent="." groups=["tinys"] instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.54615, 0, -14.2297 )
 script = ExtResource( 17 )
 
-[node name="tiny3" type="Area" parent="newTiny16" groups=[
-"tinyArea",
-]]
+[node name="tiny3" type="Area" parent="newTiny16" groups=["tinyArea"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
 script = ExtResource( 18 )
 
 [node name="CollisionShape" type="CollisionShape" parent="newTiny16/tiny3"]
 shape = SubResource( 5 )
 
-[node name="newTiny17" parent="." groups=[
-"tinys",
-] instance=ExtResource( 16 )]
-editor/display_folded = true
+[node name="newTiny17" parent="." groups=["tinys"] instance=ExtResource( 16 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.34315, 0, -14.2297 )
 script = ExtResource( 17 )
 
-[node name="tiny3" type="Area" parent="newTiny17" groups=[
-"tinyArea",
-]]
-editor/display_folded = true
+[node name="tiny3" type="Area" parent="newTiny17" groups=["tinyArea"]]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
 script = ExtResource( 18 )
 
@@ -449,7 +367,6 @@ autostart = true
 script = ExtResource( 21 )
 
 [node name="loli_root" parent="." instance=ExtResource( 22 )]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.09991, 0, -9.34885 )
 
 [node name="tiny4" type="Area" parent="loli_root"]
@@ -459,7 +376,6 @@ script = ExtResource( 18 )
 shape = SubResource( 5 )
 
 [node name="loli_root2" parent="." instance=ExtResource( 22 )]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.40021, 0, -9.34885 )
 
 [node name="tiny4" type="Area" parent="loli_root2"]
@@ -469,7 +385,6 @@ script = ExtResource( 18 )
 shape = SubResource( 5 )
 
 [node name="loli_root3" parent="." instance=ExtResource( 22 )]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0194581, 0, -9.34885 )
 
 [node name="tiny4" type="Area" parent="loli_root3"]
@@ -479,7 +394,6 @@ script = ExtResource( 18 )
 shape = SubResource( 5 )
 
 [node name="loli_root4" parent="." instance=ExtResource( 22 )]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0168, 0, -9.34885 )
 
 [node name="tiny4" type="Area" parent="loli_root4"]
@@ -489,7 +403,6 @@ script = ExtResource( 18 )
 shape = SubResource( 5 )
 
 [node name="loli_root5" parent="." instance=ExtResource( 22 )]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.77944, 0, -9.34885 )
 
 [node name="tiny4" type="Area" parent="loli_root5"]
@@ -499,7 +412,6 @@ script = ExtResource( 18 )
 shape = SubResource( 5 )
 
 [node name="loli_root6" parent="." instance=ExtResource( 22 )]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.34208, 0, -9.34885 )
 
 [node name="tiny4" type="Area" parent="loli_root6"]
@@ -509,7 +421,6 @@ script = ExtResource( 18 )
 shape = SubResource( 5 )
 
 [node name="loli_root7" parent="." instance=ExtResource( 22 )]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7391, 0, -9.34885 )
 
 [node name="tiny4" type="Area" parent="loli_root7"]
@@ -519,7 +430,6 @@ script = ExtResource( 18 )
 shape = SubResource( 5 )
 
 [node name="loli_root8" parent="." instance=ExtResource( 22 )]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.98725, 0, -9.34885 )
 
 [node name="tiny4" type="Area" parent="loli_root8"]
@@ -529,7 +439,6 @@ script = ExtResource( 18 )
 shape = SubResource( 5 )
 
 [node name="loli_root9" parent="." instance=ExtResource( 22 )]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4605, 0, -9.34885 )
 
 [node name="tiny4" type="Area" parent="loli_root9"]
@@ -539,7 +448,6 @@ script = ExtResource( 18 )
 shape = SubResource( 5 )
 
 [node name="loli_root10" parent="." instance=ExtResource( 22 )]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8678, 0, -9.34885 )
 
 [node name="tiny4" type="Area" parent="loli_root10"]
@@ -549,7 +457,6 @@ script = ExtResource( 18 )
 shape = SubResource( 5 )
 
 [node name="loli_root11" parent="." instance=ExtResource( 22 )]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.58, 0, -9.34885 )
 
 [node name="tiny4" type="Area" parent="loli_root11"]
@@ -559,7 +466,6 @@ script = ExtResource( 18 )
 shape = SubResource( 5 )
 
 [node name="loli_root12" parent="." instance=ExtResource( 22 )]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5344, 0, -9.34885 )
 
 [node name="tiny4" type="Area" parent="loli_root12"]
@@ -569,7 +475,6 @@ script = ExtResource( 18 )
 shape = SubResource( 5 )
 
 [node name="loli_root13" parent="." instance=ExtResource( 22 )]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.624, 0, -9.34885 )
 
 [node name="tiny4" type="Area" parent="loli_root13"]
@@ -579,7 +484,6 @@ script = ExtResource( 18 )
 shape = SubResource( 5 )
 
 [node name="loli_root14" parent="." instance=ExtResource( 22 )]
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.6552, 0, -9.34885 )
 
 [node name="tiny4" type="Area" parent="loli_root14"]
@@ -610,7 +514,6 @@ visible = false
 visible = false
 
 [node name="piano_root" parent="." instance=ExtResource( 27 )]
-editor/display_folded = true
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -17.2178, 0, -17.4423 )
 
 [node name="piano_Area" type="Area" parent="piano_root"]
@@ -736,7 +639,8 @@ script = ExtResource( 36 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 8 )
-[connection signal="area_entered" from="KinematicBody/Area_miku" to="KinematicBody/Area_miku" method="_on_Area_miku_area_entered"]
+
+[connection signal="area_entered" from="Player/Area_miku" to="Player/Area_miku" method="_on_Area_miku_area_entered"]
 [connection signal="area_shape_entered" from="newAI/AI" to="newAI/AI" method="_on_Area_area_shape_entered"]
 [connection signal="area_entered" from="newTiny/tiny" to="newTiny/tiny" method="_on_Area_area_entered"]
 [connection signal="area_entered" from="newTiny2/tiny2" to="newTiny2/tiny2" method="_on_Area_area_entered"]
