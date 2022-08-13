@@ -5,7 +5,6 @@ func _on_start_pressed():
 	get_tree().change_scene("res://ready_scene/ta_fang_mode/level_selector.tscn")
 	pass
 
-
 func _on_bian_dui_pressed():
 	get_tree().change_scene("res://scenes/ta_fang_mode/bian_dui.tscn")
 	pass
