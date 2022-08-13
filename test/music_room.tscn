@@ -112,10 +112,10 @@ custom_styles/normal = SubResource( 1 )
 text = "w"
 
 [node name="info" type="Label" parent="."]
-margin_left = 170.0
-margin_top = 220.0
-margin_right = 770.0
-margin_bottom = 720.0
+margin_left = 59.127
+margin_top = 158.264
+margin_right = 659.127
+margin_bottom = 658.264
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 5 )
 custom_styles/normal = SubResource( 1 )
@@ -127,15 +127,15 @@ scale = Vector2( 0.158793, 0.158793 )
 texture = ExtResource( 6 )
 
 [node name="to_title" type="Button" parent="."]
-margin_right = 310.0
-margin_bottom = 160.0
+margin_right = 156.0
+margin_bottom = 96.0
 custom_fonts/font = ExtResource( 4 )
 text = "back"
 script = ExtResource( 7 )
 
 [node name="rect" type="Sprite" parent="."]
-position = Vector2( 1305.72, 470 )
-rotation = 1.25368
+position = Vector2( 1418.67, 470 )
+rotation = 1.71685
 scale = Vector2( 3.15625, 3.15625 )
 texture = ExtResource( 8 )
 

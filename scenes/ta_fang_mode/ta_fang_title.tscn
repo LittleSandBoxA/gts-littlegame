@@ -90,69 +90,69 @@ tracks/4/keys = {
 [node name="ta_fang_title" type="Node2D"]
 
 [node name="start" type="Button" parent="."]
-margin_left = 550.0
-margin_top = 100.0
-margin_right = 970.0
-margin_bottom = 250.0
+margin_left = 520.056
+margin_top = 33.204
+margin_right = 644.056
+margin_bottom = 103.204
 custom_fonts/font = ExtResource( 1 )
 text = "开始作战→"
 script = ExtResource( 2 )
 
 [node name="bian_dui" type="Button" parent="."]
-margin_left = 560.0
-margin_top = 280.0
-margin_right = 970.0
-margin_bottom = 400.0
+margin_left = 525.0
+margin_top = 124.0
+margin_right = 660.0
+margin_bottom = 180.0
 custom_fonts/font = ExtResource( 1 )
 text = "编队"
 script = ExtResource( 2 )
 
 [node name="ta_ku" type="Button" parent="."]
-margin_left = 1040.0
-margin_top = 90.0
-margin_right = 1390.0
-margin_bottom = 260.0
+margin_left = 814.318
+margin_top = 21.0
+margin_right = 1005.32
+margin_bottom = 84.0
 custom_fonts/font = ExtResource( 1 )
 text = "塔库"
 script = ExtResource( 2 )
 
 [node name="sign" type="Button" parent="."]
-margin_left = 1040.0
-margin_top = 280.0
-margin_right = 1390.0
-margin_bottom = 410.0
+margin_left = 813.639
+margin_top = 111.26
+margin_right = 1004.64
+margin_bottom = 170.26
 custom_fonts/font = ExtResource( 1 )
 text = "每日签到"
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="sign"]
-position = Vector2( 430, 50 )
+position = Vector2( 280.069, 27.3214 )
 scale = Vector2( 0.333333, 0.333333 )
 texture = ExtResource( 4 )
 
 [node name="task" type="Button" parent="."]
-margin_left = 1040.0
-margin_top = 420.0
-margin_right = 1390.0
-margin_bottom = 550.0
+margin_left = 814.0
+margin_top = 200.0
+margin_right = 1013.0
+margin_bottom = 268.0
 custom_fonts/font = ExtResource( 1 )
 text = "任务"
 script = ExtResource( 2 )
 
 [node name="tu_jian" type="Button" parent="."]
-margin_left = 1040.0
-margin_top = 570.0
-margin_right = 1390.0
-margin_bottom = 700.0
+margin_left = 789.0
+margin_top = 281.0
+margin_right = 968.0
+margin_bottom = 364.0
 custom_fonts/font = ExtResource( 1 )
 text = "图鉴"
 script = ExtResource( 2 )
 
 [node name="store" type="Button" parent="."]
-margin_left = 560.0
-margin_top = 420.0
-margin_right = 970.0
-margin_bottom = 510.0
+margin_left = 526.0
+margin_top = 199.0
+margin_right = 660.0
+margin_bottom = 261.0
 custom_fonts/font = ExtResource( 1 )
 text = "仓库"
 script = ExtResource( 2 )
@@ -161,19 +161,19 @@ script = ExtResource( 2 )
 script = ExtResource( 6 )
 
 [node name="to_game_title" type="Button" parent="."]
-margin_left = 572.0
-margin_top = 550.0
-margin_right = 970.0
-margin_bottom = 640.0
+margin_left = 523.0
+margin_top = 280.0
+margin_right = 686.0
+margin_bottom = 339.0
 custom_fonts/font = ExtResource( 1 )
 text = "回到总主界面"
 script = ExtResource( 2 )
 
 [node name="story" type="Button" parent="."]
-margin_left = 572.0
-margin_top = 680.0
-margin_right = 1000.0
-margin_bottom = 850.0
+margin_left = 525.495
+margin_top = 365.255
+margin_right = 691.495
+margin_bottom = 420.255
 custom_fonts/font = ExtResource( 1 )
 text = "背景故事"
 script = ExtResource( 2 )
@@ -193,8 +193,8 @@ margin_left = 270.0
 margin_top = 20.0
 margin_right = 798.0
 margin_bottom = 101.0
-custom_styles/normal = SubResource( 1 )
 custom_fonts/font = ExtResource( 9 )
+custom_styles/normal = SubResource( 1 )
 text = "I draw the color of thi character.
 I am a newer."
 
@@ -228,6 +228,7 @@ text = "coin +100"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/open_gift = SubResource( 3 )
+
 [connection signal="pressed" from="start" to="start" method="_on_start_pressed"]
 [connection signal="pressed" from="bian_dui" to="bian_dui" method="_on_bian_dui_pressed"]
 [connection signal="pressed" from="ta_ku" to="ta_ku" method="_on_ta_ku_pressed"]
