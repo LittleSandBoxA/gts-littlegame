@@ -78,6 +78,9 @@ texture = ExtResource( 2 )
 
 [node name="sound" parent="." instance=ExtResource( 3 )]
 
+[node name="level" parent="sound" index="6"]
+autoplay = true
+
 [node name="Label" type="Label" parent="."]
 margin_left = 890.0
 margin_top = 60.0
@@ -131,8 +134,8 @@ text = "back"
 script = ExtResource( 7 )
 
 [node name="rect" type="Sprite" parent="."]
-position = Vector2( 1406.14, 470 )
-rotation = 1.66545
+position = Vector2( 1305.72, 470 )
+rotation = 1.25368
 scale = Vector2( 3.15625, 3.15625 )
 texture = ExtResource( 8 )
 
@@ -156,3 +159,5 @@ position = Vector2( 840, 130 )
 position = Vector2( 840, 180 )
 
 [connection signal="pressed" from="to_title" to="to_title" method="_on_to_title_pressed"]
+
+[editable path="sound"]
