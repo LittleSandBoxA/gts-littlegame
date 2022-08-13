@@ -81,4 +81,8 @@ func _input(event):
 		var newScale = oldScale *1.5
 		tween.interpolate_property(self,"scale",oldScale,newScale, 0.5,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		tween.start()
+	if event.is_action_pressed("walk"):
+		$rhea/rhea/AnimationPlayer.play("女性走路(气质001) 1800帧 可循环_bone")
+	if event.is_action_released("walk"):
+		$rhea/rhea/AnimationPlayer.stop()
 	pass

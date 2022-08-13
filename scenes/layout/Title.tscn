@@ -162,7 +162,7 @@ margin_bottom = 510.728
 [node name="Label" type="Label" parent="how_to_play"]
 margin_left = 4.0
 margin_top = 4.0
-margin_right = 650.0
+margin_right = 650.004
 margin_bottom = 405.0
 custom_fonts/font = ExtResource( 3 )
 text = "wasd 移动 v键切换视角
