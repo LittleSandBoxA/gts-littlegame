@@ -1,21 +1,11 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/layout/Title.gd" type="Script" id=1]
 [ext_resource path="res://images/title.jpg" type="Texture" id=2]
 [ext_resource path="res://fonts/font.tres" type="DynamicFont" id=3]
-[ext_resource path="res://scenes/layout/test_AI.gd" type="Script" id=4]
 [ext_resource path="res://fonts/SIMLI.TTF" type="DynamicFontData" id=5]
-[ext_resource path="res://startgame.gd" type="Script" id=6]
-[ext_resource path="res://scenes/layout/mulit.gd" type="Script" id=7]
-[ext_resource path="res://scenes/layout/mod.gd" type="Script" id=8]
 [ext_resource path="res://scenes/layout/language/back.gd" type="Script" id=9]
 [ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/layout/language/language.gd" type="Script" id=12]
-[ext_resource path="res://scenes/layout/how_to_play.gd" type="Script" id=13]
-[ext_resource path="res://scenes/layout/Button.gd" type="Script" id=14]
-[ext_resource path="res://scenes/layout/title/to_sand_box_mode.gd" type="Script" id=15]
-[ext_resource path="res://scenes/layout/ta_fang.gd" type="Script" id=16]
-[ext_resource path="res://scenes/layout/hand.gd" type="Script" id=17]
 [ext_resource path="res://assets/font_simi_40.tres" type="DynamicFont" id=18]
 
 [sub_resource type="DynamicFont" id=1]
@@ -45,7 +35,6 @@ margin_right = 252.0
 margin_bottom = 47.0
 custom_fonts/font = ExtResource( 18 )
 text = "单人游戏"
-script = ExtResource( 6 )
 
 [node name="mulit" type="Button" parent="buttons"]
 margin_top = 55.0
@@ -54,7 +43,6 @@ margin_bottom = 102.0
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 18 )
 text = "多人游戏"
-script = ExtResource( 7 )
 
 [node name="mod" type="Button" parent="buttons"]
 margin_top = 110.0
@@ -62,7 +50,6 @@ margin_right = 252.0
 margin_bottom = 157.0
 custom_fonts/font = ExtResource( 18 )
 text = "Mod"
-script = ExtResource( 8 )
 
 [node name="set" type="Button" parent="buttons"]
 margin_top = 165.0
@@ -83,7 +70,6 @@ margin_right = 252.0
 margin_bottom = 47.0
 custom_fonts/font = ExtResource( 18 )
 text = "AI测试"
-script = ExtResource( 4 )
 
 [node name="language" type="Button" parent="buttons2"]
 margin_top = 56.0
@@ -91,7 +77,6 @@ margin_right = 252.0
 margin_bottom = 103.0
 custom_fonts/font = ExtResource( 18 )
 text = "多国语言"
-script = ExtResource( 12 )
 
 [node name="how_to_play" type="Button" parent="buttons2"]
 margin_top = 112.0
@@ -99,49 +84,13 @@ margin_right = 252.0
 margin_bottom = 159.0
 custom_fonts/font = ExtResource( 18 )
 text = "操作说明"
-script = ExtResource( 13 )
 
-[node name="PopupPanel" type="PopupPanel" parent="buttons2/how_to_play"]
-margin_left = -390.0
-margin_top = -330.0
-margin_right = 238.0
-margin_bottom = 203.0
-popup_exclusive = true
-
-[node name="Button" type="Button" parent="buttons2/how_to_play/PopupPanel"]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 624.0
-margin_bottom = 529.0
-text = "x"
-script = ExtResource( 14 )
-
-[node name="Label" type="Label" parent="buttons2/how_to_play/PopupPanel"]
-margin_left = 4.0
-margin_top = 4.0
-margin_right = 624.0
-margin_bottom = 529.0
-custom_fonts/font = ExtResource( 3 )
-text = "wasd 移动 v键切换视角
-(AI测试中,第一人称有点问题
-不要按下v)
-E -打开背包 开发中
-T -输入指令 开发中
-现在AI会先按照顺序吃几个小人
-当那几个小人被吃后就会来捉玩家
-shift+w -加速
-新加入楼房 可以撞倒，后面会加入破碎效果 钢琴
-当进入钢琴范围时按大键盘1234567
-来弹琴
-高分排行榜还没做好"
-
-[node name="Button" type="Button" parent="buttons2"]
+[node name="sand_box" type="Button" parent="buttons2"]
 margin_top = 168.0
 margin_right = 252.0
 margin_bottom = 215.0
 custom_fonts/font = ExtResource( 18 )
 text = "沙盒模式测试"
-script = ExtResource( 15 )
 
 [node name="ta_fang" type="Button" parent="buttons2"]
 margin_top = 224.0
@@ -149,7 +98,6 @@ margin_right = 252.0
 margin_bottom = 271.0
 custom_fonts/font = ExtResource( 18 )
 text = "塔防测试"
-script = ExtResource( 16 )
 
 [node name="hand" type="Button" parent="buttons2"]
 margin_top = 280.0
@@ -157,7 +105,6 @@ margin_right = 252.0
 margin_bottom = 327.0
 custom_fonts/font = ExtResource( 18 )
 text = "测手速"
-script = ExtResource( 17 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = 76.4494
@@ -208,15 +155,39 @@ script = ExtResource( 9 )
 
 [node name="sound" parent="." instance=ExtResource( 10 )]
 
-[connection signal="button_down" from="buttons/solo" to="buttons/solo" method="_on_Button_button_down"]
-[connection signal="button_down" from="buttons/mulit" to="buttons/mulit" method="_on_mulit_button_down"]
-[connection signal="button_down" from="buttons/mod" to="buttons/mod" method="_on_mod_button_down"]
+[node name="how_to_play" type="PopupPanel" parent="."]
+margin_left = 412.286
+margin_top = 101.728
+margin_right = 1066.29
+margin_bottom = 510.728
+
+[node name="Label" type="Label" parent="how_to_play"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 650.0
+margin_bottom = 405.0
+custom_fonts/font = ExtResource( 3 )
+text = "wasd 移动 v键切换视角
+(AI测试中,第一人称有点问题
+不要按下v)
+E -打开背包 开发中
+T -输入指令 开发中
+现在AI会先按照顺序吃几个小人
+当那几个小人被吃后就会来捉玩家
+shift+w -加速
+新加入楼房 可以撞倒，后面会加入破碎效果 钢琴
+当进入钢琴范围时按大键盘1234567
+来弹琴
+高分排行榜还没做好"
+
+[connection signal="pressed" from="buttons/solo" to="." method="_on_solo_pressed"]
+[connection signal="pressed" from="buttons/mulit" to="." method="_on_mulit_pressed"]
+[connection signal="button_down" from="buttons/mod" to="." method="_on_mod_button_down"]
 [connection signal="pressed" from="buttons/set" to="." method="_on_set_pressed"]
-[connection signal="pressed" from="buttons2/AI_test" to="buttons2/AI_test" method="_on_Button_pressed"]
-[connection signal="button_down" from="buttons2/language" to="buttons2/language" method="_on_language_button_down"]
-[connection signal="pressed" from="buttons2/how_to_play" to="buttons2/how_to_play" method="_on_how_to_play_pressed"]
-[connection signal="pressed" from="buttons2/how_to_play/PopupPanel/Button" to="buttons2/how_to_play/PopupPanel/Button" method="_on_Button_pressed"]
-[connection signal="pressed" from="buttons2/Button" to="buttons2/Button" method="_on_Button_pressed"]
-[connection signal="pressed" from="buttons2/ta_fang" to="buttons2/ta_fang" method="_on_ta_fang_pressed"]
-[connection signal="pressed" from="buttons2/hand" to="buttons2/hand" method="_on_hand_pressed"]
+[connection signal="pressed" from="buttons2/AI_test" to="." method="_on_AI_test_pressed"]
+[connection signal="pressed" from="buttons2/language" to="." method="_on_language_pressed"]
+[connection signal="pressed" from="buttons2/how_to_play" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="buttons2/sand_box" to="." method="_on_sand_box_pressed"]
+[connection signal="pressed" from="buttons2/ta_fang" to="." method="_on_ta_fang_pressed"]
+[connection signal="pressed" from="buttons2/hand" to="." method="_on_hand_pressed"]
 [connection signal="button_down" from="Panel/back" to="Panel/back" method="_on_back_button_down"]

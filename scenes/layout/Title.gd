@@ -1,22 +1,60 @@
 extends Node2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var EnterSound = $sound/EnterSound
+onready var cancelSound = $sound/CancelSound
 
-var EnterSound
-var cancelSound
-var titleSound
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	EnterSound=get_node("sound/EnterSound")
-	cancelSound=get_node("sound/CancelSound")
-	titleSound=get_node("sound/title")
+	var titleSound = $"sound/title"
 	titleSound.play()
-	#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	#pai_xu()
-	pass # Replace with function body.
+	pass
+	
+func _on_set_pressed():
+	EnterSound.play()
+	pass 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+
+func _on_mod_button_down():
+	pass 
+
+
+func _on_mulit_pressed():
+	EnterSound.play()
+	get_tree().change_scene("res://scenes/layout/multi_room.tscn")
+	pass
+
+func _on_solo_pressed():
+	EnterSound.play()
+	get_tree().change_scene("res://scenes/AI_test.tscn")
+	pass
+
+#buttons2
+func _on_AI_test_pressed():
+	cancelSound.play()
+	get_tree().change_scene("res://scenes/AI_test.tscn")
+	pass
+
+func _on_language_pressed():
+	EnterSound.play()
+	$Panel.show()
+	pass
+
+func _on_how_to_play_pressed():
+	$how_to_play.popup()
+	pass 
+
+
+func _on_sand_box_pressed():
+	EnterSound.play()
+	get_tree().change_scene("res://scenes/test_creating.tscn")
+	pass 
+
+func _on_ta_fang_pressed():
+	EnterSound.play()
+	get_tree().change_scene("res://scenes/ta_fang_mode/ta_fang_title.tscn")
+	pass
+
+
+func _on_hand_pressed():
+	EnterSound.play()
+	get_tree().change_scene("res://scenes/test_hand_speed.tscn")
+	pass # Replace with function body.
