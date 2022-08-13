@@ -8,7 +8,7 @@
 [ext_resource path="res://scripts/ta_fang_mode/layout/bian_dui.gd" type="Script" id=6]
 [ext_resource path="res://scripts/ta_fang_mode/to_ta_fang_title.gd" type="Script" id=7]
 [ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=8]
-[ext_resource path="res://ready_scene/coin.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/puhuiti-rgular-40.tres" type="DynamicFont" id=10]
 
 [sub_resource type="DynamicFont" id=1]
 size = 200
@@ -17,14 +17,12 @@ font_data = ExtResource( 3 )
 [node name="bian_dui" type="Node2D"]
 
 [node name="bian_dui_1" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 130, 320 )
 scale = Vector2( 1.90625, 3.46875 )
 
 [node name="tower_sprite_1" type="Sprite" parent="bian_dui_1"]
-editor/display_folded = true
-position = Vector2( 31.4753, 34.9183 )
-scale = Vector2( 0.177612, 0.138656 )
+position = Vector2( 112.616, 5.67822 )
+scale = Vector2( 0.0729133, 0.0569211 )
 texture = ExtResource( 1 )
 
 [node name="cost" type="Sprite" parent="bian_dui_1/tower_sprite_1"]
@@ -41,9 +39,8 @@ custom_fonts/font = SubResource( 1 )
 text = "10"
 
 [node name="tower_sprite_2" type="Sprite" parent="bian_dui_1"]
-editor/display_folded = true
-position = Vector2( 194.098, 43.2432 )
-scale = Vector2( 0.177612, 0.138656 )
+position = Vector2( 188.593, 5.67822 )
+scale = Vector2( 0.112617, 0.0494626 )
 texture = ExtResource( 1 )
 
 [node name="cost" type="Sprite" parent="bian_dui_1/tower_sprite_2"]
@@ -60,9 +57,8 @@ custom_fonts/font = SubResource( 1 )
 text = "10"
 
 [node name="tower_sprite_3" type="Sprite" parent="bian_dui_1"]
-editor/display_folded = true
-position = Vector2( 393.443, 40.3604 )
-scale = Vector2( 0.177612, 0.138656 )
+position = Vector2( 291.427, 5.67139 )
+scale = Vector2( 0.110927, 0.0404936 )
 texture = ExtResource( 1 )
 
 [node name="cost" type="Sprite" parent="bian_dui_1/tower_sprite_3"]
@@ -79,9 +75,8 @@ custom_fonts/font = SubResource( 1 )
 text = "10"
 
 [node name="tower_sprite_4" type="Sprite" parent="bian_dui_1"]
-editor/display_folded = true
-position = Vector2( 629.508, 34.5946 )
-scale = Vector2( 0.177612, 0.138656 )
+position = Vector2( 439.7, 16.0027 )
+scale = Vector2( 0.133907, 0.0608312 )
 texture = ExtResource( 1 )
 
 [node name="cost" type="Sprite" parent="bian_dui_1/tower_sprite_4"]
@@ -98,13 +93,11 @@ custom_fonts/font = SubResource( 1 )
 text = "10"
 
 [node name="bian_dui_2" type="Node2D" parent="."]
-editor/display_folded = true
 visible = false
 position = Vector2( 180, 450 )
 scale = Vector2( 4.21875, 10.3281 )
 
 [node name="tower_sprite_1" type="Sprite" parent="bian_dui_2"]
-editor/display_folded = true
 position = Vector2( 0, -1.29484 )
 scale = Vector2( 0.0712219, 0.0466053 )
 texture = ExtResource( 1 )
@@ -123,7 +116,6 @@ custom_fonts/font = SubResource( 1 )
 text = "10"
 
 [node name="tower_sprite_2" type="Sprite" parent="bian_dui_2"]
-editor/display_folded = true
 position = Vector2( 83.9343, 0 )
 scale = Vector2( 0.0712219, 0.0466053 )
 texture = ExtResource( 1 )
@@ -142,7 +134,6 @@ custom_fonts/font = SubResource( 1 )
 text = "10"
 
 [node name="tower_sprite_3" type="Sprite" parent="bian_dui_2"]
-editor/display_folded = true
 position = Vector2( 157.377, 0 )
 scale = Vector2( 0.0712219, 0.0466053 )
 texture = ExtResource( 1 )
@@ -161,7 +152,6 @@ custom_fonts/font = SubResource( 1 )
 text = "10"
 
 [node name="tower_sprite_4" type="Sprite" parent="bian_dui_2"]
-editor/display_folded = true
 position = Vector2( 236.066, 0 )
 scale = Vector2( 0.0712219, 0.0466053 )
 texture = ExtResource( 1 )
@@ -180,67 +170,72 @@ custom_fonts/font = SubResource( 1 )
 text = "10"
 
 [node name="Sprite1" parent="." instance=ExtResource( 4 )]
-position = Vector2( 180, 450 )
-scale = Vector2( 4.21875, 10.3281 )
+position = Vector2( 354.337, 351.038 )
+scale = Vector2( 1.67291, 4.23033 )
 
 [node name="Sprite2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 511.863, 460 )
-scale = Vector2( 4.21875, 10.3281 )
+position = Vector2( 506.164, 339.673 )
+scale = Vector2( 2.10937, 3.47734 )
 
 [node name="Sprite3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 890, 450 )
-scale = Vector2( 4.21875, 10.3281 )
+position = Vector2( 719.691, 351.639 )
+scale = Vector2( 3.94223, 4.61718 )
 
 [node name="Sprite4" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1320, 460 )
-scale = Vector2( 4.21875, 10.3281 )
-
-[node name="btn_1" type="Button" parent="."]
-margin_left = 40.0
-margin_top = 840.0
-margin_right = 320.0
-margin_bottom = 1050.0
-custom_fonts/font = ExtResource( 5 )
-text = "第一编队"
-script = ExtResource( 6 )
-
-[node name="btn_2" type="Button" parent="."]
-margin_left = 380.0
-margin_top = 820.0
-margin_right = 630.0
-margin_bottom = 1040.0
-custom_fonts/font = ExtResource( 5 )
-text = "第二编队"
-script = ExtResource( 6 )
-
-[node name="btn_3" type="Button" parent="."]
-margin_left = 720.0
-margin_top = 800.0
-margin_right = 1060.0
-margin_bottom = 1040.0
-custom_fonts/font = ExtResource( 5 )
-text = "第三编队"
-script = ExtResource( 6 )
-
-[node name="btn_4" type="Button" parent="."]
-margin_left = 1190.0
-margin_top = 790.0
-margin_right = 1610.0
-margin_bottom = 1020.0
-custom_fonts/font = ExtResource( 5 )
-text = "第四编队"
-script = ExtResource( 6 )
+position = Vector2( 980, 375.509 )
+scale = Vector2( 3.0684, 4.083 )
 
 [node name="to_title" type="Button" parent="."]
-margin_right = 190.0
-margin_bottom = 90.0
+margin_top = 17.9797
+margin_right = 152.0
+margin_bottom = 71.9797
 custom_fonts/font = ExtResource( 5 )
 text = "←"
 script = ExtResource( 7 )
 
 [node name="sound" parent="." instance=ExtResource( 8 )]
 
-[node name="coin" parent="." instance=ExtResource( 9 )]
-[connection signal="pressed" from="btn_1" to="btn_1" method="_on_btn_1_pressed"]
-[connection signal="pressed" from="btn_2" to="btn_2" method="_on_btn_2_pressed"]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 245.0
+margin_top = 608.0
+margin_right = 1013.0
+margin_bottom = 692.0
+
+[node name="btn_1" type="Button" parent="HBoxContainer"]
+margin_right = 189.0
+margin_bottom = 84.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 10 )
+text = "第一编队"
+script = ExtResource( 6 )
+
+[node name="btn_2" type="Button" parent="HBoxContainer"]
+margin_left = 193.0
+margin_right = 382.0
+margin_bottom = 84.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 10 )
+text = "第二编队"
+script = ExtResource( 6 )
+
+[node name="btn_3" type="Button" parent="HBoxContainer"]
+margin_left = 386.0
+margin_right = 575.0
+margin_bottom = 84.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 10 )
+text = "第三编队"
+script = ExtResource( 6 )
+
+[node name="btn_4" type="Button" parent="HBoxContainer"]
+margin_left = 579.0
+margin_right = 768.0
+margin_bottom = 84.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 10 )
+text = "第四编队"
+script = ExtResource( 6 )
+
 [connection signal="pressed" from="to_title" to="to_title" method="_on_to_title_pressed"]
+[connection signal="pressed" from="HBoxContainer/btn_1" to="HBoxContainer/btn_1" method="_on_btn_1_pressed"]
+[connection signal="pressed" from="HBoxContainer/btn_2" to="HBoxContainer/btn_2" method="_on_btn_2_pressed"]
