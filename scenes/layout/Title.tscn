@@ -97,7 +97,7 @@ margin_top = 224.0
 margin_right = 252.0
 margin_bottom = 271.0
 custom_fonts/font = ExtResource( 18 )
-text = "塔防测试"
+text = "塔防模式"
 
 [node name="hand" type="Button" parent="buttons2"]
 margin_top = 280.0
@@ -153,8 +153,6 @@ custom_fonts/font = ExtResource( 3 )
 text = "返回"
 script = ExtResource( 9 )
 
-[node name="sound" parent="." instance=ExtResource( 10 )]
-
 [node name="how_to_play" type="PopupPanel" parent="."]
 margin_left = 412.286
 margin_top = 101.728
@@ -179,6 +177,8 @@ shift+w -加速
 当进入钢琴范围时按大键盘1234567
 来弹琴
 高分排行榜还没做好"
+
+[node name="sound" parent="." instance=ExtResource( 10 )]
 
 [connection signal="pressed" from="buttons/solo" to="." method="_on_solo_pressed"]
 [connection signal="pressed" from="buttons/mulit" to="." method="_on_mulit_pressed"]

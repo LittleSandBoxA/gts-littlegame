@@ -1,84 +1,24 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://fonts/font.tres" type="DynamicFont" id=1]
-[ext_resource path="res://scripts/ta_fang_mode/to_ta_fang_title.gd" type="Script" id=2]
-[ext_resource path="res://scripts/ta_fang_mode/title/sign/sign.gd" type="Script" id=3]
+[ext_resource path="res://scenes/ta_fang_mode/button_normal.tres" type="StyleBox" id=1]
 [ext_resource path="res://assets/UI/present-gift-box-reward-full.png" type="Texture" id=4]
 [ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/sounds/sound.gd" type="Script" id=6]
-[ext_resource path="res://assets/character/kan_ban.png" type="Texture" id=7]
-[ext_resource path="res://scripts/ta_fang_mode/kan_ban_girl.gd" type="Script" id=8]
-[ext_resource path="res://fonts/xolonium/Xolonium.tres" type="DynamicFont" id=9]
 [ext_resource path="res://ready_scene/coin.tscn" type="PackedScene" id=10]
-[ext_resource path="res://assets/UI/present-gift-box-reward-top.png" type="Texture" id=11]
-[ext_resource path="res://assets/UI/coin.png" type="Texture" id=12]
-[ext_resource path="res://assets/UI/present-gift-box-reward-bottom.png" type="Texture" id=13]
-[ext_resource path="res://fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Regular.ttf" type="DynamicFontData" id=14]
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 40
-font_data = ExtResource( 14 )
+[ext_resource path="res://sounds/bgm/ark_nights_life_flow.mp3" type="AudioStream" id=15]
+[ext_resource path="res://scripts/TaFangMode/Title.gd" type="Script" id=16]
+[ext_resource path="res://assets/puhuiti-rgular-40.tres" type="DynamicFont" id=17]
+[ext_resource path="res://images/eden720p.png" type="Texture" id=18]
 
 [sub_resource type="Animation" id=3]
 length = 3.0
-tracks/0/type = "value"
-tracks/0/path = NodePath("gift/top:position")
+tracks/0/type = "method"
+tracks/0/path = NodePath("coin")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1670, 400 ), Vector2( 1670, 350 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("gift/coin:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 1.9 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ false, true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("gift/top:rotation_degrees")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0, 35.0 ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("gift:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 2.8 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/4/type = "method"
-tracks/4/path = NodePath("coin")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
 "times": PoolRealArray( 2 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -88,155 +28,158 @@ tracks/4/keys = {
 }
 
 [node name="ta_fang_title" type="Node2D"]
+script = ExtResource( 16 )
 
-[node name="start" type="Button" parent="."]
-margin_left = 520.056
-margin_top = 33.204
-margin_right = 644.056
-margin_bottom = 103.204
-custom_fonts/font = ExtResource( 1 )
-text = "开始作战→"
-script = ExtResource( 2 )
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 720.0
+texture = ExtResource( 18 )
 
-[node name="bian_dui" type="Button" parent="."]
-margin_left = 525.0
-margin_top = 124.0
-margin_right = 660.0
-margin_bottom = 180.0
-custom_fonts/font = ExtResource( 1 )
-text = "编队"
-script = ExtResource( 2 )
-
-[node name="ta_ku" type="Button" parent="."]
-margin_left = 814.318
-margin_top = 21.0
-margin_right = 1005.32
-margin_bottom = 84.0
-custom_fonts/font = ExtResource( 1 )
-text = "塔库"
-script = ExtResource( 2 )
-
-[node name="sign" type="Button" parent="."]
-margin_left = 813.639
-margin_top = 111.26
-margin_right = 1004.64
-margin_bottom = 170.26
-custom_fonts/font = ExtResource( 1 )
-text = "每日签到"
-script = ExtResource( 3 )
-
-[node name="Sprite" type="Sprite" parent="sign"]
-position = Vector2( 280.069, 27.3214 )
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( 562.549, 49.2621 )
 scale = Vector2( 0.333333, 0.333333 )
 texture = ExtResource( 4 )
 
-[node name="task" type="Button" parent="."]
-margin_left = 814.0
-margin_top = 200.0
-margin_right = 1013.0
-margin_bottom = 268.0
-custom_fonts/font = ExtResource( 1 )
-text = "任务"
-script = ExtResource( 2 )
+[node name="bian_dui" type="Button" parent="."]
+margin_left = 835.471
+margin_top = 238.645
+margin_right = 952.471
+margin_bottom = 293.645
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 17 )
+custom_styles/normal = ExtResource( 1 )
+text = "编队"
 
-[node name="tu_jian" type="Button" parent="."]
-margin_left = 789.0
-margin_top = 281.0
-margin_right = 968.0
-margin_bottom = 364.0
-custom_fonts/font = ExtResource( 1 )
-text = "图鉴"
-script = ExtResource( 2 )
+[node name="ta_ku" type="Button" parent="."]
+margin_left = 960.471
+margin_top = 238.645
+margin_right = 1091.47
+margin_bottom = 293.645
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 17 )
+custom_styles/normal = ExtResource( 1 )
+text = "干员"
 
-[node name="store" type="Button" parent="."]
-margin_left = 526.0
-margin_top = 199.0
-margin_right = 660.0
-margin_bottom = 261.0
-custom_fonts/font = ExtResource( 1 )
-text = "仓库"
-script = ExtResource( 2 )
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+visible = false
+margin_left = 689.0
+margin_top = 189.0
+margin_right = 945.0
+margin_bottom = 244.0
 
 [node name="sound" parent="." instance=ExtResource( 5 )]
 script = ExtResource( 6 )
 
+[node name="BgmTitle" type="AudioStreamPlayer" parent="sound"]
+stream = ExtResource( 15 )
+autoplay = true
+
+[node name="start" type="Button" parent="."]
+margin_left = 835.471
+margin_top = 149.262
+margin_right = 1091.47
+margin_bottom = 219.262
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 17 )
+custom_styles/normal = ExtResource( 1 )
+text = "作战"
+
+[node name="sign" type="Button" parent="."]
+margin_left = 532.052
+margin_top = 20.0
+margin_right = 688.052
+margin_bottom = 79.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 17 )
+custom_styles/normal = ExtResource( 1 )
+text = "每日签到"
+
+[node name="task" type="Button" parent="."]
+margin_left = 835.471
+margin_top = 398.14
+margin_right = 952.471
+margin_bottom = 453.14
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 17 )
+custom_styles/normal = ExtResource( 1 )
+text = "任务"
+
+[node name="tu_jian" type="Button" parent="."]
+margin_left = 270.0
+margin_top = 20.2819
+margin_right = 348.0
+margin_bottom = 75.2819
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 17 )
+custom_styles/normal = ExtResource( 1 )
+text = "图鉴"
+
+[node name="store" type="Button" parent="."]
+margin_left = 960.471
+margin_top = 398.14
+margin_right = 1094.47
+margin_bottom = 453.14
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 17 )
+custom_styles/normal = ExtResource( 1 )
+text = "仓库"
+
+[node name="buy" type="Button" parent="."]
+margin_left = 835.471
+margin_top = 309.915
+margin_right = 952.471
+margin_bottom = 364.915
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 17 )
+custom_styles/normal = ExtResource( 1 )
+text = "采购"
+
+[node name="invite" type="Button" parent="."]
+margin_left = 960.471
+margin_top = 309.915
+margin_right = 1116.47
+margin_bottom = 364.915
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 17 )
+custom_styles/normal = ExtResource( 1 )
+text = "公开招募"
+
 [node name="to_game_title" type="Button" parent="."]
-margin_left = 523.0
-margin_top = 280.0
-margin_right = 686.0
-margin_bottom = 339.0
-custom_fonts/font = ExtResource( 1 )
+margin_left = 1014.37
+margin_top = 640.415
+margin_right = 1248.37
+margin_bottom = 699.415
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 17 )
+custom_styles/normal = ExtResource( 1 )
 text = "回到总主界面"
-script = ExtResource( 2 )
 
 [node name="story" type="Button" parent="."]
-margin_left = 525.495
-margin_top = 365.255
-margin_right = 691.495
-margin_bottom = 420.255
-custom_fonts/font = ExtResource( 1 )
+margin_left = 358.388
+margin_top = 20.2819
+margin_right = 514.388
+margin_bottom = 75.2819
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 17 )
+custom_styles/normal = ExtResource( 1 )
 text = "背景故事"
-script = ExtResource( 2 )
-
-[node name="TextureButton" type="TextureButton" parent="."]
-margin_left = 33.0
-margin_top = 10.0
-margin_right = 888.0
-margin_bottom = 1810.0
-rect_scale = Vector2( 0.506369, 0.540948 )
-texture_normal = ExtResource( 7 )
-script = ExtResource( 8 )
-
-[node name="Label" type="Label" parent="."]
-visible = false
-margin_left = 270.0
-margin_top = 20.0
-margin_right = 798.0
-margin_bottom = 101.0
-custom_fonts/font = ExtResource( 9 )
-custom_styles/normal = SubResource( 1 )
-text = "I draw the color of thi character.
-I am a newer."
 
 [node name="coin" parent="." instance=ExtResource( 10 )]
-
-[node name="gift" type="Node2D" parent="."]
-visible = false
-
-[node name="top" type="Sprite" parent="gift"]
-position = Vector2( 1670, 350 )
-rotation = 0.610865
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 11 )
-
-[node name="coin" type="Sprite" parent="gift"]
-position = Vector2( 1670, 380 )
-texture = ExtResource( 12 )
-
-[node name="bottom" type="Sprite" parent="gift"]
-position = Vector2( 1670, 410 )
-scale = Vector2( 0.25, 0.25 )
-texture = ExtResource( 13 )
-
-[node name="Label" type="Label" parent="gift"]
-margin_left = 1590.0
-margin_top = 470.0
-margin_right = 1803.0
-margin_bottom = 519.0
-custom_fonts/font = SubResource( 2 )
-text = "coin +100"
+position = Vector2( 835.68, 67.1295 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/open_gift = SubResource( 3 )
 
-[connection signal="pressed" from="start" to="start" method="_on_start_pressed"]
-[connection signal="pressed" from="bian_dui" to="bian_dui" method="_on_bian_dui_pressed"]
-[connection signal="pressed" from="ta_ku" to="ta_ku" method="_on_ta_ku_pressed"]
-[connection signal="pressed" from="sign" to="sign" method="_on_sign_pressed"]
-[connection signal="pressed" from="task" to="task" method="_on_task_pressed"]
-[connection signal="pressed" from="tu_jian" to="tu_jian" method="_on_tu_jian_pressed"]
+[connection signal="pressed" from="bian_dui" to="." method="_on_bian_dui_pressed"]
+[connection signal="pressed" from="ta_ku" to="." method="_on_ta_ku_pressed"]
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="sign" to="." method="_on_sign_pressed"]
+[connection signal="pressed" from="task" to="." method="_on_task_pressed"]
+[connection signal="pressed" from="tu_jian" to="." method="_on_tu_jian_pressed"]
 [connection signal="button_down" from="store" to="store" method="_on_store_button_down"]
 [connection signal="pressed" from="store" to="store" method="_on_store_pressed"]
-[connection signal="pressed" from="to_game_title" to="to_game_title" method="_on_to_game_title_pressed"]
-[connection signal="pressed" from="story" to="story" method="_on_story_pressed"]
-[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="to_game_title" to="." method="_on_to_game_title_pressed"]
+[connection signal="pressed" from="story" to="." method="_on_story_pressed"]
+
+[editable path="sound"]

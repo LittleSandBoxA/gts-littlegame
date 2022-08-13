@@ -1,8 +1,6 @@
 extends Button
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+
 var scene_name
 var click_sound
 #默认按钮是否被按下，默认为false
@@ -14,7 +12,6 @@ var ta_ku="ta_ku"
 #到达哪个场景
 var to_what
 var bgm
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	click_sound=get_tree().current_scene.get_node("sound/EnterSound")
 	scene_name=get_tree().current_scene.name
@@ -22,9 +19,8 @@ func _ready():
 	#重置按钮是否被按下
 	if scene_name==ta_ku:
 		clicked=false
-	pass # Replace with function body.
+	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#回到游戏的总主界面
 	if scene_name=="music" and click_sound.is_playing()==false and clicked==true:
@@ -97,14 +93,6 @@ func _on_bian_dui_pressed():
 		to_what="res://scenes/ta_fang_mode/bian_dui.tscn"
 	pass # Replace with function body.
 
-#故事介绍
-func _on_story_pressed():
-	if scene_name==title:
-		click_sound.play()
-		clicked=true
-		to_what="res://test/story.tscn"
-	pass # Replace with function body.
-
 #去往图片库
 func _on_image_pressed():
 	if scene_name=="Android":
@@ -122,13 +110,6 @@ func _on_back_pressed():
 		click_sound.play()
 		clicked=true
 		to_what="res://scenes/ta_fang_mode/ta_fang_title.tscn"
-	pass # Replace with function body.
-
-#到图鉴
-func _on_tu_jian_pressed():
-	click_sound.play()
-	clicked=true
-	to_what="res://scenes/ta_fang_mode/tu_jian.tscn"
 	pass # Replace with function body.
 
 #到任务界面

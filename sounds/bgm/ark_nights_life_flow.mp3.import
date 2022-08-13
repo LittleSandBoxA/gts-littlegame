@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ark_nights_life_flow.mp3-8b09eb22054818575d25a9142e869765.mp3str"
+
+[deps]
+
+source_file="res://sounds/bgm/ark_nights_life_flow.mp3"
+dest_files=[ "res://.import/ark_nights_life_flow.mp3-8b09eb22054818575d25a9142e869765.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

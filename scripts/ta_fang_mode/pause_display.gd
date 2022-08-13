@@ -1,28 +1,24 @@
 extends TextureButton
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var scene
 var pause_Display
 var root
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	scene=get_tree().current_scene.name
-	if scene=="level2":
-		root=get_parent()
-		pause_Display=get_tree().current_scene.get_node("pause_label")
-	if scene=="ta_fang_test":
-		pause_Display=get_parent().get_node("pause_label")
+#	scene=get_tree().current_scene.name
+#	if scene=="level2":
+#		root=get_parent()
+#		pause_Display=get_tree().current_scene.get_node("pause_label")
+#	if scene=="ta_fang_test":
+#		pause_Display=get_parent().get_node("pause_label")
 	pass
 func _process(delta):
-	if self.pressed:
-		get_tree().paused=true
-		pause_Display.show()
-	elif root.my_pressed==true:
-		get_tree().paused=true
-		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	else:
-		get_tree().paused=false
-		pause_Display.hide()
+#	if self.pressed:
+#		get_tree().paused=true
+#		pause_Display.show()
+#	elif root.my_pressed==true:
+#		get_tree().paused=true
+#		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+#	else:
+#		get_tree().paused=false
+#		pause_Display.hide()
 		pass
