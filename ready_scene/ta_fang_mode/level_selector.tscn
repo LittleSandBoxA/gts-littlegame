@@ -27,9 +27,7 @@ tracks/0/keys = {
 size = 90
 font_data = ExtResource( 6 )
 
-[node name="level_selector" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="level_selector" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = 230.0
@@ -58,18 +56,18 @@ text = "level_2"
 script = ExtResource( 2 )
 
 [node name="Label2" type="Label" parent="."]
-margin_left = 1320.0
-margin_top = 700.0
-margin_right = 1400.0
-margin_bottom = 741.0
+margin_left = 1012.23
+margin_top = 629.365
+margin_right = 1092.23
+margin_bottom = 670.365
 custom_fonts/font = ExtResource( 3 )
 text = "章节:"
 
 [node name="Label" type="Label" parent="."]
-margin_left = 1420.0
-margin_top = 700.0
-margin_right = 1482.0
-margin_bottom = 739.0
+margin_left = 1129.05
+margin_top = 629.365
+margin_right = 1191.05
+margin_bottom = 668.365
 custom_fonts/font = ExtResource( 1 )
 text = "1/3"
 
@@ -83,13 +81,14 @@ anims/level_2 = SubResource( 1 )
 script = ExtResource( 5 )
 
 [node name="coin_level" type="Button" parent="."]
-margin_left = 1290.0
-margin_top = 320.0
-margin_right = 1640.0
-margin_bottom = 520.0
+margin_left = 884.0
+margin_top = 413.0
+margin_right = 1166.0
+margin_bottom = 510.0
 custom_fonts/font = SubResource( 2 )
 text = "金币关"
 script = ExtResource( 2 )
+
 [connection signal="pressed" from="level_1" to="level_1" method="_on_level_1_pressed"]
 [connection signal="pressed" from="level_2" to="level_2" method="_on_level_2_pressed"]
 [connection signal="pressed" from="coin_level" to="coin_level" method="_on_coin_level_pressed"]

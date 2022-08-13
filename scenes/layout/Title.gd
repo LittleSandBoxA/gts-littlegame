@@ -57,4 +57,4 @@ func _on_ta_fang_pressed():
 func _on_hand_pressed():
 	EnterSound.play()
 	get_tree().change_scene("res://scenes/test_hand_speed.tscn")
-	pass # Replace with function body.
+	pass

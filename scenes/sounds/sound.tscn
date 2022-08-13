@@ -2,7 +2,7 @@
 
 [ext_resource path="res://sounds/abs-confirm-2.wav" type="AudioStream" id=1]
 [ext_resource path="res://sounds/abs-cancel-6-verbed.wav" type="AudioStream" id=2]
-[ext_resource path="res://bigger.wav" type="AudioStream" id=3]
+[ext_resource path="res://sounds/bigger.wav" type="AudioStream" id=3]
 [ext_resource path="res://sounds/bite-mordisco.ogg" type="AudioStream" id=4]
 [ext_resource path="res://sounds/med.ogg" type="AudioStream" id=5]
 [ext_resource path="res://sounds/abs-pointer-1.ogg" type="AudioStream" id=6]

@@ -31,7 +31,7 @@ func _on_Panel_mouse_entered():
 func _on_Panel_visibility_changed():
 	if self.visible==true:
 		can_grow=false
-		clicks_display.text=clicks_display.text+str(root.clicks)+"次"
-		hand_speed_display.text=hand_speed_display.text+str(timer.hand_speed)+"次/秒"
+		clicks_display.text = clicks_display.text + str(root.clicks) + "次"
+		hand_speed_display.text = hand_speed_display.text + str(timer.hand_speed) + "次/秒"
 		anim.play("胜利")
-	pass # Replace with function body.
+	pass

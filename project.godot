@@ -16,8 +16,6 @@ _global_script_class_icons={
 
 config/name="gts"
 run/main_scene="res://scenes/layout/Title.tscn"
-config/auto_accept_quit=false
-config/quit_on_go_back=false
 
 [debug]
 
