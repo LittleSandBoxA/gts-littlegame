@@ -15,7 +15,7 @@ _global_script_class_icons={
 [application]
 
 config/name="gts"
-run/main_scene="res://test/Android_title.tscn"
+run/main_scene="res://scenes/layout/Title.tscn"
 config/auto_accept_quit=false
 config/quit_on_go_back=false
 
