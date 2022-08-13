@@ -28,9 +28,8 @@ func _on_tu_jian_pressed():
 	pass
 
 func _on_to_game_title_pressed():
-	get_tree().change_scene("res://scenes/ta_fang_mode/tu_jian.tscn")
+	get_tree().change_scene("res://scenes/layout/Title.tscn")
 	pass
-
 
 func _on_story_pressed():
 	get_tree().change_scene("res://test/story.tscn")
