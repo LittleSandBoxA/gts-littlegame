@@ -1,8 +1,6 @@
 extends Spatial
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+
 var Game_Over
 var World_Enviroment_Anim
 var bag
@@ -14,7 +12,6 @@ func _ready():
 	#World_Enviroment_Anim.play("day to night")
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
 func _input(event):

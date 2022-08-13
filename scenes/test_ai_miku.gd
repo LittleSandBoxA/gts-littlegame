@@ -14,14 +14,15 @@ var ItemStack_Pointer_index
 
 var size
 
-export var speed = 1 #变大后的移动速度
+export var speed = 2 #变大后的移动速度
 
 var player
 var distance_to_gts
 var command_box
 var New_AI
 onready var tween = $Tween
-# Called when the node enters the scene tree for the first time.
+
+var vel = Vector3(0,0,0)
 func _ready():
 #	root=find_parent("root")
 #	player=get_node("miku")
@@ -43,9 +44,12 @@ func _ready():
 #	score_display=root.get_node("score_root/score_display")
 #	weight_display=root.get_node("score_root/weight_display")
 	pass # Replace with function body.
-
+func _physics_process(delta):
+	move_and_slide(vel *speed)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	vel.z = Input.get_action_strength("walk") - Input.get_action_strength("walk_back")
+	print_debug(vel)
 	#移动速度
 	#speed=anim.moveSpeed
 	#print("实时速度"+str(speed*delta))
@@ -73,7 +77,8 @@ func _process(delta):
 	pass
 func _input(event):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
-		var newScale = self.scale *1.2
-		tween.interpolate_property(self,"scale",Vector3(1,1,1),newScale, 0.5,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
+		var oldScale = self.scale
+		var newScale = oldScale *1.5
+		tween.interpolate_property(self,"scale",oldScale,newScale, 0.5,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 		tween.start()
 	pass

@@ -1,9 +1,6 @@
 extends Spatial
 
 var clicks=0
-var gts
-var current_size
-var add_size=0
 var click_sound
 var can_process
 var anim
@@ -16,15 +13,12 @@ var height = 1.5
 #缩放倍数
 export var mulit_scale = 1.01
 func _ready():
-#	gts=get_node("miku")
 #	anim=get_node("anim")
 #	click_sound=get_node("sound/EnterSound")
 #	touch=InputEventScreenTouch.new()
-	pass # Replace with function body.
+	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-#	current_size=gts.get_scale()
 #	#print(can_process)
 #	can_process=get_node("Panel").can_grow
 #	if can_process==false:

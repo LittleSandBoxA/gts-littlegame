@@ -183,7 +183,7 @@ visible = false
 visible = false
 
 [node name="hand" type="BoneAttachment" parent="初音ミク/初音ミク_arm/Skeleton" index="19"]
-transform = Transform( 0.724343, 0.687684, 0.0491874, -0.100733, 0.0349839, 0.994298, 0.682076, -0.725204, 0.0946212, 0.689187, 2.44633, -0.0662579 )
+transform = Transform( 0.477968, 0.467636, -0.743548, 0.467612, 0.581114, 0.666067, 0.743602, -0.666082, 0.0590874, 1.00361, 2.59278, -0.050404 )
 bone_name = "手首.L"
 
 [node name="handArea" type="Area" parent="初音ミク/初音ミク_arm/Skeleton/hand" index="0"]
@@ -193,15 +193,15 @@ transform = Transform( 0.724342, -0.100735, 0.682007, 0.687683, 0.0349869, -0.72
 shape = SubResource( 1 )
 
 [node name="Leftfoot" type="BoneAttachment" parent="初音ミク/初音ミク_arm/Skeleton" index="20"]
-transform = Transform( 0.997122, 0.0733743, -0.0191238, 0.0733743, -0.870087, 0.487406, 0.0191237, -0.487406, -0.872966, 0.175085, 0.268, -8.00937e-08 )
+transform = Transform( 0.997121, 0.0733743, -0.0191237, 0.0733743, -0.870087, 0.487406, 0.0191237, -0.487406, -0.872966, 0.175085, 0.268, 1.39698e-08 )
 bone_name = "足首.L"
 
 [node name="rightfoot" type="BoneAttachment" parent="初音ミク/初音ミク_arm/Skeleton" index="21"]
-transform = Transform( 0.997122, -0.0733743, 0.0191238, -0.0733743, -0.870087, 0.487406, -0.0191237, -0.487406, -0.872966, -0.175085, 0.268, -8.00937e-08 )
+transform = Transform( 0.997121, -0.0733743, 0.0191237, -0.0733743, -0.870087, 0.487406, -0.0191237, -0.487406, -0.872966, -0.175085, 0.268, 1.39698e-08 )
 bone_name = "足首.R"
 
 [node name="hairL" type="BoneAttachment" parent="初音ミク/初音ミク_arm/Skeleton" index="22"]
-transform = Transform( 0.950886, 0.189488, -0.244764, 0.189497, 0.268891, 0.944346, 0.244769, -0.944394, 0.219792, 0.32964, 3.92784, -0.290872 )
+transform = Transform( 0.950886, 0.189488, -0.244764, 0.189497, 0.26889, 0.944346, 0.244769, -0.944394, 0.219791, 0.32964, 3.92784, -0.290872 )
 bone_name = "髪１.L"
 
 [node name="hair_static_L" type="StaticBody" parent="初音ミク/初音ミク_arm/Skeleton/hairL" index="0"]
@@ -211,7 +211,7 @@ transform = Transform( 0.999972, 0.00710109, -0.00201697, -0.00709933, 0.999974,
 shape = SubResource( 2 )
 
 [node name="hairR" type="BoneAttachment" parent="初音ミク/初音ミク_arm/Skeleton" index="23"]
-transform = Transform( 0.950886, -0.189488, 0.244764, -0.189497, 0.268891, 0.944346, -0.244769, -0.944394, 0.219792, -0.32964, 3.92784, -0.290872 )
+transform = Transform( 0.950886, -0.189488, 0.244764, -0.189497, 0.26889, 0.944346, -0.244769, -0.944394, 0.219791, -0.32964, 3.92784, -0.290872 )
 bone_name = "髪１.R"
 
 [node name="hair_static_L" type="StaticBody" parent="初音ミク/初音ミク_arm/Skeleton/hairR" index="0"]
@@ -222,7 +222,7 @@ transform = Transform( 0.999972, 0.00710109, -0.00201697, -0.00709933, 0.999974,
 shape = SubResource( 2 )
 
 [node name="head2" type="BoneAttachment" parent="初音ミク/初音ミク_arm/Skeleton" index="24"]
-transform = Transform( 1, 0, 0, 0, 3.97116e-06, -1, 0, 1.00005, -7.45058e-09, 0, 3.38172, -1.37802e-08 )
+transform = Transform( 1, 0, 0, 0, 3.97116e-06, -1, 0, 1.00005, 0, 0, 3.38172, 2.29122e-08 )
 bone_name = "頭"
 
 [node name="RayCast" type="RayCast" parent="初音ミク/初音ミク_arm/Skeleton/head2" index="0"]
