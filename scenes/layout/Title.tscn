@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://scenes/layout/Title.gd" type="Script" id=1]
 [ext_resource path="res://images/title.jpg" type="Texture" id=2]
@@ -10,23 +10,15 @@
 [ext_resource path="res://scenes/layout/mod.gd" type="Script" id=8]
 [ext_resource path="res://scenes/layout/language/back.gd" type="Script" id=9]
 [ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/layout/set.gd" type="Script" id=11]
 [ext_resource path="res://scenes/layout/language/language.gd" type="Script" id=12]
 [ext_resource path="res://scenes/layout/how_to_play.gd" type="Script" id=13]
 [ext_resource path="res://scenes/layout/Button.gd" type="Script" id=14]
 [ext_resource path="res://scenes/layout/title/to_sand_box_mode.gd" type="Script" id=15]
 [ext_resource path="res://scenes/layout/ta_fang.gd" type="Script" id=16]
 [ext_resource path="res://scenes/layout/hand.gd" type="Script" id=17]
+[ext_resource path="res://assets/font_simi_40.tres" type="DynamicFont" id=18]
 
 [sub_resource type="DynamicFont" id=1]
-size = 60
-font_data = ExtResource( 5 )
-
-[sub_resource type="DynamicFont" id=2]
-size = 60
-font_data = ExtResource( 5 )
-
-[sub_resource type="DynamicFont" id=3]
 size = 60
 font_data = ExtResource( 5 )
 
@@ -34,145 +26,100 @@ font_data = ExtResource( 5 )
 script = ExtResource( 1 )
 
 [node name="background" type="Sprite" parent="."]
-position = Vector2( 515.536, 300 )
-scale = Vector2( 1.51313, 1.17647 )
+position = Vector2( 643.826, 360.581 )
+scale = Vector2( 1.89045, 1.41404 )
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
-[node name="AI_test" type="Button" parent="."]
-margin_left = 610.0
-margin_top = 240.0
-margin_right = 890.0
-margin_bottom = 308.0
-custom_fonts/font = ExtResource( 3 )
-text = "AI测试"
-script = ExtResource( 4 )
+[node name="buttons" type="VBoxContainer" parent="."]
+margin_left = 662.951
+margin_top = 56.8258
+margin_right = 914.951
+margin_bottom = 268.826
+custom_constants/separation = 8
 
-[node name="Label" type="Label" parent="."]
-margin_left = 410.0
-margin_top = 140.913
-margin_right = 620.0
-margin_bottom = 265.913
-size_flags_stretch_ratio = 0.0
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "gts eat
-"
-align = 1
-valign = 1
-
-[node name="solo" type="Button" parent="."]
-margin_left = 306.0
-margin_top = 240.0
-margin_right = 572.0
-margin_bottom = 308.0
-custom_fonts/font = SubResource( 2 )
+[node name="solo" type="Button" parent="buttons"]
+margin_right = 252.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 18 )
 text = "单人游戏"
 script = ExtResource( 6 )
 
-[node name="mulit" type="Button" parent="."]
-margin_left = 311.361
-margin_top = 338.507
-margin_right = 571.361
-margin_bottom = 407.507
-custom_fonts/font = SubResource( 3 )
+[node name="mulit" type="Button" parent="buttons"]
+margin_top = 55.0
+margin_right = 252.0
+margin_bottom = 102.0
 custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 18 )
 text = "多人游戏"
 script = ExtResource( 7 )
 
-[node name="mod" type="Button" parent="."]
-margin_left = 306.0
-margin_top = 424.0
-margin_right = 572.0
-margin_bottom = 500.0
-custom_fonts/font = ExtResource( 3 )
+[node name="mod" type="Button" parent="buttons"]
+margin_top = 110.0
+margin_right = 252.0
+margin_bottom = 157.0
+custom_fonts/font = ExtResource( 18 )
 text = "Mod"
 script = ExtResource( 8 )
 
-[node name="Panel" type="Panel" parent="."]
-editor/display_folded = true
-visible = false
-margin_left = 160.0
-margin_top = 70.0
-margin_right = 980.0
-margin_bottom = 530.0
-
-[node name="Vbox" type="VBoxContainer" parent="Panel"]
-margin_left = 230.0
-margin_top = 80.0
-margin_right = 470.0
-margin_bottom = 173.0
-
-[node name="chinese" type="CheckButton" parent="Panel/Vbox"]
-margin_right = 240.0
-margin_bottom = 49.0
-custom_fonts/font = ExtResource( 3 )
-text = "简体中文"
-
-[node name="english" type="CheckButton" parent="Panel/Vbox"]
-margin_top = 53.0
-margin_right = 240.0
-margin_bottom = 102.0
-custom_fonts/font = ExtResource( 3 )
-text = "English"
-
-[node name="back" type="Button" parent="Panel"]
-margin_left = 240.0
-margin_top = 270.0
-margin_right = 510.0
-margin_bottom = 370.0
-custom_fonts/font = ExtResource( 3 )
-text = "返回"
-script = ExtResource( 9 )
-
-[node name="sound" parent="." instance=ExtResource( 10 )]
-
-[node name="set" type="Button" parent="."]
-margin_left = 310.0
-margin_top = 510.0
-margin_right = 571.0
-margin_bottom = 570.0
-custom_fonts/font = ExtResource( 3 )
+[node name="set" type="Button" parent="buttons"]
+margin_top = 165.0
+margin_right = 252.0
+margin_bottom = 212.0
+custom_fonts/font = ExtResource( 18 )
 text = "设置"
-script = ExtResource( 11 )
 
-[node name="language" type="Button" parent="."]
-margin_left = 630.0
-margin_top = 510.0
-margin_right = 848.0
-margin_bottom = 577.0
-custom_fonts/font = ExtResource( 3 )
-text = "language"
+[node name="buttons2" type="VBoxContainer" parent="."]
+margin_left = 664.369
+margin_top = 309.72
+margin_right = 916.369
+margin_bottom = 611.72
+custom_constants/separation = 9
+
+[node name="AI_test" type="Button" parent="buttons2"]
+margin_right = 252.0
+margin_bottom = 47.0
+custom_fonts/font = ExtResource( 18 )
+text = "AI测试"
+script = ExtResource( 4 )
+
+[node name="language" type="Button" parent="buttons2"]
+margin_top = 56.0
+margin_right = 252.0
+margin_bottom = 103.0
+custom_fonts/font = ExtResource( 18 )
+text = "多国语言"
 script = ExtResource( 12 )
 
-[node name="how_to_play" type="Button" parent="."]
-editor/display_folded = true
-margin_left = 620.0
-margin_top = 340.0
-margin_right = 900.0
-margin_bottom = 400.0
-custom_fonts/font = ExtResource( 3 )
+[node name="how_to_play" type="Button" parent="buttons2"]
+margin_top = 112.0
+margin_right = 252.0
+margin_bottom = 159.0
+custom_fonts/font = ExtResource( 18 )
 text = "操作说明"
 script = ExtResource( 13 )
 
-[node name="PopupPanel" type="PopupPanel" parent="how_to_play"]
+[node name="PopupPanel" type="PopupPanel" parent="buttons2/how_to_play"]
 margin_left = -390.0
 margin_top = -330.0
 margin_right = 238.0
 margin_bottom = 203.0
 popup_exclusive = true
 
-[node name="Button" type="Button" parent="how_to_play/PopupPanel"]
+[node name="Button" type="Button" parent="buttons2/how_to_play/PopupPanel"]
 margin_left = 4.0
 margin_top = 4.0
-margin_right = 884.0
+margin_right = 624.0
 margin_bottom = 529.0
 text = "x"
 script = ExtResource( 14 )
 
-[node name="Label" type="Label" parent="how_to_play/PopupPanel"]
+[node name="Label" type="Label" parent="buttons2/how_to_play/PopupPanel"]
 margin_left = 4.0
 margin_top = 4.0
-margin_right = 884.0
+margin_right = 624.0
 margin_bottom = 529.0
 custom_fonts/font = ExtResource( 3 )
 text = "wasd 移动 v键切换视角
@@ -188,41 +135,88 @@ shift+w -加速
 来弹琴
 高分排行榜还没做好"
 
-[node name="Button" type="Button" parent="."]
-margin_left = 620.0
-margin_top = 420.0
-margin_right = 910.0
-margin_bottom = 490.0
-custom_fonts/font = ExtResource( 3 )
+[node name="Button" type="Button" parent="buttons2"]
+margin_top = 168.0
+margin_right = 252.0
+margin_bottom = 215.0
+custom_fonts/font = ExtResource( 18 )
 text = "沙盒模式测试"
 script = ExtResource( 15 )
 
-[node name="ta_fang" type="Button" parent="."]
-margin_left = 620.0
-margin_top = 90.0
-margin_right = 880.0
-margin_bottom = 160.0
-custom_fonts/font = ExtResource( 3 )
+[node name="ta_fang" type="Button" parent="buttons2"]
+margin_top = 224.0
+margin_right = 252.0
+margin_bottom = 271.0
+custom_fonts/font = ExtResource( 18 )
 text = "塔防测试"
 script = ExtResource( 16 )
 
-[node name="hand" type="Button" parent="."]
-margin_left = 630.0
-margin_top = 170.0
-margin_right = 890.0
-margin_bottom = 230.0
-custom_fonts/font = ExtResource( 3 )
+[node name="hand" type="Button" parent="buttons2"]
+margin_top = 280.0
+margin_right = 252.0
+margin_bottom = 327.0
+custom_fonts/font = ExtResource( 18 )
 text = "测手速"
 script = ExtResource( 17 )
-[connection signal="pressed" from="AI_test" to="AI_test" method="_on_Button_pressed"]
-[connection signal="button_down" from="solo" to="solo" method="_on_Button_button_down"]
-[connection signal="button_down" from="mulit" to="mulit" method="_on_mulit_button_down"]
-[connection signal="button_down" from="mod" to="mod" method="_on_mod_button_down"]
+
+[node name="Label" type="Label" parent="."]
+margin_left = 76.4494
+margin_top = -14.9119
+margin_right = 526.449
+margin_bottom = 110.088
+size_flags_stretch_ratio = 0.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "gts聚合类小游戏"
+align = 1
+valign = 1
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+margin_left = 160.0
+margin_top = 70.0
+margin_right = 980.0
+margin_bottom = 530.0
+
+[node name="Vbox" type="VBoxContainer" parent="Panel"]
+margin_left = 230.0
+margin_top = 80.0
+margin_right = 470.0
+margin_bottom = 173.0
+
+[node name="chinese" type="CheckButton" parent="Panel/Vbox"]
+margin_right = 240.0
+margin_bottom = 40.0
+custom_fonts/font = ExtResource( 3 )
+text = "简体中文"
+
+[node name="english" type="CheckButton" parent="Panel/Vbox"]
+margin_top = 44.0
+margin_right = 240.0
+margin_bottom = 84.0
+custom_fonts/font = ExtResource( 3 )
+text = "English"
+
+[node name="back" type="Button" parent="Panel"]
+margin_left = 240.0
+margin_top = 270.0
+margin_right = 510.0
+margin_bottom = 370.0
+custom_fonts/font = ExtResource( 3 )
+text = "返回"
+script = ExtResource( 9 )
+
+[node name="sound" parent="." instance=ExtResource( 10 )]
+
+[connection signal="button_down" from="buttons/solo" to="buttons/solo" method="_on_Button_button_down"]
+[connection signal="button_down" from="buttons/mulit" to="buttons/mulit" method="_on_mulit_button_down"]
+[connection signal="button_down" from="buttons/mod" to="buttons/mod" method="_on_mod_button_down"]
+[connection signal="pressed" from="buttons/set" to="." method="_on_set_pressed"]
+[connection signal="pressed" from="buttons2/AI_test" to="buttons2/AI_test" method="_on_Button_pressed"]
+[connection signal="button_down" from="buttons2/language" to="buttons2/language" method="_on_language_button_down"]
+[connection signal="pressed" from="buttons2/how_to_play" to="buttons2/how_to_play" method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="buttons2/how_to_play/PopupPanel/Button" to="buttons2/how_to_play/PopupPanel/Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="buttons2/Button" to="buttons2/Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="buttons2/ta_fang" to="buttons2/ta_fang" method="_on_ta_fang_pressed"]
+[connection signal="pressed" from="buttons2/hand" to="buttons2/hand" method="_on_hand_pressed"]
 [connection signal="button_down" from="Panel/back" to="Panel/back" method="_on_back_button_down"]
-[connection signal="pressed" from="set" to="set" method="_on_set_pressed"]
-[connection signal="button_down" from="language" to="language" method="_on_language_button_down"]
-[connection signal="pressed" from="how_to_play" to="how_to_play" method="_on_how_to_play_pressed"]
-[connection signal="pressed" from="how_to_play/PopupPanel/Button" to="how_to_play/PopupPanel/Button" method="_on_Button_pressed"]
-[connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]
-[connection signal="pressed" from="ta_fang" to="ta_fang" method="_on_ta_fang_pressed"]
-[connection signal="pressed" from="hand" to="hand" method="_on_hand_pressed"]
