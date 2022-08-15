@@ -1,18 +1,13 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scenes/test_hand_speed.gd" type="Script" id=1]
 [ext_resource path="res://ready_scene/models/character/rhea/rhea_spatial.tscn" type="PackedScene" id=2]
-[ext_resource path="res://images/gts_background.jpg" type="Texture" id=3]
+[ext_resource path="res://resource/Panel.tres" type="StyleBox" id=3]
 [ext_resource path="res://scripts/test_hand_speed_mode/Timer.gd" type="Script" id=4]
 [ext_resource path="res://fonts/SIMLI.TTF" type="DynamicFontData" id=5]
-[ext_resource path="res://scripts/test_hand_speed_mode/pandel.gd" type="Script" id=6]
-[ext_resource path="res://fonts/font.tres" type="DynamicFont" id=7]
-[ext_resource path="res://scripts/test_hand_speed_mode/re_start.gd" type="Script" id=8]
-[ext_resource path="res://scripts/test_hand_speed_mode/to_title.gd" type="Script" id=9]
+[ext_resource path="res://scripts/test_hand_speed_mode/Panel.gd" type="Script" id=6]
 [ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=10]
 [ext_resource path="res://fonts/xolonium/Xolonium.tres" type="DynamicFont" id=11]
-[ext_resource path="res://scripts/test_hand_speed_mode/to_title_Android.gd" type="Script" id=12]
-[ext_resource path="res://rain.tscn" type="PackedScene" id=13]
 [ext_resource path="res://sounds/bigger.wav" type="AudioStream" id=14]
 [ext_resource path="res://sounds/level/Juhani Junkala [Chiptune Adventures] 2. Stage 2.ogg" type="AudioStream" id=15]
 [ext_resource path="res://ready_scene/models/city/building.obj" type="ArrayMesh" id=16]
@@ -101,11 +96,6 @@ background_sky = SubResource( 5 )
 script = ExtResource( 1 )
 mulit_scale = 1.1
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.48501, -1.26389 )
-visible = false
-texture = ExtResource( 3 )
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 20.0
 one_shot = true
@@ -122,54 +112,56 @@ custom_fonts/font = SubResource( 1 )
 text = "00:00"
 
 [node name="Panel" type="Panel" parent="."]
+pause_mode = 2
 visible = false
-margin_left = 140.0
-margin_top = 60.0
-margin_right = 810.0
-margin_bottom = 480.0
+margin_left = 292.827
+margin_top = 128.922
+margin_right = 962.827
+margin_bottom = 548.922
+custom_styles/panel = ExtResource( 3 )
 script = ExtResource( 6 )
 
 [node name="Label" type="Label" parent="Panel"]
-margin_left = 270.0
-margin_top = 10.0
-margin_right = 390.0
-margin_bottom = 60.0
-custom_fonts/font = ExtResource( 7 )
+pause_mode = 2
+margin_left = 262.0
+margin_top = 3.0
+margin_right = 382.0
+margin_bottom = 58.0
+custom_fonts/font = ExtResource( 17 )
 text = "时间到"
 
 [node name="clicks" type="Label" parent="Panel"]
-margin_left = 100.0
 margin_top = 60.0
-margin_right = 300.0
-margin_bottom = 110.0
-custom_fonts/font = ExtResource( 7 )
+margin_right = 200.0
+margin_bottom = 115.0
+custom_fonts/font = ExtResource( 17 )
 text = "点击次数："
 
 [node name="hand_speed" type="Label" parent="Panel"]
-margin_left = 100.0
 margin_top = 110.0
-margin_right = 300.0
-margin_bottom = 160.0
-custom_fonts/font = ExtResource( 7 )
+margin_right = 200.0
+margin_bottom = 165.0
+custom_fonts/font = ExtResource( 17 )
 text = "手速："
 
-[node name="re_start" type="Button" parent="Panel"]
-margin_left = 100.0
-margin_top = 240.0
-margin_right = 440.0
-margin_bottom = 350.0
-custom_fonts/font = ExtResource( 7 )
-text = "再来一次"
-script = ExtResource( 8 )
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+margin_left = 219.0
+margin_top = 225.0
+margin_right = 387.0
+margin_bottom = 351.0
 
-[node name="title2" type="Button" parent="Panel"]
-margin_left = 470.0
-margin_top = 240.0
-margin_right = 650.0
-margin_bottom = 340.0
-custom_fonts/font = ExtResource( 7 )
-text = "返回主页"
-script = ExtResource( 9 )
+[node name="Restart" type="Button" parent="Panel/VBoxContainer"]
+margin_right = 168.0
+margin_bottom = 61.0
+custom_fonts/font = ExtResource( 17 )
+text = "再来一次"
+
+[node name="MainMenu" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 65.0
+margin_right = 168.0
+margin_bottom = 126.0
+custom_fonts/font = ExtResource( 17 )
+text = "主菜单"
 
 [node name="anim" type="AnimationPlayer" parent="."]
 anims/add = SubResource( 2 )
@@ -181,40 +173,20 @@ anims/add = SubResource( 2 )
 visible = false
 margin_left = 700.0
 margin_top = 100.0
-margin_right = 740.0
-margin_bottom = 141.0
+margin_right = 745.0
+margin_bottom = 155.0
 custom_colors/font_color = Color( 0.937255, 0.027451, 0.027451, 1 )
-custom_fonts/font = ExtResource( 7 )
+custom_fonts/font = ExtResource( 17 )
 text = "+1"
-
-[node name="exit" type="Panel" parent="."]
-visible = false
-margin_left = 390.0
-margin_top = 90.0
-margin_right = 570.0
-margin_bottom = 500.0
-
-[node name="title" type="Button" parent="exit"]
-margin_top = 140.0
-margin_right = 180.0
-margin_bottom = 240.0
-custom_fonts/font = ExtResource( 7 )
-text = "返回主页"
-script = ExtResource( 9 )
 
 [node name="back" type="Button" parent="."]
 margin_right = 130.0
 margin_bottom = 90.0
 custom_fonts/font = ExtResource( 11 )
 text = "back"
-script = ExtResource( 12 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 4 )
-
-[node name="rain" parent="." instance=ExtResource( 13 )]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.84723, 0, 0 )
-visible = false
 
 [node name="rhea" parent="." instance=ExtResource( 2 )]
 
@@ -262,9 +234,7 @@ custom_fonts/font = ExtResource( 11 )
 text = "1.5m"
 
 [connection signal="timeout" from="Timer" to="Timer" method="_on_Timer_timeout"]
-[connection signal="mouse_entered" from="Panel" to="Panel" method="_on_Panel_mouse_entered"]
 [connection signal="visibility_changed" from="Panel" to="Panel" method="_on_Panel_visibility_changed"]
-[connection signal="pressed" from="Panel/re_start" to="Panel/re_start" method="_on_re_start_pressed"]
-[connection signal="pressed" from="Panel/title2" to="Panel/title2" method="_on_title_pressed"]
-[connection signal="pressed" from="exit/title" to="exit/title" method="_on_title_pressed"]
-[connection signal="pressed" from="back" to="back" method="_on_back_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Restart" to="Panel" method="_on_Restart_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MainMenu" to="Panel" method="_on_MainMenu_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

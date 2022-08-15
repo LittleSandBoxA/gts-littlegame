@@ -16,21 +16,18 @@ func _ready():
 	pass
 	
 func _input(event):
-	if event.is_action_pressed("backToMenu"):
-		get_tree().current_scene.get_node("exit").show()
-		
 	if event is InputEventScreenTouch and event.pressed == false:
 		clicks += 1
-		print_debug("变大！")
+		#print_debug("变大！")
 		var origin_scale = rhea.scale
 		var to_scale = origin_scale * mulit_scale
-		print_debug("原始缩放",origin_scale)
-		print_debug("变大的缩放",to_scale)
+		#print_debug("原始缩放",origin_scale)
+		#print_debug("变大的缩放",to_scale)
 		height *= mulit_scale
 		$rhea/AnimationPlayer.play("jump")
 		tween.interpolate_property(rhea,"scale",origin_scale,to_scale,0.1,Tween.TRANS_LINEAR)
 		tween.start()
-		print_debug("tween之后的大小",rhea.scale)
+		#print_debug("tween之后的大小",rhea.scale)
 		big.play()
 		var height_human = stepify(height,0.01)
 		if height < 1000:
@@ -38,4 +35,9 @@ func _input(event):
 		elif height >= 1000:
 			$height.text = str(height_human) + "km"
 		pass
+	pass
+
+func _on_back_pressed():
+# warning-ignore:return_value_discarded
+	get_tree().change_scene("res://scenes/layout/Title.tscn")
 	pass

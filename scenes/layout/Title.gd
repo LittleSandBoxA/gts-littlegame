@@ -23,7 +23,7 @@ func _on_mulit_pressed():
 
 func _on_solo_pressed():
 	EnterSound.play()
-	get_tree().change_scene("res://scenes/AI_test.tscn")
+	get_tree().change_scene("res://scenes/AITest.tscn")
 	pass
 
 #buttons2
@@ -50,7 +50,6 @@ func _on_ta_fang_pressed():
 	EnterSound.play()
 	get_tree().change_scene("res://scenes/ta_fang_mode/TaFang.tscn")
 	pass
-
 
 func _on_hand_pressed():
 	EnterSound.play()

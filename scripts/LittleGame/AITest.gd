@@ -1,9 +1,9 @@
 extends Spatial
 
-
 var Game_Over
 var World_Enviroment_Anim
 var bag
+
 func _ready():
 	bag=$bag_root
 	Game_Over=$Game_over_root
