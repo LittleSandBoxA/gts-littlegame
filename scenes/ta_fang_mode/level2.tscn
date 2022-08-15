@@ -327,7 +327,6 @@ margin_right = 114.0
 margin_bottom = 55.0
 custom_fonts/font = SubResource( 14 )
 text = "back"
-script = ExtResource( 20 )
 
 [node name="win" parent="." instance=ExtResource( 1 )]
 visible = false
@@ -387,4 +386,4 @@ visible = false
 [connection signal="area_entered" from="fall_out" to="fall_out" method="_on_fall_out_area_entered"]
 [connection signal="timeout" from="costTimer" to="costTimer" method="_on_costTimer_timeout"]
 [connection signal="pressed" from="caozuo_mode" to="caozuo_mode" method="_on_caozuo_mode_pressed"]
-[connection signal="pressed" from="back" to="back" method="_on_back_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]

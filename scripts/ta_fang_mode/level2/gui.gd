@@ -30,5 +30,5 @@ func _on_caozuo_mode_pressed():
 
 
 func _on_back_pressed():
-	get_tree().change_scene("res://scenes/ta_fang_mode/ta_fang_title.tscn")
+	
 	pass # Replace with function body.

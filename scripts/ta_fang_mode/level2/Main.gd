@@ -44,3 +44,7 @@ func _on_Timer_timeout():
 	rheaInstance.scale = Vector3(8,8,8)
 	$BornEnemy.add_child(rheaInstance)
 	pass
+
+func _on_back_pressed():
+	get_tree().change_scene("res://scenes/ta_fang_mode/TaFang.tscn")
+	pass
