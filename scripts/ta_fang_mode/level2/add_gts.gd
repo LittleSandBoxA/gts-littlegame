@@ -15,17 +15,16 @@ var tip_anim
 
 func _ready():
 	root=find_parent("Level2")
-	gts_count_display_root=root.get_node("bo_shu")
-	gts_name_display=root.get_node("add_gts_name")
-	real_display=gts_count_display_root.get_node("gts_now")
+	gts_count_display_root = root.get_node("bo_shu")
+	gts_name_display = root.get_node("add_gts_name")
+	real_display = gts_count_display_root.get_node("gts_now")
 	print(real_display.text)
-	born_pos=root.get_node("gts_born").translation
-	tip_anim=root.get_node("tip/tip_anim")
+	born_pos = root.get_node("gts_born").translation
+	tip_anim = root.get_node("tip/tip_anim")
 	pass
-
+	
 #func _process(delta):
 #	pass
-
 
 func _on_Timer_timeout():
 #	var gts_group=get_tree().get_nodes_in_group("gts")

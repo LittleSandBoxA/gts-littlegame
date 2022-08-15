@@ -17,16 +17,16 @@ func _ready():
 
 func _process(delta):
 	if is_colliding():
-		print_debug("碰撞名称"+str(get_collider().name))
+		#print_debug("碰撞名称"+str(get_collider().name))
 		if get_collider().name=="walk":
 			emit_signal("timeStart")
 		else:
-			print_debug("没有碰撞")
+			#print_debug("没有碰撞")
 			pass
 	pass
 
 
 func _on_RayCast_timeStart():
 	ball_timer.myStart(4)
-	print_debug("开始timer")
+	#print_debug("开始timer")
 	pass
