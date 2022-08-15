@@ -39,20 +39,20 @@ rect_rotation = -135.0
 rect_scale = Vector2( 1, 0.25 )
 
 [node name="level_1" type="Button" parent="."]
-margin_left = 120.0
-margin_top = 380.0
-margin_right = 300.0
-margin_bottom = 490.0
+margin_left = 144.163
+margin_top = 413.0
+margin_right = 275.163
+margin_bottom = 458.0
 custom_fonts/font = ExtResource( 1 )
-text = "level_1"
+text = "level1"
 
 [node name="level_2" type="Button" parent="."]
-margin_left = 410.0
-margin_top = 200.0
-margin_right = 590.0
-margin_bottom = 310.0
+margin_left = 397.0
+margin_top = 209.406
+margin_right = 528.0
+margin_bottom = 255.406
 custom_fonts/font = ExtResource( 1 )
-text = "level_2"
+text = "level2"
 
 [node name="Label2" type="Label" parent="."]
 margin_left = 1012.23

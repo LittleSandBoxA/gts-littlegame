@@ -5,7 +5,7 @@ func _on_level_1_pressed():
 	pass
 	
 func _on_level_2_pressed():
-	get_tree().change_scene("res://scenes/ta_fang_mode/level2.tscn")
+	get_tree().change_scene("res://scenes/ta_fang_mode/Level2.tscn")
 	pass
 
 func _on_coin_level_pressed():
