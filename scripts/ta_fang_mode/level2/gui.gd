@@ -1,16 +1,11 @@
 extends Button
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var cam
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	var root=find_parent("level2")
-	cam=root.get_node("Camera")
+	var root = find_parent("Level2")
+	cam = root.get_node("Camera")
 	pass 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if self.pressed and self.name=="up":
 		cam.translate(Vector3(0,0,-3*delta))
@@ -31,7 +26,7 @@ func _process(delta):
 
 func _on_caozuo_mode_pressed():
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	pass # Replace with function body.
+	pass
 
 
 func _on_back_pressed():

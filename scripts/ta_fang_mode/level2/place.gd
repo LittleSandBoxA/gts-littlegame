@@ -26,20 +26,20 @@ func _ready():
 		display=get_tree().current_scene.get_node("tower_static")
 		child_count=get_child_count()
 		print_debug(child_count)
-	if scene=="level2":
-		root=find_parent("level2")
-		place_root=get_parent()
+	if scene == "Level2":
+		root = find_parent("Level2")
+		place_root = get_parent()
 
 		#tower_btn=root.get_node("tower_btn")
-		display=get_tree().current_scene.get_node("tower_static")
-		self_pos=self.translation
-		child_count=get_child_count()
+		display = get_tree().current_scene.get_node("tower_static")
+		self_pos = self.translation
+		child_count = get_child_count()
 	pass 
 
 
 func _process(delta): 
-	child_count=get_child_count()
-	now_cost_node=root.get_node("costTimer")
+	child_count = get_child_count()
+	now_cost_node = root.get_node("costTimer")
 	cost=root.get_node("costTimer").real_cost
 	#print("childs:"+""+str(child_count))
 	pass # Replace with function body.

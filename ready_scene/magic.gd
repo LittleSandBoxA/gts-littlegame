@@ -33,25 +33,25 @@ func add_ball():
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	gts_rains=get_tree().get_nodes_in_group("gts")
-	gts_group_length=len(gts_rains)
-	if gts_group_length>1:
-		print_debug("有rain的gts存在")
-		print_debug("数组长度"+str(gts_group_length))
-		#减去自带的node
-		#get_class().get_base_dir()
-		real_length=len(gts_rains)-1
-		for index in range(1,gts_group_length):
-			#print_debug("index"+str(index))
-			var gts=gts_rains[index].get_node("RigidBody/亞北ネル/亞北ネル_arm/Skeleton")
-			var distance=self.translation.distance_to(gts.translation)
-			print_debug("距离："+str(distance))
-			if distance<30:
-				attack_anim.play("magic_attack")
-				#gts.life_up(7)
-				#print_debug("gts的生命提升到7")
-				if gts.scale.x<2:
-					gts.scale.x+=0.05
-					gts.scale.y+=0.05
-					gts.scale.z+=0.05
+#	gts_rains=get_tree().get_nodes_in_group("gts")
+#	gts_group_length=len(gts_rains)
+#	if gts_group_length>1:
+#		print_debug("有rain的gts存在")
+#		print_debug("数组长度"+str(gts_group_length))
+#		#减去自带的node
+#		#get_class().get_base_dir()
+#		real_length=len(gts_rains)-1
+#		for index in range(1,gts_group_length):
+#			#print_debug("index"+str(index))
+#			var gts=gts_rains[index].get_node("RigidBody/亞北ネル/亞北ネル_arm/Skeleton")
+#			var distance=self.translation.distance_to(gts.translation)
+#			print_debug("距离："+str(distance))
+#			if distance<30:
+#				attack_anim.play("magic_attack")
+#				#gts.life_up(7)
+#				#print_debug("gts的生命提升到7")
+#				if gts.scale.x<2:
+#					gts.scale.x+=0.05
+#					gts.scale.y+=0.05
+#					gts.scale.z+=0.05
 	pass

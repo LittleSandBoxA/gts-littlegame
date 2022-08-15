@@ -8,14 +8,13 @@ var pos
 var ball_timer
 var attack=0
 signal timeStart
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	root=get_parent().get_parent()
 	pos=root.get_node("Position3D")
 	ball_timer=root.get_node("Timer")
-	pass # Replace with function body.
+	pass 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if is_colliding():
 		print_debug("碰撞名称"+str(get_collider().name))
@@ -30,4 +29,4 @@ func _process(delta):
 func _on_RayCast_timeStart():
 	ball_timer.myStart(4)
 	print_debug("开始timer")
-	pass # Replace with function body.
+	pass

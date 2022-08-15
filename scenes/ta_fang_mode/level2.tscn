@@ -1,29 +1,30 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=39 format=2]
 
-[ext_resource path="res://scripts/ta_fang_mode/level2/tower_Ram_List.gd" type="Script" id=1]
-[ext_resource path="res://block.meshlib" type="MeshLibrary" id=2]
-[ext_resource path="res://ready_scene/bo_shu.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scripts/ta_fang_mode/level2/place_root.gd" type="Script" id=5]
+[ext_resource path="res://ready_scene/win.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ready_scene/bo_shu.tscn" type="PackedScene" id=2]
+[ext_resource path="res://ready_scene/ta_fang_mode/lost.tscn" type="PackedScene" id=3]
+[ext_resource path="res://ready_scene/life.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ready_scene/pause_label.tscn" type="PackedScene" id=5]
 [ext_resource path="res://ready_scene/Godot_place.tscn" type="PackedScene" id=6]
-[ext_resource path="res://ready_scene/pause_label.tscn" type="PackedScene" id=7]
-[ext_resource path="res://assets/UI/continue.png" type="Texture" id=8]
-[ext_resource path="res://assets/UI/pause.png" type="Texture" id=9]
-[ext_resource path="res://scripts/ta_fang_mode/level2/xian_shi_ta_x.gd" type="Script" id=11]
-[ext_resource path="res://scripts/ta_fang_mode/level2/add_gts.gd" type="Script" id=12]
-[ext_resource path="res://sounds/level/void - Harbinger.wav" type="AudioStream" id=13]
-[ext_resource path="res://scripts/ta_fang_mode/level2/fall_out.gd" type="Script" id=14]
-[ext_resource path="res://images/back6.jpg" type="Texture" id=15]
-[ext_resource path="res://sounds/slide_down.wav" type="AudioStream" id=16]
-[ext_resource path="res://fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Regular.ttf" type="DynamicFontData" id=17]
-[ext_resource path="res://fonts/font.tres" type="DynamicFont" id=18]
-[ext_resource path="res://scripts/ta_fang_mode/level2/gui.gd" type="Script" id=19]
-[ext_resource path="res://scripts/ta_fang_mode/level2/CostTimer.gd" type="Script" id=20]
-[ext_resource path="res://assets/UI/energy.png" type="Texture" id=21]
-[ext_resource path="res://fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Bold.ttf" type="DynamicFontData" id=22]
-[ext_resource path="res://ready_scene/win.tscn" type="PackedScene" id=23]
-[ext_resource path="res://ready_scene/life.tscn" type="PackedScene" id=24]
-[ext_resource path="res://ready_scene/ta_fang_mode/lost.tscn" type="PackedScene" id=25]
-[ext_resource path="res://fonts/SIMLI.TTF" type="DynamicFontData" id=26]
+[ext_resource path="res://fonts/font.tres" type="DynamicFont" id=7]
+[ext_resource path="res://sounds/level/void - Harbinger.wav" type="AudioStream" id=8]
+[ext_resource path="res://sounds/slide_down.wav" type="AudioStream" id=9]
+[ext_resource path="res://fonts/SIMLI.TTF" type="DynamicFontData" id=10]
+[ext_resource path="res://fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Bold.ttf" type="DynamicFontData" id=11]
+[ext_resource path="res://fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Regular.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://assets/UI/pause.png" type="Texture" id=13]
+[ext_resource path="res://assets/UI/energy.png" type="Texture" id=14]
+[ext_resource path="res://assets/UI/continue.png" type="Texture" id=15]
+[ext_resource path="res://images/back6.jpg" type="Texture" id=16]
+[ext_resource path="res://scripts/ta_fang_mode/level2/CostTimer.gd" type="Script" id=17]
+[ext_resource path="res://scripts/ta_fang_mode/level2/add_gts.gd" type="Script" id=18]
+[ext_resource path="res://scripts/ta_fang_mode/level2/Main.gd" type="Script" id=19]
+[ext_resource path="res://scripts/ta_fang_mode/level2/gui.gd" type="Script" id=20]
+[ext_resource path="res://scripts/ta_fang_mode/level2/fall_out.gd" type="Script" id=21]
+[ext_resource path="res://scripts/ta_fang_mode/level2/place_root.gd" type="Script" id=22]
+[ext_resource path="res://scripts/ta_fang_mode/level2/xian_shi_ta_x.gd" type="Script" id=23]
+[ext_resource path="res://block.meshlib" type="MeshLibrary" id=24]
+[ext_resource path="res://ready_scene/models/character/rhea/rhea_spatial.tscn" type="PackedScene" id=25]
 
 [sub_resource type="ArrayMesh" id=1]
 surfaces/0 = {
@@ -49,19 +50,19 @@ extents = Vector3( 28.8051, 1, 43.2292 )
 
 [sub_resource type="DynamicFont" id=5]
 size = 90
-font_data = ExtResource( 17 )
+font_data = ExtResource( 12 )
 
 [sub_resource type="DynamicFont" id=15]
 size = 40
-font_data = ExtResource( 17 )
+font_data = ExtResource( 12 )
 
-[sub_resource type="DynamicFont" id=7]
-size = 90
-font_data = ExtResource( 17 )
+[sub_resource type="DynamicFont" id=16]
+size = 40
+font_data = ExtResource( 12 )
 
 [sub_resource type="DynamicFont" id=14]
 size = 40
-font_data = ExtResource( 22 )
+font_data = ExtResource( 11 )
 
 [sub_resource type="ProceduralSky" id=9]
 
@@ -72,7 +73,7 @@ background_color = Color( 0.760784, 0.635294, 0.635294, 1 )
 
 [sub_resource type="DynamicFont" id=12]
 size = 50
-font_data = ExtResource( 26 )
+font_data = ExtResource( 10 )
 
 [sub_resource type="StyleBoxFlat" id=11]
 bg_color = Color( 0.443137, 0.439216, 0.439216, 1 )
@@ -105,11 +106,11 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[node name="level2" type="Spatial"]
-script = ExtResource( 1 )
+[node name="Level2" type="Spatial"]
+script = ExtResource( 19 )
 
 [node name="GridMap" type="GridMap" parent="."]
-mesh_library = ExtResource( 2 )
+mesh_library = ExtResource( 24 )
 cell_size = Vector3( 1, 1, 1 )
 collision_layer = 1048575
 data = {
@@ -123,14 +124,14 @@ __meta__ = {
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 8.9407e-08, -0.898641, 0.438685, -0.00198974, 0.438684, 0.898639, -0.999998, -0.000872948, -0.00178802, 11.1401, 32.4585, -16.8899 )
 
-[node name="bo_shu" parent="." instance=ExtResource( 4 )]
+[node name="bo_shu" parent="." instance=ExtResource( 2 )]
 margin_left = 350.0
 margin_top = 10.0
 margin_right = 390.0
 margin_bottom = 50.0
 
 [node name="place" type="Spatial" parent="."]
-script = ExtResource( 5 )
+script = ExtResource( 22 )
 
 [node name="tower_place_root2" parent="place" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.413166, 0.46699, 5.75213 )
@@ -157,7 +158,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.413166, 0.682254, -30.1391 )
 [node name="tower_place_root9" parent="place" instance=ExtResource( 6 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.20483, 0.682254, -8.51882 )
 
-[node name="pause_label" parent="." instance=ExtResource( 7 )]
+[node name="pause_label" parent="." instance=ExtResource( 5 )]
 visible = false
 margin_left = 463.156
 margin_top = 10.0
@@ -171,13 +172,13 @@ margin_right = 173.0
 margin_bottom = 38.0
 rect_scale = Vector2( 2.19465, 2.19465 )
 toggle_mode = true
-texture_normal = ExtResource( 8 )
-texture_pressed = ExtResource( 9 )
+texture_normal = ExtResource( 15 )
+texture_pressed = ExtResource( 13 )
 expand = true
 
 [node name="tower_static" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 40.7953 )
-script = ExtResource( 11 )
+script = ExtResource( 23 )
 
 [node name="MeshInstance" type="MeshInstance" parent="tower_static"]
 mesh = SubResource( 1 )
@@ -190,10 +191,10 @@ shape = SubResource( 2 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 8.0
 autostart = true
-script = ExtResource( 12 )
+script = ExtResource( 18 )
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 13 )
+stream = ExtResource( 8 )
 autoplay = true
 
 [node name="gts_born" type="Position3D" parent="."]
@@ -209,7 +210,7 @@ shape = SubResource( 3 )
 
 [node name="fall_out" type="Area" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.9211, -21.4415 )
-script = ExtResource( 14 )
+script = ExtResource( 21 )
 
 [node name="StaticBody" type="StaticBody" parent="fall_out"]
 
@@ -224,10 +225,10 @@ shape = SubResource( 3 )
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
 visible = false
 pixel_size = 0.05
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 
 [node name="hit" type="AudioStreamPlayer" parent="fall_out"]
-stream = ExtResource( 16 )
+stream = ExtResource( 9 )
 
 [node name="dies2" type="Label" parent="."]
 margin_left = 1480.0
@@ -249,36 +250,36 @@ margin_left = -479.6
 margin_top = 410.0
 margin_right = -239.6
 margin_bottom = 590.0
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 7 )
 text = "↑"
-script = ExtResource( 19 )
+script = ExtResource( 20 )
 
 [node name="left" type="Button" parent="."]
 margin_left = -729.6
 margin_top = 540.0
 margin_right = -479.6
 margin_bottom = 720.0
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 7 )
 text = "←"
-script = ExtResource( 19 )
+script = ExtResource( 20 )
 
 [node name="right" type="Button" parent="."]
 margin_left = -259.6
 margin_top = 540.0
 margin_right = -39.6002
 margin_bottom = 720.0
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 7 )
 text = "→"
-script = ExtResource( 19 )
+script = ExtResource( 20 )
 
 [node name="down" type="Button" parent="."]
 margin_left = -489.6
 margin_top = 690.0
 margin_right = -239.6
 margin_bottom = 870.0
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 7 )
 text = "↓"
-script = ExtResource( 19 )
+script = ExtResource( 20 )
 
 [node name="x2" type="Button" parent="."]
 margin_left = 249.0
@@ -288,44 +289,47 @@ margin_bottom = 65.0
 custom_fonts/font = SubResource( 15 )
 toggle_mode = true
 text = "x1"
-script = ExtResource( 19 )
+script = ExtResource( 20 )
 
 [node name="costTimer" type="Timer" parent="."]
 autostart = true
-script = ExtResource( 20 )
+script = ExtResource( 17 )
 
-[node name="spr" type="Sprite" parent="costTimer"]
-position = Vector2( 1720, 760 )
-scale = Vector2( 2.03125, 2.0625 )
-texture = ExtResource( 21 )
+[node name="spr" type="TextureRect" parent="costTimer"]
+margin_left = 1156.74
+margin_top = 676.648
+margin_right = 1192.74
+margin_bottom = 712.648
+texture = ExtResource( 14 )
+expand = true
 
 [node name="cost" type="Label" parent="costTimer"]
-margin_left = 1790.0
-margin_top = 700.0
-margin_right = 1854.0
-margin_bottom = 809.0
+margin_left = 1199.0
+margin_top = 669.0
+margin_right = 1280.0
+margin_bottom = 718.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 16 )
 text = "0"
 
 [node name="caozuo_mode" type="Button" parent="."]
 margin_left = 1660.0
 margin_top = 410.0
-margin_right = 1910.0
-margin_bottom = 590.0
-custom_fonts/font = ExtResource( 18 )
+margin_right = 1736.0
+margin_bottom = 456.0
+custom_fonts/font = ExtResource( 7 )
 toggle_mode = true
 text = "显示鼠标"
-script = ExtResource( 19 )
+script = ExtResource( 20 )
 
 [node name="back" type="Button" parent="."]
 margin_right = 114.0
 margin_bottom = 55.0
 custom_fonts/font = SubResource( 14 )
 text = "back"
-script = ExtResource( 19 )
+script = ExtResource( 20 )
 
-[node name="win" parent="." instance=ExtResource( 23 )]
+[node name="win" parent="." instance=ExtResource( 1 )]
 visible = false
 
 [node name="add_gts_name" type="Label" parent="."]
@@ -333,23 +337,22 @@ margin_left = 1030.0
 margin_top = 40.0
 margin_right = 1130.0
 margin_bottom = 81.0
-custom_fonts/font = ExtResource( 18 )
+custom_fonts/font = ExtResource( 7 )
 text = "name:"
 
-[node name="life_sprite3D" parent="." instance=ExtResource( 24 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.28626, 9.23347, 13.6851 )
+[node name="life_sprite3D" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 0.513347, -0.858181, 0, 0.858181, 0.513347, -7.28626, 9.23347, 13.6851 )
 
-[node name="lost" parent="." instance=ExtResource( 25 )]
+[node name="lost" parent="." instance=ExtResource( 3 )]
 visible = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 10 )
 
 [node name="tip" type="Label" parent="."]
-modulate = Color( 1, 1, 1, 0 )
-margin_left = 1420.0
+margin_left = 1920.0
 margin_top = 230.0
-margin_right = 1920.0
+margin_right = 2420.0
 margin_bottom = 290.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 12 )
@@ -360,6 +363,13 @@ text = "敌方术士，请小心应对"
 anims/tip_anim = SubResource( 13 )
 
 [node name="gtsGroup" type="Node" parent="." groups=["gts"]]
+
+[node name="BornEnemy" type="Position3D" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.35033, 3.90198, -29.5722 )
+
+[node name="rhea" parent="BornEnemy" instance=ExtResource( 25 )]
+transform = Transform( 8, 0, 0, 0, 8, 0, 0, 0, 8, -0.917467, -2.99284, 0 )
+visible = false
 
 [connection signal="mouse_exited" from="place/tower_place_root2" to="place/tower_place_root2" method="_on_tower_place_root_mouse_exited"]
 [connection signal="mouse_exited" from="place/tower_place_root3" to="place/tower_place_root3" method="_on_tower_place_root_mouse_exited"]
@@ -373,7 +383,7 @@ anims/tip_anim = SubResource( 13 )
 [connection signal="toggled" from="pause" to="." method="_on_pause_toggled"]
 [connection signal="mouse_entered" from="tower_static" to="tower_static" method="_on_tower_static_mouse_entered"]
 [connection signal="mouse_exited" from="tower_static" to="tower_static" method="_on_tower_static_mouse_exited"]
-[connection signal="timeout" from="Timer" to="Timer" method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="area_entered" from="fall_out" to="fall_out" method="_on_fall_out_area_entered"]
 [connection signal="timeout" from="costTimer" to="costTimer" method="_on_costTimer_timeout"]
 [connection signal="pressed" from="caozuo_mode" to="caozuo_mode" method="_on_caozuo_mode_pressed"]

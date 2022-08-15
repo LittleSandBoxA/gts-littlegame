@@ -17,9 +17,9 @@ func _ready():
 		life_node=get_tree().get_nodes_in_group("life")
 		lost_node=root.get_node("lost")
 		hit_sound=$hit
-	pass # Replace with function body.
+	pass 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	#print_debug((""+life_index)
 	if life==0:
@@ -39,4 +39,4 @@ func _on_fall_out_area_entered(area):
 			life_node[life_index].queue_free()
 			life_index+=1
 		area.get_parent().get_parent().queue_free()
-	pass # Replace with function body.
+	pass
