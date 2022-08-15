@@ -63,9 +63,10 @@ func _process(delta):
 #		rotate_y(2*delta)
 #	if Input.is_action_pressed("rotate_right"):
 #		rotate_y(-2*delta)
-#	if Input.is_action_pressed("walk") and Input.is_action_pressed("run_faster"):
-#		move_and_slide(Vector3(0,0,20))
-#		print("加速跑")	
+	if (vel.z == 1 or vel.z == -1) and Input.is_action_pressed("run_faster"):
+		print_debug("加速跑")
+		speed = 4
+		$rhea/rhea/AnimationPlayer.play("有力的女性跑步")
 #	if Input.is_action_pressed("look_behind"):
 #		cam_back.make_current()
 #	if Input.is_action_just_released("look_behind"):
@@ -91,7 +92,8 @@ func _input(event):
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
 		pass
 	if event.is_action_pressed("walk"):
-		$rhea/rhea/AnimationPlayer.play("女性走路(气质001) 1800帧 可循环_bone")
+		$rhea/rhea/AnimationPlayer.play("女性走路气质001")
 	if event.is_action_released("walk"):
 		$rhea/rhea/AnimationPlayer.stop()
+		speed = 2
 	pass

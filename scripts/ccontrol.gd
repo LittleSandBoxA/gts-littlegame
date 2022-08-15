@@ -22,7 +22,6 @@ func _input(event):
 		Game_Over.show()
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
-
 func _on_Menu_pressed():
 	$Game_over_root.show()
 	pass
