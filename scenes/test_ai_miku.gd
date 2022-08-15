@@ -5,7 +5,6 @@ var grabState=false
 var cam_back
 var cam
 var root
-var score_display
 var weight_display
 var sound_level
 var Item
@@ -19,11 +18,13 @@ export var speed = 2 #变大后的移动速度
 var player
 var distance_to_gts
 var command_box
-var New_AI
+var height = 1.5
 onready var tween = $Tween
-
+signal set_height
 var vel = Vector3(0,0,0)
 func _ready():
+	if get_tree().current_scene.name == "AI_test":
+		connect("set_height",get_parent().get_node("score_root"),"_set_height")
 #	root=find_parent("root")
 #	player=get_node("miku")
 #
@@ -49,16 +50,13 @@ func _physics_process(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	vel.z = Input.get_action_strength("walk") - Input.get_action_strength("walk_back")
-	print_debug(vel)
+	#print_debug(vel)
 	#移动速度
 	#speed=anim.moveSpeed
 	#print("实时速度"+str(speed*delta))
 	#distance_to_gts=self.translation.distance_to(New_AI.translation)
 	#size=player.get_scale()
 	#bug修复 应该使用move and slide
-#	if Input.is_action_pressed("walk"):
-#		move_and_slide(Vector3(0,0,speed).rotated(Vector3(0,1,0),deg2rad(rotation_degrees.y)))
-#		anim.play("walk")
 #	if Input.is_action_pressed("walk_back"):
 #		move_and_slide(Vector3(0,0,-speed))
 #	if Input.is_action_pressed("rotate_left"):
@@ -73,14 +71,25 @@ func _process(delta):
 #	if Input.is_action_just_released("look_behind"):
 #		cam.make_current()
 	#weight_display.text=str("体重"+str(anim.weight))
-	#score_display.text=str("分数"+str(anim.score))
+	#变小
+	if Input.is_action_pressed("z"):
+		self.scale *= 0.99
+		if height > 0:
+			height -= 0.9
+			speed -= 1.05
+			emit_signal("set_height",Utils.humanize_size(height))
+	#变大
+	if Input.is_action_pressed("x"):
+		self.scale *= 1.01
+		speed += 1.05
+		height = 1.5*self.scale.x
+		emit_signal("set_height",Utils.humanize_size(height))
 	pass
+
 func _input(event):
+	#这个是grab
 	if event is InputEventMouseButton and event.is_pressed() and event.button_index == BUTTON_LEFT:
-		var oldScale = self.scale
-		var newScale = oldScale *1.5
-		tween.interpolate_property(self,"scale",oldScale,newScale, 0.5,Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-		tween.start()
+		pass
 	if event.is_action_pressed("walk"):
 		$rhea/rhea/AnimationPlayer.play("女性走路(气质001) 1800帧 可循环_bone")
 	if event.is_action_released("walk"):

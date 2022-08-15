@@ -1,8 +1,9 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://scripts/ccontrol.gd" type="Script" id=1]
 [ext_resource path="res://scenes/test_ai_miku.gd" type="Script" id=2]
 [ext_resource path="res://ready_scene/models/character/rhea/rhea_spatial.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/layout/score_root.gd" type="Script" id=4]
 [ext_resource path="res://scenes/tree.tscn" type="PackedScene" id=8]
 [ext_resource path="res://images/gts_background.jpg" type="Texture" id=9]
 [ext_resource path="res://scenes/layout/win.tscn" type="PackedScene" id=10]
@@ -34,7 +35,7 @@
 [sub_resource type="BoxShape" id=9]
 
 [sub_resource type="BoxShape" id=10]
-extents = Vector3( 81.1429, 0.388851, 101.077 )
+extents = Vector3( 1000, 0.389, 1000 )
 
 [sub_resource type="BoxShape" id=6]
 extents = Vector3( 20, 20, 20 )
@@ -83,7 +84,7 @@ __meta__ = {
 }
 
 [node name="Sprite3D" type="Sprite3D" parent="StaticBody"]
-transform = Transform( 20, 0, 0, 0, -8.74228e-07, -20, 0, 20, -8.74228e-07, 0, 0, 0 )
+transform = Transform( 1000, 0, 0, 0, -4.37114e-05, -1000, 0, 1000, -4.37114e-05, 0, 0, 0 )
 texture = ExtResource( 9 )
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
@@ -102,7 +103,8 @@ texture = ExtResource( 12 )
 visible = false
 
 [node name="score_root" parent="." instance=ExtResource( 20 )]
-position = Vector2( 217.293, 11.3894 )
+position = Vector2( 1.8526, -1.43442 )
+script = ExtResource( 4 )
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 600.0

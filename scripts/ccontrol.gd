@@ -4,13 +4,12 @@ extends Spatial
 var Game_Over
 var World_Enviroment_Anim
 var bag
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	bag=$bag_root
 	Game_Over=$Game_over_root
 	#World_Enviroment_Anim=$EnviromentAnim
 	#World_Enviroment_Anim.play("day to night")
-	pass # Replace with function body.
+	pass
 
 #func _process(delta):
 #	pass
