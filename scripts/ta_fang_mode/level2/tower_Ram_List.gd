@@ -27,3 +27,14 @@ func _process(delta):
 		my_pressed=true
 		win.show()
 	pass
+
+func _on_pause_toggled(button_pressed):
+	$pause_label.visible = button_pressed
+	pass
+
+func _on_pause_label_visibility_changed():
+	if $pause_label.visible:
+		get_tree().paused = true
+	else:
+		get_tree().paused = false
+	pass 

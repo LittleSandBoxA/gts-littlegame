@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://scripts/ta_fang_mode/level2/tower_Ram_List.gd" type="Script" id=1]
 [ext_resource path="res://block.meshlib" type="MeshLibrary" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://ready_scene/pause_label.tscn" type="PackedScene" id=7]
 [ext_resource path="res://assets/UI/continue.png" type="Texture" id=8]
 [ext_resource path="res://assets/UI/pause.png" type="Texture" id=9]
-[ext_resource path="res://scripts/ta_fang_mode/pause_display.gd" type="Script" id=10]
 [ext_resource path="res://scripts/ta_fang_mode/level2/xian_shi_ta_x.gd" type="Script" id=11]
 [ext_resource path="res://scripts/ta_fang_mode/level2/add_gts.gd" type="Script" id=12]
 [ext_resource path="res://sounds/level/void - Harbinger.wav" type="AudioStream" id=13]
@@ -159,10 +158,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.413166, 0.682254, -30.1391 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.20483, 0.682254, -8.51882 )
 
 [node name="pause_label" parent="." instance=ExtResource( 7 )]
-margin_left = 760.0
-margin_top = 490.0
-margin_right = 991.0
-margin_bottom = 529.0
+visible = false
+margin_left = 463.156
+margin_top = 10.0
+margin_right = 694.156
+margin_bottom = 49.0
 
 [node name="pause" type="TextureButton" parent="."]
 pause_mode = 2
@@ -174,10 +174,9 @@ toggle_mode = true
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 9 )
 expand = true
-script = ExtResource( 10 )
 
 [node name="tower_static" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 6 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 1, 40.7953 )
 script = ExtResource( 11 )
 
 [node name="MeshInstance" type="MeshInstance" parent="tower_static"]
@@ -370,6 +369,8 @@ anims/tip_anim = SubResource( 13 )
 [connection signal="mouse_exited" from="place/tower_place_root7" to="place/tower_place_root7" method="_on_tower_place_root_mouse_exited"]
 [connection signal="mouse_exited" from="place/tower_place_root8" to="place/tower_place_root8" method="_on_tower_place_root_mouse_exited"]
 [connection signal="mouse_exited" from="place/tower_place_root9" to="place/tower_place_root9" method="_on_tower_place_root_mouse_exited"]
+[connection signal="visibility_changed" from="pause_label" to="." method="_on_pause_label_visibility_changed"]
+[connection signal="toggled" from="pause" to="." method="_on_pause_toggled"]
 [connection signal="mouse_entered" from="tower_static" to="tower_static" method="_on_tower_static_mouse_entered"]
 [connection signal="mouse_exited" from="tower_static" to="tower_static" method="_on_tower_static_mouse_exited"]
 [connection signal="timeout" from="Timer" to="Timer" method="_on_Timer_timeout"]
