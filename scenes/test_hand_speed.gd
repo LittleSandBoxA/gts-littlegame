@@ -13,16 +13,6 @@ var height = 1.5
 #缩放倍数
 export var mulit_scale = 1.01
 func _ready():
-#	anim=get_node("anim")
-#	click_sound=get_node("sound/EnterSound")
-#	touch=InputEventScreenTouch.new()
-	pass
-
-func _process(delta):
-#	#print(can_process)
-#	can_process=get_node("Panel").can_grow
-#	if can_process==false:
-#		set_process_input(false)
 	pass
 	
 func _input(event):
