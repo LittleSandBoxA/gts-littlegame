@@ -26,7 +26,6 @@
 [ext_resource path="res://scenes/base_block_root.tscn" type="PackedScene" id=31]
 [ext_resource path="res://building.tscn" type="PackedScene" id=32]
 [ext_resource path="res://scenes/sha_mo.tscn" type="PackedScene" id=33]
-[ext_resource path="res://scripts/AI_test_Android/up.gd" type="Script" id=34]
 [ext_resource path="res://fonts/xolonium/Xolonium.tres" type="DynamicFont" id=35]
 [ext_resource path="res://scripts/AI_test_Android/grab.gd" type="Script" id=36]
 [ext_resource path="res://assets/puhuiti-rgular-40.tres" type="DynamicFont" id=37]
@@ -39,6 +38,42 @@ extents = Vector3( 1000, 0.389, 1000 )
 
 [sub_resource type="BoxShape" id=6]
 extents = Vector3( 20, 20, 20 )
+
+[sub_resource type="GDScript" id=11]
+script/source = "extends Button
+#scene:AI_test
+#手机gui触摸AI场景
+# Declare member variables here. Examples:
+# var a = 2
+# var b = \"text\"
+var miku
+var anim
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass
+#	var root=get_parent()
+#	miku=root.get_node(\"KinematicBody\")
+#	anim=root.get_node(\"KinematicBody/miku/AnimationPlayer\")
+#	pass # Replace with function body.
+#
+## Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	if self.pressed:
+#		#print(self.name)
+#		if self.name==\"up\":
+#			miku.translate(Vector3(0,0,2*delta))
+#			anim.play(\"walk\")
+#		if self.name==\"down\":
+#			miku.translate(Vector3(0,0,-2*delta))
+#		if self.name==\"left\":
+#			miku.rotate_y(1*delta)
+#		if self.name==\"right\":
+#			miku.rotate_y(-1*delta)
+#	pass
+#func _on_back_to_android_pressed():
+#	get_tree().change_scene(\"res://test/Node2D.tscn\")
+#	pass # Replace with function body.
+"
 
 [sub_resource type="ProceduralSky" id=7]
 
@@ -160,7 +195,7 @@ margin_right = -310.229
 margin_bottom = 573.87
 custom_fonts/font = ExtResource( 23 )
 text = "↑"
-script = ExtResource( 34 )
+script = SubResource( 11 )
 
 [node name="down" type="Button" parent="."]
 margin_left = -445.4
@@ -169,7 +204,7 @@ margin_right = -315.4
 margin_bottom = 853.87
 custom_fonts/font = ExtResource( 23 )
 text = "↓"
-script = ExtResource( 34 )
+script = SubResource( 11 )
 
 [node name="left" type="Button" parent="."]
 margin_left = -564.229
@@ -178,7 +213,7 @@ margin_right = -444.229
 margin_bottom = 673.87
 custom_fonts/font = ExtResource( 23 )
 text = "←"
-script = ExtResource( 34 )
+script = SubResource( 11 )
 
 [node name="right" type="Button" parent="."]
 margin_left = -310.229
@@ -187,16 +222,15 @@ margin_right = -154.229
 margin_bottom = 673.87
 custom_fonts/font = ExtResource( 23 )
 text = "→"
-script = ExtResource( 34 )
+script = SubResource( 11 )
 
-[node name="back_to_android" type="Button" parent="."]
+[node name="Menu" type="Button" parent="."]
 margin_left = -1.5817
 margin_top = 6.6371
 margin_right = 148.418
 margin_bottom = 70.6371
 custom_fonts/font = ExtResource( 37 )
-text = "返回"
-script = ExtResource( 34 )
+text = "菜单"
 
 [node name="grab" type="Button" parent="."]
 margin_left = 1480.0
@@ -586,7 +620,7 @@ transform = Transform( 10, 0, 0, 0, 9.89109, 1.47185, 0, -1.47185, 9.89109, -247
 [connection signal="pressed" from="btn_bag" to="btn_bag" method="_on_btn_bag_pressed"]
 [connection signal="area_entered" from="piano_root/piano_Area" to="piano_root/piano_Area" method="_on_piano_Area_area_entered"]
 [connection signal="area_exited" from="piano_root/piano_Area" to="piano_root/piano_Area" method="_on_piano_Area_area_exited"]
-[connection signal="pressed" from="back_to_android" to="back_to_android" method="_on_back_to_android_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]
 [connection signal="pressed" from="grab" to="grab" method="_on_grab_pressed"]
 [connection signal="area_entered" from="tinys/newTiny/tiny" to="tinys/newTiny/tiny" method="_on_Area_area_entered"]
 [connection signal="area_entered" from="tinys/newTiny2/tiny2" to="tinys/newTiny2/tiny2" method="_on_Area_area_entered"]
