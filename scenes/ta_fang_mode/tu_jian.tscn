@@ -3,7 +3,7 @@
 [ext_resource path="res://assets/puhuiti-rgular-40.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/UI/bag.png" type="Texture" id=2]
 [ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/UI/ai.png" type="Texture" id=4]
+[ext_resource path="res://assets/character/rhea.png" type="Texture" id=4]
 [ext_resource path="res://scripts/ta_fang_mode/layout/tu_jian/gui.gd" type="Script" id=5]
 [ext_resource path="res://assets/UI/magic.png" type="Texture" id=6]
 [ext_resource path="res://fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Regular.ttf" type="DynamicFontData" id=7]
@@ -21,10 +21,10 @@ font_data = ExtResource( 7 )
 script = ExtResource( 8 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 250.599
-margin_top = 601.0
-margin_right = 328.599
-margin_bottom = 656.0
+margin_left = 228.124
+margin_top = 599.502
+margin_right = 306.124
+margin_bottom = 654.502
 custom_fonts/font = ExtResource( 1 )
 text = "蕾雅"
 
@@ -41,8 +41,8 @@ text = "普通的女巨人，很常见
 autowrap = true
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 278.464, 296.265 )
-scale = Vector2( 4.3125, 8.92497 )
+position = Vector2( 285.192, 287.609 )
+scale = Vector2( 4.52272, 8.65447 )
 texture = ExtResource( 2 )
 
 [node name="Sprite2" type="Sprite" parent="."]
@@ -63,12 +63,12 @@ custom_fonts/font = ExtResource( 1 )
 text = "法师"
 
 [node name="gts_btn" type="TextureButton" parent="."]
-visible = false
-margin_left = -709.401
-margin_top = 90.0
-margin_right = 250.599
-margin_bottom = 630.0
+margin_left = 54.063
+margin_top = 37.5522
+margin_right = 491.063
+margin_bottom = 557.552
 texture_normal = ExtResource( 4 )
+expand = true
 script = ExtResource( 5 )
 
 [node name="magic_btn" type="TextureButton" parent="."]
