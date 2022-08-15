@@ -25,7 +25,6 @@ func _process(delta):
 			pass
 	pass
 
-
 func _on_RayCast_timeStart():
 	ball_timer.myStart(4)
 	#print_debug("开始timer")
