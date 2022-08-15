@@ -4,32 +4,30 @@
 [ext_resource path="res://fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Bold.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="DynamicFont" id=1]
-size = 90
+size = 40
 font_data = ExtResource( 2 )
 
 [node name="bo_shu" type="Control"]
-margin_left = 690.0
-margin_top = 20.0
-margin_right = 730.0
-margin_bottom = 60.0
+margin_right = 40.0
+margin_bottom = 40.0
 script = ExtResource( 1 )
 
 [node name="gts_now" type="Label" parent="."]
-margin_right = 134.0
-margin_bottom = 109.0
+margin_right = 30.0
+margin_bottom = 49.0
 custom_fonts/font = SubResource( 1 )
 text = "0"
 
-[node name="label" type="Label" parent="."]
-margin_left = 130.0
-margin_right = 178.0
-margin_bottom = 109.0
+[node name="split" type="Label" parent="."]
+margin_left = 39.3881
+margin_right = 60.3881
+margin_bottom = 49.0
 custom_fonts/font = SubResource( 1 )
 text = "/"
 
 [node name="gts_all" type="Label" parent="."]
-margin_left = 180.0
-margin_right = 247.0
-margin_bottom = 109.0
+margin_left = 60.3881
+margin_right = 90.3881
+margin_bottom = 49.0
 custom_fonts/font = SubResource( 1 )
 text = "0"

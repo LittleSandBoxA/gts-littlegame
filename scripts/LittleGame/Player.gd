@@ -1,7 +1,7 @@
 extends KinematicBody
 
 var anim
-var grabState=false
+var grabState = false
 onready var selfCamera = $selfCam
 onready var fpsCamera = $fps
 onready var thirdCamera = $thirdCam

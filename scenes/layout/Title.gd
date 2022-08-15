@@ -16,7 +16,6 @@ func _on_set_pressed():
 func _on_mod_button_down():
 	pass 
 
-
 func _on_mulit_pressed():
 	EnterSound.play()
 	get_tree().change_scene("res://scenes/layout/multi_room.tscn")
@@ -41,7 +40,6 @@ func _on_language_pressed():
 func _on_how_to_play_pressed():
 	$how_to_play.popup()
 	pass 
-
 
 func _on_sand_box_pressed():
 	EnterSound.play()
