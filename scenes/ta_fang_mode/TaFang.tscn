@@ -177,8 +177,6 @@ anims/open_gift = SubResource( 3 )
 [connection signal="pressed" from="sign" to="." method="_on_sign_pressed"]
 [connection signal="pressed" from="task" to="." method="_on_task_pressed"]
 [connection signal="pressed" from="tu_jian" to="." method="_on_tu_jian_pressed"]
-[connection signal="button_down" from="store" to="store" method="_on_store_button_down"]
-[connection signal="pressed" from="store" to="store" method="_on_store_pressed"]
 [connection signal="pressed" from="to_game_title" to="." method="_on_to_game_title_pressed"]
 [connection signal="pressed" from="story" to="." method="_on_story_pressed"]
 

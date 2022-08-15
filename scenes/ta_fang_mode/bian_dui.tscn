@@ -6,7 +6,7 @@
 [ext_resource path="res://ready_scene/card.tscn" type="PackedScene" id=4]
 [ext_resource path="res://fonts/font.tres" type="DynamicFont" id=5]
 [ext_resource path="res://scripts/ta_fang_mode/layout/bian_dui.gd" type="Script" id=6]
-[ext_resource path="res://scripts/ta_fang_mode/to_ta_fang_title.gd" type="Script" id=7]
+[ext_resource path="res://scripts/TaFangMode/bian_dui.gd" type="Script" id=7]
 [ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/puhuiti-rgular-40.tres" type="DynamicFont" id=10]
 
@@ -15,6 +15,7 @@ size = 200
 font_data = ExtResource( 3 )
 
 [node name="bian_dui" type="Node2D"]
+script = ExtResource( 7 )
 
 [node name="bian_dui_1" type="Node2D" parent="."]
 position = Vector2( 130, 320 )
@@ -191,7 +192,6 @@ margin_right = 152.0
 margin_bottom = 71.9797
 custom_fonts/font = ExtResource( 5 )
 text = "←"
-script = ExtResource( 7 )
 
 [node name="sound" parent="." instance=ExtResource( 8 )]
 
@@ -236,6 +236,6 @@ custom_fonts/font = ExtResource( 10 )
 text = "第四编队"
 script = ExtResource( 6 )
 
-[connection signal="pressed" from="to_title" to="to_title" method="_on_to_title_pressed"]
+[connection signal="pressed" from="to_title" to="." method="_on_to_title_pressed"]
 [connection signal="pressed" from="HBoxContainer/btn_1" to="HBoxContainer/btn_1" method="_on_btn_1_pressed"]
 [connection signal="pressed" from="HBoxContainer/btn_2" to="HBoxContainer/btn_2" method="_on_btn_2_pressed"]
