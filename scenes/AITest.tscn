@@ -25,7 +25,7 @@
 [ext_resource path="res://scripts/Area.gd" type="Script" id=23]
 [ext_resource path="res://scripts/AI_test_Android/open_bag.gd" type="Script" id=24]
 [ext_resource path="res://scripts/LittleGame/Player.gd" type="Script" id=25]
-[ext_resource path="res://scenes/layout/score_root.gd" type="Script" id=26]
+[ext_resource path="res://scripts/LittleGame/ScoreRoot.gd" type="Script" id=26]
 [ext_resource path="res://newTiny.gd" type="Script" id=27]
 [ext_resource path="res://piano_Area.gd" type="Script" id=28]
 [ext_resource path="res://scripts/LittleGame/AITest.gd" type="Script" id=29]
@@ -145,7 +145,7 @@ texture = ExtResource( 21 )
 [node name="Game_over_root" parent="." instance=ExtResource( 14 )]
 visible = false
 
-[node name="score_root" parent="." instance=ExtResource( 7 )]
+[node name="ScoreRoot" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1.8526, -1.43442 )
 script = ExtResource( 26 )
 

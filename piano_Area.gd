@@ -14,7 +14,7 @@ var piano_sound_7
 var piano_sound_8
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var root=find_parent("root")
+	#var root=find_parent("root")
 	pass
 #	piano_sound_1=root.get_node("win/sound/piano_1")
 #	piano_sound_2=root.get_node("win/sound/piano_2")

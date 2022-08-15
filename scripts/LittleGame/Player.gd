@@ -20,12 +20,16 @@ var distance_to_gts
 var command_box
 var height = 1.5
 onready var tween = $Tween
+
 signal set_height
 var vel = Vector3(0,0,0)
+
 func _ready():
-	if get_tree().current_scene.name == "AI_test":
-		connect("set_height",get_parent().get_node("score_root"),"_set_height")
-#	root=find_parent("root")
+	if get_tree().current_scene.name == "AITest":
+		var err1 = connect("set_height",get_parent().get_node("ScoreRoot"),"_set_height")
+		if err1 != OK:
+			print_debug("链接set_height信号出错了",err1)
+		
 #	command_box=root.get_node("command_root")
 #	Item=root.get_node("item_stack_root/item_Stack")
 #	ItemStack_Pointer_index=root.get_node("item_stack_root/pointer").pointer_index
@@ -34,9 +38,12 @@ func _ready():
 #	score_display=root.get_node("score_root/score_display")
 #	weight_display=root.get_node("score_root/weight_display")
 	pass
+# warning-ignore:unused_argument
 func _physics_process(delta):
+# warning-ignore:return_value_discarded
 	move_and_slide(vel *speed)
 
+# warning-ignore:unused_argument
 func _process(delta):
 	vel.z = Input.get_action_strength("walk") - Input.get_action_strength("walk_back")
 	#print_debug(vel)
