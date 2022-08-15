@@ -32,4 +32,4 @@ func _on_to_game_title_pressed():
 
 func _on_story_pressed():
 	get_tree().change_scene("res://test/story.tscn")
-	pass # Replace with function body.
+	pass

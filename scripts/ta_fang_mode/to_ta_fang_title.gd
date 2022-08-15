@@ -1,6 +1,5 @@
 extends Button
 
-
 var scene_name
 var click_sound
 #默认按钮是否被按下，默认为false
