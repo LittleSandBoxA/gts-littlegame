@@ -27,6 +27,7 @@ func _input(event):
 		print_debug("原始缩放",origin_scale)
 		print_debug("变大的缩放",to_scale)
 		height *= mulit_scale
+		$rhea/AnimationPlayer.play("jump")
 		tween.interpolate_property(rhea,"scale",origin_scale,to_scale,0.1,Tween.TRANS_LINEAR)
 		tween.start()
 		print_debug("tween之后的大小",rhea.scale)
