@@ -1,0 +1,38 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/pixiv.jpg-97ad2c8646d481e2b3ee44275b280d83.s3tc.stex"
+path.etc2="res://.import/pixiv.jpg-97ad2c8646d481e2b3ee44275b280d83.etc2.stex"
+path.etc="res://.import/pixiv.jpg-97ad2c8646d481e2b3ee44275b280d83.etc.stex"
+metadata={
+"imported_formats": [ "bptc", "s3tc", "etc2", "etc" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://assets/2D/images/pixiv.jpg"
+dest_files=[ "res://.import/pixiv.jpg-97ad2c8646d481e2b3ee44275b280d83.s3tc.stex", "res://.import/pixiv.jpg-97ad2c8646d481e2b3ee44275b280d83.etc2.stex", "res://.import/pixiv.jpg-97ad2c8646d481e2b3ee44275b280d83.etc.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=true
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+process/normal_map_invert_y=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

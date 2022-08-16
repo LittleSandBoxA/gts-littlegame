@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://assets/UI/coin.png" type="Texture" id=1]
+[ext_resource path="res://assets/2D/UI/coin.png" type="Texture" id=1]
 [ext_resource path="res://scripts/ta_fang_mode/coin.gd" type="Script" id=2]
 [ext_resource path="res://fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Regular.ttf" type="DynamicFontData" id=3]
 

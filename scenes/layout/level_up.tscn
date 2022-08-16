@@ -1,9 +1,9 @@
 [gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://fonts/font.tres" type="DynamicFont" id=1]
-[ext_resource path="res://assets/UI/coin.png" type="Texture" id=2]
+[ext_resource path="res://assets/2D/UI/coin.png" type="Texture" id=2]
 [ext_resource path="res://fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Regular.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://assets/UI/book_5.png" type="Texture" id=4]
+[ext_resource path="res://assets/2D/UI/book_5.png" type="Texture" id=4]
 [ext_resource path="res://scripts/ta_fang_mode/layout/back.gd" type="Script" id=5]
 [ext_resource path="res://scripts/ta_fang_mode/layout/x.gd" type="Script" id=6]
 [ext_resource path="res://scripts/ta_fang_mode/layout/level_up_right.gd" type="Script" id=7]

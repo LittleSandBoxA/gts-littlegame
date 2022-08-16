@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://assets/puhuiti-rgular-40.tres" type="DynamicFont" id=1]
-[ext_resource path="res://assets/UI/bag.png" type="Texture" id=2]
+[ext_resource path="res://resource/font/puhuiti-rgular-40.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/2D/UI/bag.png" type="Texture" id=2]
 [ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=3]
-[ext_resource path="res://assets/character/rhea.png" type="Texture" id=4]
+[ext_resource path="res://assets/2D/character/rhea.png" type="Texture" id=4]
 [ext_resource path="res://scripts/ta_fang_mode/layout/tu_jian/gui.gd" type="Script" id=5]
-[ext_resource path="res://assets/UI/magic.png" type="Texture" id=6]
+[ext_resource path="res://assets/2D/UI/magic.png" type="Texture" id=6]
 [ext_resource path="res://fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Regular.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://scripts/TaFangMode/tu_jian.gd" type="Script" id=8]
 

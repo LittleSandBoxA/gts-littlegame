@@ -23,6 +23,10 @@ _global_script_class_icons={
 config/name="gts"
 run/main_scene="res://scenes/layout/Title.tscn"
 
+[audio]
+
+default_bus_layout="res://resource/audio/default_bus_layout.tres"
+
 [debug]
 
 shapes/collision/contact_color=Color( 1, 0.2, 0.101961, 0.8 )
@@ -222,6 +226,7 @@ pointing/emulate_touch_from_mouse=true
 [rendering]
 
 quality/driver/driver_name="GLES2"
+quality/driver/fallback_to_gles2=true
 vram_compression/import_bptc=true
 vram_compression/import_etc=true
 environment/default_environment="res://default_env.tres"

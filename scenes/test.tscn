@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/tst.gd" type="Script" id=1]
-[ext_resource path="res://images/title.jpg" type="Texture" id=2]
+[ext_resource path="res://assets/2D/images/title.jpg" type="Texture" id=2]
 [ext_resource path="res://scenes/test.gd" type="Script" id=3]
 [ext_resource path="res://scenes/rotate.gd" type="Script" id=4]
-[ext_resource path="res://Myplayer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://test/Myplayer.tscn" type="PackedScene" id=5]
 
 
 [sub_resource type="BoxShape" id=1]

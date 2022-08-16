@@ -20,6 +20,9 @@ extents = Vector3( 0.384139, 0.324648, 1 )
 [node name="初音ミク" parent="." index="0"]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
 
+[node name="b_skirt_L" parent="初音ミク" index="2"]
+visible = false
+
 [node name="b_skirt_R" parent="初音ミク" index="3"]
 visible = false
 
@@ -93,6 +96,13 @@ visible = false
 visible = false
 
 [node name="Skeleton" parent="初音ミク/初音ミク_arm" index="0"]
+bones/3/bound_children = [ NodePath("head2") ]
+bones/8/bound_children = [ NodePath("hairL") ]
+bones/15/bound_children = [ NodePath("hairR") ]
+bones/40/bound_children = [ NodePath("hand") ]
+bones/89/bound_children = [ NodePath("body"), NodePath("body_down") ]
+bones/98/bound_children = [ NodePath("Leftfoot") ]
+bones/106/bound_children = [ NodePath("rightfoot") ]
 script = ExtResource( 2 )
 
 [node name="arm_L" parent="初音ミク/初音ミク_arm/Skeleton" index="0"]

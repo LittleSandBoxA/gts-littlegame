@@ -1,11 +1,11 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://ready_scene/Godot_place.tscn" type="PackedScene" id=1]
-[ext_resource path="res://block.meshlib" type="MeshLibrary" id=2]
+[ext_resource path="res://resource/block.meshlib" type="MeshLibrary" id=2]
 [ext_resource path="res://scripts/ta_fang_mode/coin_level/costTimer.gd" type="Script" id=3]
 [ext_resource path="res://fonts/ninety.tres" type="DynamicFont" id=4]
 [ext_resource path="res://fonts/xolonium/xolonium-fonts-4.1/ttf/Xolonium-Regular.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://assets/maujoe.camera_control/scripts/camera_control.gd" type="Script" id=6]
+[ext_resource path="res://addons/maujoe.camera_control/scripts/camera_control.gd" type="Script" id=6]
 [ext_resource path="res://ready_scene/models/buildings/attack_tower.obj" type="ArrayMesh" id=7]
 [ext_resource path="res://scripts/ta_fang_mode/coin_level/first_bo.gd" type="Script" id=8]
 [ext_resource path="res://sounds/level/void - Harbinger.wav" type="AudioStream" id=9]

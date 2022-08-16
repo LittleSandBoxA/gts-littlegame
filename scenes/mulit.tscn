@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/mulit_test.gd" type="Script" id=1]
-[ext_resource path="res://assets/simple-grass/Grass.tscn" type="PackedScene" id=2]
-[ext_resource path="res://building.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/3D/simple-grass/Grass.tscn" type="PackedScene" id=2]
+[ext_resource path="res://objects/3D/building.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/sha_mo.tscn" type="PackedScene" id=4]
-[ext_resource path="res://player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://test/player.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=6]
-[ext_resource path="res://newTiny.tscn" type="PackedScene" id=7]
+[ext_resource path="res://objects/3D/newTiny.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scripts/multi/Area.gd" type="Script" id=8]
 
 

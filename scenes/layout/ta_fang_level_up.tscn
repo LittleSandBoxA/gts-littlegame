@@ -4,8 +4,8 @@
 [ext_resource path="res://fonts/font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://scripts/ta_fang_mode/layout/add_level_exp.gd" type="Script" id=4]
-[ext_resource path="res://assets/UI/life.png" type="Texture" id=5]
-[ext_resource path="res://assets/UI/wei_yi.png" type="Texture" id=6]
+[ext_resource path="res://assets/2D/UI/life.png" type="Texture" id=5]
+[ext_resource path="res://assets/2D/UI/wei_yi.png" type="Texture" id=6]
 [ext_resource path="res://level_back.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=8]
 

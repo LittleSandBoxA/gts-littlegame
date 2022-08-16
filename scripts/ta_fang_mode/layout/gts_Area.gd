@@ -1,8 +1,6 @@
 extends Area
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+
 var die_sound
 var scene
 var life_display
@@ -10,7 +8,7 @@ var attack_tower_root
 var hits=0
 var lifes=4
 var dies_display
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	var root=find_parent("rain_walk")
 	scene=get_tree().current_scene
@@ -18,14 +16,12 @@ func _ready():
 		attack_tower_root=scene.get_node(".")
 		life_display=scene.get_node("life")
 		
-	pass # Replace with function body.
+	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if scene.name=="ta_fang_test":
 		dies_display=get_tree().current_scene.get_node("dies")
 	pass
-
 
 func _on_Area_area_entered(area):
 	#print(area.name)
@@ -51,7 +47,6 @@ func _on_Area_area_entered(area):
 			area.get_parent().queue_free()
 			get_parent().queue_free()
 	pass # Replace with function body.
-
 
 func _on_Area_body_entered(body):
 	pass # Replace with function body.
