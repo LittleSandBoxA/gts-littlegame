@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://resource/font/puhuiti-rgular-40.tres" type="DynamicFont" id=1]
 [ext_resource path="res://fonts/xolonium/Xolonium.tres" type="DynamicFont" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://sounds/level/Juhani Junkala [Chiptune Adventures] 1. Stage 1.ogg" type="AudioStream" id=19]
 [ext_resource path="res://assets/2D/images/gts_background.jpg" type="Texture" id=20]
 [ext_resource path="res://assets/2D/images/pixiv.jpg" type="Texture" id=21]
+[ext_resource path="res://objects/3D/kizunaAI.tscn" type="PackedScene" id=22]
 [ext_resource path="res://scripts/Area.gd" type="Script" id=23]
 [ext_resource path="res://scripts/AI_test_Android/open_bag.gd" type="Script" id=24]
 [ext_resource path="res://scripts/LittleGame/Player.gd" type="Script" id=25]
@@ -151,12 +152,6 @@ script = ExtResource( 26 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 600.0
 autostart = true
-
-[node name="loli_root16" parent="." instance=ExtResource( 5 )]
-transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 20, -17.8278, 0, -29.1797 )
-
-[node name="loli_root17" parent="." instance=ExtResource( 5 )]
-transform = Transform( 4.06044, 0, 9.13853, 0, 10, 0, -9.13853, 0, 4.06044, -21.9643, 0, -0.396725 )
 
 [node name="btn_bag" type="Button" parent="."]
 margin_left = 21.1168
@@ -298,28 +293,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
 script = ExtResource( 23 )
 
 [node name="CollisionShape" type="CollisionShape" parent="tinys/newTiny4/tiny3"]
-shape = SubResource( 5 )
-
-[node name="newTiny5" parent="tinys" groups=["tinys"] instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.34076, 0, -25.631 )
-script = ExtResource( 27 )
-
-[node name="tiny3" type="Area" parent="tinys/newTiny5" groups=["tinyArea"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
-script = ExtResource( 23 )
-
-[node name="CollisionShape" type="CollisionShape" parent="tinys/newTiny5/tiny3"]
-shape = SubResource( 5 )
-
-[node name="newTiny6" parent="tinys" groups=["tinys"] instance=ExtResource( 10 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.86377, 0, -31.166 )
-script = ExtResource( 27 )
-
-[node name="tiny3" type="Area" parent="tinys/newTiny6" groups=["tinyArea"]]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.985551, 0 )
-script = ExtResource( 23 )
-
-[node name="CollisionShape" type="CollisionShape" parent="tinys/newTiny6/tiny3"]
 shape = SubResource( 5 )
 
 [node name="newTiny7" parent="tinys" groups=["tinys"] instance=ExtResource( 10 )]
@@ -627,6 +600,12 @@ transform = Transform( 1, 0, 0, 0, -0.436347, 0.899779, 0, -0.899779, -0.436347,
 light_energy = 0.706
 shadow_enabled = true
 
+[node name="kizunaAI" parent="." instance=ExtResource( 22 )]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.63842, 0, 16.7351 )
+
+[node name="kizunaAI2" parent="." instance=ExtResource( 22 )]
+transform = Transform( -0.517149, 0, -0.855894, 0, 1, 0, 0.855894, 0, -0.517149, 18.0099, 0, 6.59072 )
+
 [connection signal="pressed" from="btn_bag" to="btn_bag" method="_on_btn_bag_pressed"]
 [connection signal="area_entered" from="piano_root/piano_Area" to="piano_root/piano_Area" method="_on_piano_Area_area_entered"]
 [connection signal="area_exited" from="piano_root/piano_Area" to="piano_root/piano_Area" method="_on_piano_Area_area_exited"]
@@ -636,8 +615,6 @@ shadow_enabled = true
 [connection signal="area_entered" from="tinys/newTiny2/tiny2" to="tinys/newTiny2/tiny2" method="_on_Area_area_entered"]
 [connection signal="area_entered" from="tinys/newTiny3/tiny3" to="tinys/newTiny3/tiny3" method="_on_Area_area_entered"]
 [connection signal="area_entered" from="tinys/newTiny4/tiny3" to="tinys/newTiny4/tiny3" method="_on_Area_area_entered"]
-[connection signal="area_entered" from="tinys/newTiny5/tiny3" to="tinys/newTiny5/tiny3" method="_on_Area_area_entered"]
-[connection signal="area_entered" from="tinys/newTiny6/tiny3" to="tinys/newTiny6/tiny3" method="_on_Area_area_entered"]
 [connection signal="area_entered" from="tinys/newTiny7/tiny3" to="tinys/newTiny7/tiny3" method="_on_Area_area_entered"]
 [connection signal="area_entered" from="tinys/newTiny8/tiny3" to="tinys/newTiny8/tiny3" method="_on_Area_area_entered"]
 [connection signal="area_entered" from="tinys/newTiny9/tiny3" to="tinys/newTiny9/tiny3" method="_on_Area_area_entered"]
@@ -663,3 +640,5 @@ shadow_enabled = true
 [connection signal="area_entered" from="tinys/loli_root12/tiny4" to="tinys/loli_root12/tiny4" method="_on_Area_area_entered"]
 [connection signal="area_entered" from="tinys/loli_root13/tiny4" to="tinys/loli_root13/tiny4" method="_on_Area_area_entered"]
 [connection signal="area_entered" from="tinys/loli_root14/tiny4" to="tinys/loli_root14/tiny4" method="_on_Area_area_entered"]
+
+[editable path="treeSceneRoot"]
