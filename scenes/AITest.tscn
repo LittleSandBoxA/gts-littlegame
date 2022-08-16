@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://resource/font/puhuiti-rgular-40.tres" type="DynamicFont" id=1]
 [ext_resource path="res://fonts/xolonium/Xolonium.tres" type="DynamicFont" id=2]
@@ -21,7 +21,6 @@
 [ext_resource path="res://sounds/level/Juhani Junkala [Chiptune Adventures] 1. Stage 1.ogg" type="AudioStream" id=19]
 [ext_resource path="res://assets/2D/images/gts_background.jpg" type="Texture" id=20]
 [ext_resource path="res://assets/2D/images/pixiv.jpg" type="Texture" id=21]
-[ext_resource path="res://Timer.gd" type="Script" id=22]
 [ext_resource path="res://scripts/Area.gd" type="Script" id=23]
 [ext_resource path="res://scripts/AI_test_Android/open_bag.gd" type="Script" id=24]
 [ext_resource path="res://scripts/LittleGame/Player.gd" type="Script" id=25]
@@ -152,7 +151,6 @@ script = ExtResource( 26 )
 [node name="Timer" type="Timer" parent="."]
 wait_time = 600.0
 autostart = true
-script = ExtResource( 22 )
 
 [node name="loli_root16" parent="." instance=ExtResource( 5 )]
 transform = Transform( 20, 0, 0, 0, 20, 0, 0, 0, 20, -17.8278, 0, -29.1797 )
@@ -629,7 +627,6 @@ transform = Transform( 1, 0, 0, 0, -0.436347, 0.899779, 0, -0.899779, -0.436347,
 light_energy = 0.706
 shadow_enabled = true
 
-[connection signal="timeout" from="Timer" to="Timer" method="_on_Timer_timeout"]
 [connection signal="pressed" from="btn_bag" to="btn_bag" method="_on_btn_bag_pressed"]
 [connection signal="area_entered" from="piano_root/piano_Area" to="piano_root/piano_Area" method="_on_piano_Area_area_entered"]
 [connection signal="area_exited" from="piano_root/piano_Area" to="piano_root/piano_Area" method="_on_piano_Area_area_exited"]
