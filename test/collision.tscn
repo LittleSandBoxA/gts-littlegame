@@ -28,6 +28,7 @@ shape = SubResource( 1 )
 position = Vector2( 1000, 190 )
 scale = Vector2( 7.21875, 5.1875 )
 texture = ExtResource( 2 )
+
 [connection signal="input_event" from="StaticBody2D1" to="StaticBody2D1" method="_on_StaticBody2D1_input_event"]
 [connection signal="mouse_exited" from="StaticBody2D1" to="StaticBody2D1" method="_on_StaticBody2D1_mouse_exited"]
 [connection signal="input_event" from="StaticBody2D2" to="StaticBody2D2" method="_on_StaticBody2D1_input_event"]

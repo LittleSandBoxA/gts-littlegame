@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/layout/Title.gd" type="Script" id=1]
 [ext_resource path="res://images/title.jpg" type="Texture" id=2]
 [ext_resource path="res://fonts/font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/selectSceneUI/city.png" type="Texture" id=4]
 [ext_resource path="res://fonts/SIMLI.TTF" type="DynamicFontData" id=5]
 [ext_resource path="res://scenes/layout/language/back.gd" type="Script" id=9]
 [ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=10]
@@ -15,10 +16,19 @@ font_data = ExtResource( 5 )
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="background" type="Sprite" parent="."]
+[node name="圈内封面图" type="Sprite" parent="."]
+visible = false
 position = Vector2( 643.826, 360.581 )
 scale = Vector2( 1.89045, 1.41404 )
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="圈外封面图" type="Sprite" parent="."]
+position = Vector2( 643.826, 360.581 )
+scale = Vector2( 1.89045, 1.41404 )
+texture = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }

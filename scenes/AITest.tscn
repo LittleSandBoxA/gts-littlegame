@@ -624,6 +624,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6246, 0.15154, -20.8932 )
 [node name="building13" parent="buildings" instance=ExtResource( 13 )]
 transform = Transform( 10, 0, 0, 0, 9.89109, 1.47185, 0, -1.47185, 9.89109, -247.234, 8.16854, 34.2236 )
 
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -0.436347, 0.899779, 0, -0.899779, -0.436347, 0, 4.10933, -3.70749 )
+light_energy = 0.706
+shadow_enabled = true
+
 [connection signal="timeout" from="Timer" to="Timer" method="_on_Timer_timeout"]
 [connection signal="pressed" from="btn_bag" to="btn_bag" method="_on_btn_bag_pressed"]
 [connection signal="area_entered" from="piano_root/piano_Area" to="piano_root/piano_Area" method="_on_piano_Area_area_entered"]

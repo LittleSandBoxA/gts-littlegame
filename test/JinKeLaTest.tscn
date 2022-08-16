@@ -5,6 +5,7 @@
 [node name="Spatial" type="Spatial"]
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( -0.96391, 0, -0.266229, 0, 1, 0, 0.266229, 0, -0.96391, 0, 0, 0 )
 texture = ExtResource( 1 )
 
 [node name="Camera" type="Camera" parent="."]

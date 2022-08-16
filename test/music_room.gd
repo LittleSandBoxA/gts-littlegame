@@ -1,8 +1,5 @@
 extends Node2D
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var arrow
 var move_sound
 var index=0
@@ -11,27 +8,27 @@ var bgms#节点组
 var level_1
 var level_2
 var w
-# Called when the node enters the scene tree for the first time.
+#使用数组重构 audioplayer
+onready var all_bgms = []
 func _ready():
-	move_sound=get_node("sound/EnterSound")
-	arrow=get_node("arrow")
-	bgms=get_tree().get_nodes_in_group("bgm")
-	level_1=get_node("sound/level")
-	level_2=get_node("sound/level2")
-	w=get_node("sound/bgm2")
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	move_sound = get_node("sound/EnterSound")
+	arrow = get_node("arrow")
+	bgms = get_tree().get_nodes_in_group("bgm")
+	level_1 = get_node("sound/level")
+	level_2 = get_node("sound/level2")
+	w = get_node("sound/bgm2")
+	pass
+#重构
 func _process(delta):
-	if Input.is_action_just_pressed("z") and index==0:
+	if Input.is_action_just_pressed("z") and index == 0:
 		level_2.stop()
 		w.stop()
 		level_1.play()
-	if Input.is_action_just_pressed("z") and index==1:
+	if Input.is_action_just_pressed("z") and index == 1:
 		level_1.stop()
 		w.stop()
 		level_2.play()
-	if Input.is_action_just_pressed("z") and index==2:
+	if Input.is_action_just_pressed("z") and index == 2:
 		level_1.stop()
 		level_2.stop()
 		w.play()

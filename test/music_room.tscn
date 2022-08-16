@@ -134,8 +134,8 @@ text = "back"
 script = ExtResource( 7 )
 
 [node name="rect" type="Sprite" parent="."]
-position = Vector2( 1418.67, 470 )
-rotation = 1.71685
+position = Vector2( 1229.87, 470 )
+rotation = 0.942621
 scale = Vector2( 3.15625, 3.15625 )
 texture = ExtResource( 8 )
 
