@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/hill.wav-1110d1d0a1100853ef50cf40a32b559c.sample"
+
+[deps]
+
+source_file="res://sounds/bgm/hill.wav"
+dest_files=[ "res://.import/hill.wav-1110d1d0a1100853ef50cf40a32b559c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

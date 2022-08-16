@@ -12,7 +12,7 @@ var place_tower_display
 var all_life=20
 var sha_mo
 var game_over_display
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	back=$back
 	sound=$sound/ta_fang
@@ -21,9 +21,8 @@ func _ready():
 	game_over_display=$game_over
 	sha_mo=$sand_root/StaticBody
 	place_tower_display=$ta_fang_place
-	pass # Replace with function body.
+	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	place_tower_display=$ta_fang_place.translation
 	if all_life==0:

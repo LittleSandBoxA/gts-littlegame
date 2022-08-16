@@ -33,3 +33,7 @@ func _on_to_game_title_pressed():
 func _on_story_pressed():
 	get_tree().change_scene("res://test/story.tscn")
 	pass
+
+func _on_buy_pressed():
+	get_tree().change_scene("res://scenes/ta_fang_mode/Shop.tscn")
+	pass
