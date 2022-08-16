@@ -9,13 +9,25 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "EditorInspectorPlugin",
+"class": "CameraInspectorPlugin",
+"language": "GDScript",
+"path": "res://addons/qol-camera/inspector_plugin.gd"
+}, {
 "base": "Reference",
 "class": "Utils",
 "language": "GDScript",
 "path": "res://scripts/utils.gd"
+}, {
+"base": "EditorProperty",
+"class": "ViewLockProperty",
+"language": "GDScript",
+"path": "res://addons/qol-camera/view_lock_property.gd"
 } ]
 _global_script_class_icons={
-"Utils": ""
+"CameraInspectorPlugin": "",
+"Utils": "",
+"ViewLockProperty": ""
 }
 
 [application]
@@ -37,6 +49,10 @@ window/size/width=1280
 window/size/height=720
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "res://addons/qol-camera/plugin.cfg" )
 
 [input]
 

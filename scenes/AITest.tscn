@@ -102,7 +102,7 @@ transform = Transform( 1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, 0, 0, 0 )
 [node name="fps" type="Camera" parent="Player"]
 transform = Transform( -0.111851, 0, -0.993725, 0, 1, 0, 0.993725, 0, -0.111851, 1.41946, 3.52758, 0.210223 )
 
-[node name="Camera2" type="Camera" parent="Player"]
+[node name="extra_testCam" type="Camera" parent="Player"]
 transform = Transform( -1, 2.79397e-09, 7.07805e-08, 2.05254e-08, 0.972048, 0.234783, -7.07805e-08, 0.234783, -0.972048, 1.35608, 4.19914, -3.74139 )
 
 [node name="selfCam" type="Camera" parent="Player"]
@@ -117,6 +117,10 @@ __meta__ = {
 transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.962919, -1.4916 )
 current = true
 far = 8192.0
+
+[node name="h" type="Spatial" parent="Player"]
+
+[node name="v" type="Spatial" parent="Player/h"]
 
 [node name="treeSceneRoot" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.9343, 0.39092, 18 )
@@ -601,10 +605,10 @@ light_energy = 0.706
 shadow_enabled = true
 
 [node name="kizunaAI" parent="." instance=ExtResource( 22 )]
-transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4.63842, 0, 16.7351 )
+transform = Transform( -0.390305, 0, -0.920455, 0, 1, 0, 0.920455, 0, -0.390305, 4.63842, 0, 16.7351 )
 
 [node name="kizunaAI2" parent="." instance=ExtResource( 22 )]
-transform = Transform( -0.517149, 0, -0.855894, 0, 1, 0, 0.855894, 0, -0.517149, 18.0099, 0, 6.59072 )
+transform = Transform( 0.409883, 0, -0.286154, 0, 0.5, 0, 0.286154, 0, 0.409883, 13.4151, 0, 6.59072 )
 
 [connection signal="pressed" from="btn_bag" to="btn_bag" method="_on_btn_bag_pressed"]
 [connection signal="area_entered" from="piano_root/piano_Area" to="piano_root/piano_Area" method="_on_piano_Area_area_entered"]

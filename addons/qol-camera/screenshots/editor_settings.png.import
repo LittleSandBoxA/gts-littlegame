@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/editor_settings.png-34c51882d5bc645b5126b4e9b8348067.stex"
+path="res://.import/editor_settings.png-c7a79abf1cb26a0618a1eaaa03dd9662.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/maujoe.camera_control/screenshots/editor_settings.png"
-dest_files=[ "res://.import/editor_settings.png-34c51882d5bc645b5126b4e9b8348067.stex" ]
+source_file="res://addons/qol-camera/screenshots/editor_settings.png"
+dest_files=[ "res://.import/editor_settings.png-c7a79abf1cb26a0618a1eaaa03dd9662.stex" ]
 
 [params]
 
