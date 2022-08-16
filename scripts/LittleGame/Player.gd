@@ -4,7 +4,7 @@ var anim
 var grabState = false
 onready var selfCamera = $selfCam
 onready var fpsCamera = $fps
-onready var thirdCamera = $thirdCam
+onready var thirdCamera = $CameraRoot/h/v/thirdCam
 var root
 var weight_display
 var sound_level
