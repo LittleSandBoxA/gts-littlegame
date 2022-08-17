@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/wei_yi_ta.obj-bf59381000eff1caafa1ebb08bb113ee.mesh"
+
+[deps]
+
+files=[ "res://.import/wei_yi_ta.obj-bf59381000eff1caafa1ebb08bb113ee.mesh" ]
+
+source_file="res://assets/3D/Towers/wei_yi_ta.obj"
+dest_files=[ "res://.import/wei_yi_ta.obj-bf59381000eff1caafa1ebb08bb113ee.mesh", "res://.import/wei_yi_ta.obj-bf59381000eff1caafa1ebb08bb113ee.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

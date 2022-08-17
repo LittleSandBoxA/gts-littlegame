@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/3D/KizunaAI/kizunaAI.glb" type="PackedScene" id=1]
+[ext_resource path="res://objects/3D/Character/kizunaAI.gd" type="Script" id=2]
+
+[node name="kizunaAI" instance=ExtResource( 1 )]
+transform = Transform( -0.733424, 0, 0.679764, 0, 1, 0, -0.679764, 0, -0.733424, 0, 0, 0 )
+script = ExtResource( 2 )

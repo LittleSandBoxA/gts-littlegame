@@ -1,0 +1,20 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/attack_tower.obj-7124a65fa978d1351abd27613e3c82ab.mesh"
+
+[deps]
+
+files=[ "res://.import/attack_tower.obj-7124a65fa978d1351abd27613e3c82ab.mesh" ]
+
+source_file="res://assets/3D/Towers/attack_tower.obj"
+dest_files=[ "res://.import/attack_tower.obj-7124a65fa978d1351abd27613e3c82ab.mesh", "res://.import/attack_tower.obj-7124a65fa978d1351abd27613e3c82ab.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+octahedral_compression=true
+optimize_mesh_flags=4286

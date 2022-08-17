@@ -1,8 +1,5 @@
 extends RayCast
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var root
 var pos
 var ball_timer

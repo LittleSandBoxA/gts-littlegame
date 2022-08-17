@@ -12,9 +12,8 @@ func _on_set_pressed():
 	EnterSound.play()
 	pass 
 
-
 func _on_mod_button_down():
-	pass 
+	pass
 
 func _on_mulit_pressed():
 	EnterSound.play()
@@ -26,7 +25,7 @@ func _on_solo_pressed():
 	get_tree().change_scene("res://scenes/AITest.tscn")
 	pass
 
-#buttons2
+#废弃代码
 func _on_AI_test_pressed():
 	cancelSound.play()
 	get_tree().change_scene("res://scenes/AI_test.tscn")

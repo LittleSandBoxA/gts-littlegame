@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://ready_scene/models/buildings/attack_tower.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://assets/3D/Towers/attack_tower.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://fonts/font.tres" type="DynamicFont" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://scripts/ta_fang_mode/layout/add_level_exp.gd" type="Script" id=4]

@@ -14,10 +14,10 @@ font_data = ExtResource( 3 )
 
 [node name="lost" type="Panel"]
 pause_mode = 2
-margin_left = 320.0
-margin_top = 210.0
-margin_right = 1540.0
-margin_bottom = 920.0
+margin_left = 0.459351
+margin_top = 1.45776
+margin_right = 1220.46
+margin_bottom = 711.458
 
 [node name="back" type="Button" parent="."]
 margin_left = 330.0
@@ -35,4 +35,5 @@ margin_right = 750.0
 margin_bottom = 151.0
 custom_fonts/font = SubResource( 2 )
 text = "作战失败"
+
 [connection signal="pressed" from="back" to="back" method="_on_back_pressed"]

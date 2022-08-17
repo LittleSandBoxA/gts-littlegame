@@ -4,7 +4,6 @@
 [ext_resource path="res://ready_scene/TextureButton.gd" type="Script" id=2]
 [ext_resource path="res://assets/2D/UI/slime_ball.png" type="Texture" id=3]
 
-
 [node name="bag_block_root" type="Node2D"]
 
 [node name="TextureButton" type="TextureButton" parent="."]
@@ -23,4 +22,5 @@ texture = ExtResource( 3 )
 
 [node name="Position2D" type="Position2D" parent="."]
 position = Vector2( 30, 30 )
+
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_TextureButton_pressed"]
