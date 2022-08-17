@@ -1,60 +1,47 @@
 extends Spatial
 
-var use_piano
-var piano_sound_1
-var piano_sound_2
-var piano_sound_3
-var piano_sound_4
-var piano_sound_5
-var piano_sound_6
-var piano_sound_7
-var piano_sound_8
+var use_piano = false
+onready var tuneC4 = $sound/piano_1
+onready var tuneD4 = $sound/piano_2
+onready var tuneE4 = $sound/piano_3
+onready var tuneF4 = $sound/piano_4
+onready var tuneG4 = $sound/piano_5
+onready var tuneA4 = $sound/piano_6
+onready var tuneB4 = $sound/piano_7
+onready var tuneC5 = $sound/piano_8
 
-func _ready():
-	#var root=find_parent("root")
+func _on_Area_body_entered(body):
+	if body.name == "Player":
+		tuneC4.play()
+		use_piano = true
 	pass
-#	piano_sound_1=root.get_node("win/sound/piano_1")
-#	piano_sound_2=root.get_node("win/sound/piano_2")
-#	piano_sound_3=root.get_node("win/sound/piano_3")
-#	piano_sound_4=root.get_node("win/sound/piano_4")
-#	piano_sound_5=root.get_node("win/sound/piano_5")
-#	piano_sound_6=root.get_node("win/sound/piano_6")
-#	piano_sound_7=root.get_node("win/sound/piano_7")
-#	piano_sound_8=root.get_node("win/sound/piano_8")
-#	pass # Replace with function body.
-#
-## Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	if use_piano==true and Input.is_action_just_pressed("item_stack1"):
-#		piano_sound_1.play()
-#	if use_piano==true and Input.is_action_just_pressed("item_stack2"):
-#		piano_sound_2.play()
-#	if use_piano==true and Input.is_action_just_pressed("item_stack3"):
-#		piano_sound_3.play()
-#	if use_piano==true and Input.is_action_just_pressed("item_stack4"):
-#		piano_sound_4.play()
-#	if use_piano==true and Input.is_action_just_pressed("item_stack5"):
-#		piano_sound_5.play()
-#	if use_piano==true and Input.is_action_just_pressed("item_stack6"):
-#		piano_sound_6.play()
-#	if use_piano==true and Input.is_action_just_pressed("item_stack7"):
-#		piano_sound_7.play()
-#	if use_piano==true and Input.is_action_just_pressed("item_stack8"):
-#		piano_sound_8.play()
-#	pass
-#
-#
-#func _on_piano_Area_area_entered(area):
-#	print(area.name)
-#	if area.name=="Area_miku":	
-#		print("使用钢琴")
-#		use_piano=true
-#		piano_sound_1.play()
-#	pass # Replace with function body.
-#
-#
-#func _on_piano_Area_area_exited(area):
-#	print(area.name)
-#	if area.name=="Area_miku":
-#		use_piano=false
-#	pass # Replace with function body.
+
+func _on_Area_body_exited(body):
+	if body.name == "Player":
+		use_piano = false
+	pass
+
+func _unhandled_input(event):
+	if use_piano:
+		if event is InputEventKey:
+			if event.echo == false and event.pressed:
+				match event.scancode:
+					KEY_1:
+						tuneC4.play()
+					KEY_2:
+						tuneD4.play()
+					KEY_3:
+						tuneE4.play()
+					KEY_4:
+						tuneF4.play()
+					KEY_5:
+						tuneG4.play()
+					KEY_6:
+						tuneA4.play()
+					KEY_7:
+						tuneB4.play()
+					KEY_8:
+						tuneC5.play()
+#				print_debug("echo",event.echo)
+#				print_debug("pressed",event.pressed)
+	pass

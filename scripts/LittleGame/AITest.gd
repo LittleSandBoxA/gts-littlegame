@@ -11,8 +11,6 @@ func _ready():
 	#World_Enviroment_Anim.play("day to night")
 	pass
 
-#func _process(delta):
-#	pass
 func _input(event):
 	if Input.is_action_just_pressed("E"):
 		bag.show()
