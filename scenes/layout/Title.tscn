@@ -75,13 +75,6 @@ margin_right = 916.369
 margin_bottom = 611.72
 custom_constants/separation = 9
 
-[node name="AI_test" type="Button" parent="buttons2"]
-visible = false
-margin_right = 252.0
-margin_bottom = 47.0
-custom_fonts/font = ExtResource( 18 )
-text = "AI测试"
-
 [node name="language" type="Button" parent="buttons2"]
 margin_right = 252.0
 margin_bottom = 47.0
@@ -194,7 +187,6 @@ shift+w -加速
 [connection signal="pressed" from="buttons/mulit" to="." method="_on_mulit_pressed"]
 [connection signal="button_down" from="buttons/mod" to="." method="_on_mod_button_down"]
 [connection signal="pressed" from="buttons/set" to="." method="_on_set_pressed"]
-[connection signal="pressed" from="buttons2/AI_test" to="." method="_on_AI_test_pressed"]
 [connection signal="pressed" from="buttons2/language" to="." method="_on_language_pressed"]
 [connection signal="pressed" from="buttons2/how_to_play" to="." method="_on_how_to_play_pressed"]
 [connection signal="pressed" from="buttons2/sand_box" to="." method="_on_sand_box_pressed"]

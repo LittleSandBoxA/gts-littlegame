@@ -1,4 +1,4 @@
-extends Area
+extends Spatial
 
 var use_piano
 var piano_sound_1
@@ -9,7 +9,7 @@ var piano_sound_5
 var piano_sound_6
 var piano_sound_7
 var piano_sound_8
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	#var root=find_parent("root")
 	pass

@@ -22,7 +22,7 @@ func _on_mulit_pressed():
 
 func _on_solo_pressed():
 	EnterSound.play()
-	get_tree().change_scene("res://scenes/AITest.tscn")
+	get_tree().change_scene("res://scenes/SignlePlayer.tscn")
 	pass
 
 #废弃代码
