@@ -5,8 +5,8 @@ var World_Enviroment_Anim
 var bag
 
 func _ready():
-	bag=$bag_root
-	Game_Over=$Game_over_root
+	bag = $bag_root
+	Game_Over = $Game_over_root
 	#World_Enviroment_Anim=$EnviromentAnim
 	#World_Enviroment_Anim.play("day to night")
 	pass

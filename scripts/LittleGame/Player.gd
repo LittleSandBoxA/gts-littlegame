@@ -18,19 +18,20 @@ var player
 var distance_to_gts
 var command_box
 var height = 1.5
-onready var tween = $Tween
+
 
 
 var vel = Vector3(0,0,0)
 var direction = Vector3(0,0,0)
 #加速度
 var accel = 6
-#纵向和横向速度
+#纵向速度
 var vertical_vel = 0
 var gravity = 20
 var angular_accel = 7
 signal set_height
-
+#从sizebox抄过来
+var myTransform = self.transform
 func _ready():
 	if get_tree().current_scene.name == "AITest":
 		var err1 = connect("set_height",get_parent().get_node("ScoreRoot"),"_set_height")
@@ -47,6 +48,8 @@ func _physics_process(delta):
 		if Input.is_action_pressed("run_faster"):
 			speed = run_speed
 			$rhea/AnimationPlayer.play("有力的女性跑步")
+			myTransform.origin = $rhea.global_transform.origin
+			myTransform.translated(Vector3.UP * height)
 		else:
 			speed = walk_speed
 			$rhea/AnimationPlayer.play("女性走路气质001")
@@ -54,7 +57,8 @@ func _physics_process(delta):
 		speed = 0
 		$rhea/AnimationPlayer.stop()
 		
-	vel = lerp(vel, direction * speed , delta * accel)
+	#vel = lerp(vel, direction * speed , delta * accel)
+	vel = lerp(vel, direction * speed , delta * accel *$rhea.scale.x)
 	move_and_slide(vel + Vector3.DOWN * vertical_vel, Vector3.UP)
 	if not is_on_floor():
 		vertical_vel += gravity * delta
@@ -63,23 +67,27 @@ func _physics_process(delta):
 	var mesh = $"rhea/レアV1 12/レアV1 12_arm/Skeleton/レアV1 12_mesh"
 	mesh.rotation.y = lerp_angle(mesh.rotation.y, atan2(direction.x, direction.z), delta * angular_accel)
 	pass
+	
+var sizeChangeRate = 0.7
 # warning-ignore:unused_argument
-#func _process(delta):
-#	#vel.z = Input.get_action_strength("walk") - Input.get_action_strength("walk_back")
-#	#变小
-#	if Input.is_action_pressed("z"):
-#		self.scale *= 0.99
-#		if height > 0:
-#			height -= 0.9
-#			speed -= 1.05
-#			emit_signal("set_height",Utils.humanize_size(height))
-#	#变大
-#	if Input.is_action_pressed("x"):
-#		self.scale *= 1.01
-#		speed += 1.05
-#		height = 1.5*self.scale.x
-#		emit_signal("set_height",Utils.humanize_size(height))
-#	pass
+func _process(delta):
+	#变小
+	if Input.is_action_pressed("z"):
+		$rhea.scale = $rhea.scale *(1 - sizeChangeRate * delta);
+		$CameraRoot.scale = $rhea.scale
+		$CollisionShape.scale = $rhea.scale
+		height = 1.5 * $rhea.scale.y
+		#print_debug("变化后的速度",vel)
+		emit_signal("set_height",Utils.humanize_size(height))
+	#变大
+	if Input.is_action_pressed("x"):
+		$rhea.scale = $rhea.scale *(1 + sizeChangeRate * delta)
+		$CollisionShape.scale = $rhea.scale
+		#print_debug("变化后的速度",vel)
+		$CameraRoot.scale = $rhea.scale
+		height = 1.5 * $rhea.scale.y
+		emit_signal("set_height",Utils.humanize_size(height))
+	pass
 
 #func _input(event):
 #	#测试用

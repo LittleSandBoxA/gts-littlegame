@@ -34,7 +34,7 @@
 radius = 0.410735
 
 [sub_resource type="BoxShape" id=10]
-extents = Vector3( 1000, 0.389, 1000 )
+extents = Vector3( 500, 0.5, 1000 )
 
 [sub_resource type="GDScript" id=11]
 script/source = "extends Button
@@ -85,10 +85,8 @@ extents = Vector3( 0.28794, 1, 0.215037 )
 script = ExtResource( 23 )
 
 [node name="Player" type="KinematicBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.818367, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 30.6677, 4.16831, -29.6121 )
 script = ExtResource( 22 )
-
-[node name="Tween" type="Tween" parent="Player"]
 
 [node name="CollisionShape" type="CollisionShape" parent="Player"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 1.19509, 0 )
@@ -242,6 +240,7 @@ environment = SubResource( 8 )
 
 [node name="bgm" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 19 )
+autoplay = true
 
 [node name="tinys" type="Spatial" parent="."]
 
@@ -595,7 +594,7 @@ light_energy = 0.706
 shadow_enabled = true
 
 [node name="kizunaAI2" parent="." instance=ExtResource( 11 )]
-transform = Transform( -0.484992, 0, -0.122665, 0, 0.5, 0, 0.122665, 0, -0.484992, -30.526, 0, 21.1476 )
+transform = Transform( 0.458335, 0, -0.199983, 0, 0.5, 0, 0.199983, 0, 0.458335, -30.526, 0, 21.1476 )
 
 [connection signal="pressed" from="btn_bag" to="btn_bag" method="_on_btn_bag_pressed"]
 [connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]
