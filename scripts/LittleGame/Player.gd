@@ -48,8 +48,10 @@ func _physics_process(delta):
 		if Input.is_action_pressed("run_faster"):
 			speed = run_speed
 			$rhea/AnimationPlayer.play("有力的女性跑步")
-			myTransform.origin = $rhea.global_transform.origin
-			myTransform.translated(Vector3.UP * height)
+			#抄写sizebox
+			#var world_pos = vel
+			#myTransform.origin = world_pos
+			#self.transform = myTransform.translated(Vector3.UP * height)
 		else:
 			speed = walk_speed
 			$rhea/AnimationPlayer.play("女性走路气质001")
@@ -58,7 +60,9 @@ func _physics_process(delta):
 		$rhea/AnimationPlayer.stop()
 		
 	#vel = lerp(vel, direction * speed , delta * accel)
-	vel = lerp(vel, direction * speed , delta * accel *$rhea.scale.x)
+	#使用此方法实现移动速度随缩放变化
+	speed = speed *$rhea.scale.x 
+	vel = lerp(vel, direction * speed , delta * accel)# *$rhea.scale.x)
 	move_and_slide(vel + Vector3.DOWN * vertical_vel, Vector3.UP)
 	if not is_on_floor():
 		vertical_vel += gravity * delta
@@ -73,7 +77,8 @@ var sizeChangeRate = 0.7
 func _process(delta):
 	#变小
 	if Input.is_action_pressed("z"):
-		$rhea.scale = $rhea.scale *(1 - sizeChangeRate * delta);
+		#self.scale = self.scale *(1 - sizeChangeRate * delta)
+		$rhea.scale = $rhea.scale *(1 - sizeChangeRate * delta)
 		$CameraRoot.scale = $rhea.scale
 		$CollisionShape.scale = $rhea.scale
 		height = 1.5 * $rhea.scale.y
@@ -81,6 +86,7 @@ func _process(delta):
 		emit_signal("set_height",Utils.humanize_size(height))
 	#变大
 	if Input.is_action_pressed("x"):
+		#self.scale = self.scale *(1 + sizeChangeRate * delta)
 		$rhea.scale = $rhea.scale *(1 + sizeChangeRate * delta)
 		$CollisionShape.scale = $rhea.scale
 		#print_debug("变化后的速度",vel)

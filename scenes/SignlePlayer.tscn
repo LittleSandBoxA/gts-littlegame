@@ -594,7 +594,7 @@ light_energy = 0.706
 shadow_enabled = true
 
 [node name="kizunaAI2" parent="." instance=ExtResource( 11 )]
-transform = Transform( 0.458335, 0, -0.199983, 0, 0.5, 0, 0.199983, 0, 0.458335, -30.526, 0, 21.1476 )
+transform = Transform( -0.477516, 0, -0.152007, 0, 0.5, 0, 0.152007, 0, -0.477516, -30.526, 0, 21.1476 )
 
 [connection signal="pressed" from="btn_bag" to="btn_bag" method="_on_btn_bag_pressed"]
 [connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]
