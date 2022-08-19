@@ -121,6 +121,8 @@ transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.96
 current = true
 far = 8192.0
 
+[node name="RayCast" type="RayCast" parent="Player"]
+
 [node name="treeSceneRoot" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.9343, 0.39092, 18 )
 
@@ -596,7 +598,7 @@ light_energy = 0.706
 shadow_enabled = true
 
 [node name="kizunaAI2" parent="." instance=ExtResource( 11 )]
-transform = Transform( -0.302601, 0, -0.399264, 0, 0.5, 0, 0.399264, 0, -0.302601, -30.526, 0, 21.1476 )
+transform = Transform( 0.304489, 0, -0.397827, 0, 0.5, 0, 0.397827, 0, 0.304489, -30.526, 0, 21.1476 )
 visible = false
 
 [node name="ItemStack" parent="." instance=ExtResource( 24 )]
