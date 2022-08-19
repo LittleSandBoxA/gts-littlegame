@@ -1,14 +1,12 @@
 extends Spatial
 
-var Game_Over
 var World_Enviroment_Anim
-var bag
+onready var bag = $bag_root
+onready var Menu = $Menu
+signal show_menu
 
 func _ready():
-	bag = $bag_root
-	Game_Over = $Game_over_root
-	#World_Enviroment_Anim=$EnviromentAnim
-	#World_Enviroment_Anim.play("day to night")
+	connect("show_menu",$Menu,"_show_menu")
 	pass
 
 func _input(event):
@@ -17,9 +15,13 @@ func _input(event):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		print("E")
 	if event.is_action_pressed("backToMenu"):
-		Game_Over.show()
+		emit_signal("show_menu")
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _on_Menu_pressed():
-	$Game_over_root.show()
+	Menu.show()
+	pass
+
+func _on_DebugCollisionButton_toggled(button_pressed):
+	get_tree().debug_collisions_hint = button_pressed
 	pass

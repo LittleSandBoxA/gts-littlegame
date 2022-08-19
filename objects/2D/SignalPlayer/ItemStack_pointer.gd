@@ -1,8 +1,6 @@
 extends Sprite
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+
 var root
 var sound_pointer
 var pointer_index=0
@@ -10,7 +8,7 @@ var Items#物品的节点组
 var SelectItem
 var pointer_pos
 var ray
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	pointer_pos=get_tree().get_nodes_in_group("pointer_pos")
 	root=find_parent("item_stack_root")
@@ -22,7 +20,6 @@ func _ready():
 		print(Items[i].name)"""
 	pass
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	#pan_duan_Item()
 

@@ -1,9 +1,9 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://objects/3D/CityStatic.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ready_scene/models/character/rhea/rhea_spatial.tscn" type="PackedScene" id=2]
 [ext_resource path="res://objects/3D/Trees.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scenes/layout/game_over.tscn" type="PackedScene" id=4]
+[ext_resource path="res://objects/2D/SignalPlayer/Menu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/layout/score_root.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/layout/bag_root.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/3D/Piano.tscn" type="PackedScene" id=7]
@@ -22,12 +22,11 @@
 [ext_resource path="res://scripts/Area.gd" type="Script" id=20]
 [ext_resource path="res://scripts/AI_test_Android/open_bag.gd" type="Script" id=21]
 [ext_resource path="res://scripts/LittleGame/Player.gd" type="Script" id=22]
-[ext_resource path="res://scripts/LittleGame/AITest.gd" type="Script" id=23]
+[ext_resource path="res://scripts/LittleGame/SignlePlayer.gd" type="Script" id=23]
 [ext_resource path="res://scripts/AI_test_Android/grab.gd" type="Script" id=25]
 [ext_resource path="res://objects/3D/Character/RuoYin.gd" type="Script" id=26]
 [ext_resource path="res://scripts/LittleGame/Camera.gd" type="Script" id=27]
 [ext_resource path="res://scripts/LittleGame/ScoreRoot.gd" type="Script" id=28]
-[ext_resource path="res://assets/2D/images/pixiv.jpg" type="Texture" id=29]
 [ext_resource path="res://assets/2D/images/gts_background.jpg" type="Texture" id=30]
 
 [sub_resource type="CylinderShape" id=12]
@@ -81,7 +80,7 @@ background_sky = SubResource( 7 )
 [sub_resource type="BoxShape" id=5]
 extents = Vector3( 0.28794, 1, 0.215037 )
 
-[node name="AITest" type="Spatial"]
+[node name="SinglePlayer" type="Spatial"]
 script = ExtResource( 23 )
 
 [node name="Player" type="KinematicBody" parent="."]
@@ -140,13 +139,7 @@ shape = SubResource( 10 )
 [node name="win" parent="." instance=ExtResource( 12 )]
 visible = false
 
-[node name="pixiv" type="Sprite3D" parent="."]
-pause_mode = 2
-transform = Transform( -0.468478, 0, 0.174723, 0, 0.5, 0, -0.174723, 0, -0.468478, 5.10519, 1.25491, 17.2188 )
-visible = false
-texture = ExtResource( 29 )
-
-[node name="Game_over_root" parent="." instance=ExtResource( 4 )]
+[node name="Menu" parent="." instance=ExtResource( 4 )]
 visible = false
 
 [node name="ScoreRoot" parent="." instance=ExtResource( 5 )]
@@ -157,14 +150,30 @@ script = ExtResource( 28 )
 wait_time = 600.0
 autostart = true
 
-[node name="btn_bag" type="Button" parent="."]
-margin_left = 21.1168
-margin_top = 97.4584
-margin_right = 111.117
-margin_bottom = 158.458
+[node name="MenuButton" type="Button" parent="."]
+margin_left = -2.0
+margin_top = 7.0
+margin_right = 92.0
+margin_bottom = 68.0
+custom_fonts/font = ExtResource( 16 )
+text = "菜单"
+
+[node name="BagButton" type="Button" parent="."]
+margin_left = 104.897
+margin_top = 7.8308
+margin_right = 194.898
+margin_bottom = 68.8308
 custom_fonts/font = ExtResource( 16 )
 text = "背包"
 script = ExtResource( 21 )
+
+[node name="DebugCollisionButton" type="CheckButton" parent="."]
+margin_left = 210.142
+margin_top = 9.61461
+margin_right = 300.142
+margin_bottom = 70.6146
+custom_fonts/font = ExtResource( 16 )
+text = "碰撞箱显示"
 
 [node name="bag_root" parent="." instance=ExtResource( 6 )]
 visible = false
@@ -217,14 +226,6 @@ margin_bottom = 673.87
 custom_fonts/font = ExtResource( 18 )
 text = "→"
 script = SubResource( 11 )
-
-[node name="Menu" type="Button" parent="."]
-margin_left = -1.5817
-margin_top = 6.6371
-margin_right = 148.418
-margin_bottom = 70.6371
-custom_fonts/font = ExtResource( 16 )
-text = "菜单"
 
 [node name="grab" type="Button" parent="."]
 margin_left = 1480.0
@@ -594,10 +595,13 @@ light_energy = 0.706
 shadow_enabled = true
 
 [node name="kizunaAI2" parent="." instance=ExtResource( 11 )]
-transform = Transform( -0.477516, 0, -0.152007, 0, 0.5, 0, 0.152007, 0, -0.477516, -30.526, 0, 21.1476 )
+transform = Transform( 0.50056, 0, -0.020442, 0, 0.5, 0, 0.020442, 0, 0.50056, -30.526, 0, 21.1476 )
+visible = false
 
-[connection signal="pressed" from="btn_bag" to="btn_bag" method="_on_btn_bag_pressed"]
-[connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]
+[connection signal="visibility_changed" from="Menu" to="Menu" method="_on_Menu_visibility_changed"]
+[connection signal="pressed" from="MenuButton" to="." method="_on_Menu_pressed"]
+[connection signal="pressed" from="BagButton" to="BagButton" method="_on_btn_bag_pressed"]
+[connection signal="toggled" from="DebugCollisionButton" to="." method="_on_DebugCollisionButton_toggled"]
 [connection signal="pressed" from="grab" to="grab" method="_on_grab_pressed"]
 [connection signal="area_entered" from="tinys/newTiny/tiny" to="tinys/newTiny/tiny" method="_on_Area_area_entered"]
 [connection signal="area_entered" from="tinys/newTiny2/tiny2" to="tinys/newTiny2/tiny2" method="_on_Area_area_entered"]

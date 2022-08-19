@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://resource/font/puhuiti-rgular-40.tres" type="DynamicFont" id=1]
-[ext_resource path="res://scenes/layout/game_over.gd" type="Script" id=2]
+[ext_resource path="res://objects/2D/SignalPlayer/Menu.gd" type="Script" id=2]
 [ext_resource path="res://resource/style/Panel.tres" type="StyleBox" id=4]
 [ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=5]
 
-[node name="Game_over_root" type="Node2D"]
+[node name="Menu" type="Node2D"]
 pause_mode = 2
 script = ExtResource( 2 )
 
