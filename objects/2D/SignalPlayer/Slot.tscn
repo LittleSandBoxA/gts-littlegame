@@ -1,26 +1,27 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/2D/UI/bag.png" type="Texture" id=1]
 [ext_resource path="res://ready_scene/TextureButton.gd" type="Script" id=2]
-[ext_resource path="res://assets/2D/UI/slime_ball.png" type="Texture" id=3]
+[ext_resource path="res://objects/2D/SignalPlayer/Slot.gd" type="Script" id=3]
+[ext_resource path="res://resource/style/Panel.tres" type="StyleBox" id=4]
 
-[node name="bag_block_root" type="Node2D"]
+[node name="Control" type="PanelContainer"]
+custom_styles/panel = ExtResource( 4 )
+script = ExtResource( 3 )
 
 [node name="TextureButton" type="TextureButton" parent="."]
-margin_left = -1.0
-margin_top = 1.0
-margin_right = 63.0
-margin_bottom = 65.0
+margin_right = 64.0
+margin_bottom = 64.0
 toggle_mode = true
 texture_normal = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 30, 30 )
+position = Vector2( 31.7798, 31 )
 scale = Vector2( 2.5625, 2.8125 )
-texture = ExtResource( 3 )
 
 [node name="Position2D" type="Position2D" parent="."]
+visible = false
 position = Vector2( 30, 30 )
 
 [connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_TextureButton_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://objects/3D/CityStatic.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ready_scene/models/character/rhea/rhea_spatial.tscn" type="PackedScene" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://scripts/AI_test_Android/open_bag.gd" type="Script" id=21]
 [ext_resource path="res://scripts/LittleGame/Player.gd" type="Script" id=22]
 [ext_resource path="res://scripts/LittleGame/SignlePlayer.gd" type="Script" id=23]
+[ext_resource path="res://objects/2D/SignalPlayer/ItemSatck.tscn" type="PackedScene" id=24]
 [ext_resource path="res://scripts/AI_test_Android/grab.gd" type="Script" id=25]
 [ext_resource path="res://objects/3D/Character/RuoYin.gd" type="Script" id=26]
 [ext_resource path="res://scripts/LittleGame/Camera.gd" type="Script" id=27]
@@ -595,8 +596,11 @@ light_energy = 0.706
 shadow_enabled = true
 
 [node name="kizunaAI2" parent="." instance=ExtResource( 11 )]
-transform = Transform( 0.50056, 0, -0.020442, 0, 0.5, 0, 0.020442, 0, 0.50056, -30.526, 0, 21.1476 )
+transform = Transform( -0.308758, 0, -0.394513, 0, 0.5, 0, 0.394513, 0, -0.308758, -30.526, 0, 21.1476 )
 visible = false
+
+[node name="ItemStack" parent="." instance=ExtResource( 24 )]
+position = Vector2( 350.327, 654.41 )
 
 [connection signal="visibility_changed" from="Menu" to="Menu" method="_on_Menu_visibility_changed"]
 [connection signal="pressed" from="MenuButton" to="." method="_on_Menu_pressed"]
