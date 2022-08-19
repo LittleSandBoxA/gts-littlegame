@@ -1,7 +1,7 @@
 extends Spatial
 
 var World_Enviroment_Anim
-onready var bag = $bag_root
+onready var bag = $Bag
 onready var Menu = $Menu
 signal show_menu
 
@@ -13,7 +13,7 @@ func _input(event):
 	if Input.is_action_just_pressed("E"):
 		bag.show()
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		print("E")
+		#print_debug("E")
 	if event.is_action_pressed("backToMenu"):
 		emit_signal("show_menu")
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

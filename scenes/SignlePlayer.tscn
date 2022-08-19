@@ -5,7 +5,7 @@
 [ext_resource path="res://objects/3D/Trees.tscn" type="PackedScene" id=3]
 [ext_resource path="res://objects/2D/SignalPlayer/Menu.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/layout/score_root.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scenes/layout/bag_root.tscn" type="PackedScene" id=6]
+[ext_resource path="res://objects/2D/SignalPlayer/BagPanel.tscn" type="PackedScene" id=6]
 [ext_resource path="res://objects/3D/Piano.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/layout/zhunXin_root.tscn" type="PackedScene" id=8]
 [ext_resource path="res://objects/3D/Terrain/ShaMo.tscn" type="PackedScene" id=9]
@@ -176,7 +176,7 @@ margin_bottom = 70.6146
 custom_fonts/font = ExtResource( 16 )
 text = "碰撞箱显示"
 
-[node name="bag_root" parent="." instance=ExtResource( 6 )]
+[node name="Bag" parent="." instance=ExtResource( 6 )]
 visible = false
 
 [node name="command_root" parent="." instance=ExtResource( 15 )]
@@ -596,7 +596,7 @@ light_energy = 0.706
 shadow_enabled = true
 
 [node name="kizunaAI2" parent="." instance=ExtResource( 11 )]
-transform = Transform( -0.308758, 0, -0.394513, 0, 0.5, 0, 0.394513, 0, -0.308758, -30.526, 0, 21.1476 )
+transform = Transform( -0.302601, 0, -0.399264, 0, 0.5, 0, 0.399264, 0, -0.302601, -30.526, 0, 21.1476 )
 visible = false
 
 [node name="ItemStack" parent="." instance=ExtResource( 24 )]
