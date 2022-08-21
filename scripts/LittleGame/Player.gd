@@ -5,10 +5,8 @@ var grabState = false
 onready var selfCamera = $selfCam
 onready var fpsCamera = $fps
 onready var thirdCamera = $CameraRoot/h/v/thirdCam
-var root
 var weight_display
 var sound_level
-var size
 
 #当前速度
 var speed = 0
@@ -18,8 +16,6 @@ var player
 var distance_to_gts
 var command_box
 var height = 1.5
-
-
 
 var vel = Vector3(0,0,0)
 var direction = Vector3(0,0,0)

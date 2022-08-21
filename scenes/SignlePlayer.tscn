@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=38 format=2]
 
 [ext_resource path="res://objects/3D/CityStatic.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ready_scene/models/character/rhea/rhea_spatial.tscn" type="PackedScene" id=2]
@@ -28,7 +28,9 @@
 [ext_resource path="res://objects/3D/Character/RuoYin.gd" type="Script" id=26]
 [ext_resource path="res://scripts/LittleGame/Camera.gd" type="Script" id=27]
 [ext_resource path="res://scripts/LittleGame/ScoreRoot.gd" type="Script" id=28]
+[ext_resource path="res://assets/2D/UI/music 32x32/piano.png" type="Texture" id=29]
 [ext_resource path="res://assets/2D/images/gts_background.jpg" type="Texture" id=30]
+[ext_resource path="res://scripts/LittleGame/RayCastCompent.gd" type="Script" id=31]
 
 [sub_resource type="CylinderShape" id=12]
 radius = 0.410735
@@ -97,9 +99,11 @@ transform = Transform( 1, 0, 3.72529e-09, 0, 1, 0, -3.72529e-09, 0, 1, 0, 0, 0 )
 
 [node name="fps" type="Camera" parent="Player"]
 transform = Transform( -0.111851, 0, -0.993725, 0, 1, 0, 0.993725, 0, -0.111851, 1.41946, 3.52758, 0.210223 )
+visible = false
 
 [node name="extra_testCam" type="Camera" parent="Player"]
 transform = Transform( -1, 2.79397e-09, 7.07805e-08, 2.05254e-08, 0.972048, 0.234783, -7.07805e-08, 0.234783, -0.972048, 1.35608, 4.19914, -3.74139 )
+visible = false
 
 [node name="selfCam" type="Camera" parent="Player"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.99735, 1.61124 )
@@ -122,6 +126,9 @@ current = true
 far = 8192.0
 
 [node name="RayCast" type="RayCast" parent="Player"]
+enabled = true
+cast_to = Vector3( 0, -1, 20 )
+script = ExtResource( 31 )
 
 [node name="treeSceneRoot" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.9343, 0.39092, 18 )
@@ -598,11 +605,16 @@ light_energy = 0.706
 shadow_enabled = true
 
 [node name="kizunaAI2" parent="." instance=ExtResource( 11 )]
-transform = Transform( 0.304489, 0, -0.397827, 0, 0.5, 0, 0.397827, 0, 0.304489, -30.526, 0, 21.1476 )
+transform = Transform( -0.31949, 0, 0.385917, 0, 0.5, 0, -0.385917, 0, -0.31949, -30.526, 0, 21.1476 )
 visible = false
 
 [node name="ItemStack" parent="." instance=ExtResource( 24 )]
 position = Vector2( 350.327, 654.41 )
+
+[node name="Sprite" parent="ItemStack/SlotContainer/Slot" index="1"]
+position = Vector2( 31.7798, 32.651 )
+scale = Vector2( 1.77416, 1.94725 )
+texture = ExtResource( 29 )
 
 [connection signal="visibility_changed" from="Menu" to="Menu" method="_on_Menu_visibility_changed"]
 [connection signal="pressed" from="MenuButton" to="." method="_on_Menu_pressed"]
@@ -640,3 +652,5 @@ position = Vector2( 350.327, 654.41 )
 [connection signal="area_entered" from="tinys/loli_root14/tiny4" to="tinys/loli_root14/tiny4" method="_on_Area_area_entered"]
 
 [editable path="treeSceneRoot"]
+[editable path="ItemStack"]
+[editable path="ItemStack/SlotContainer/Slot"]

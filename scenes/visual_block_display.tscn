@@ -18,7 +18,6 @@ shader = SubResource( 3 )
 material = SubResource( 4 )
 
 [node name="visual_block_display" type="Spatial"]
-editor/display_folded = true
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
 material_override = SubResource( 2 )

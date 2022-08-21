@@ -1,15 +1,17 @@
 extends Spatial
 
-var clicks=0
+var clicks = 0
 var click_sound
 var can_process
-var anim
 var touch
 onready var rhea = $rhea
+onready var rheaAnim = $rhea/AnimationPlayer
 onready var tween = $Tween
 onready var big = $big
-
+onready var TimeDislay = $Label
+onready var timer = $Timer
 var height = 1.5
+var hand_speed = 0
 #缩放倍数
 export var mulit_scale = 1.01
 func _ready():
@@ -18,16 +20,12 @@ func _ready():
 func _input(event):
 	if event is InputEventScreenTouch and event.pressed == false:
 		clicks += 1
-		#print_debug("变大！")
 		var origin_scale = rhea.scale
 		var to_scale = origin_scale * mulit_scale
-		#print_debug("原始缩放",origin_scale)
-		#print_debug("变大的缩放",to_scale)
 		height *= mulit_scale
-		$rhea/AnimationPlayer.play("jump")
+		rheaAnim.play("jump")
 		tween.interpolate_property(rhea,"scale",origin_scale,to_scale,0.1,Tween.TRANS_LINEAR)
 		tween.start()
-		#print_debug("tween之后的大小",rhea.scale)
 		big.play()
 		var height_human = stepify(height,0.01)
 		if height < 1000:
@@ -40,4 +38,13 @@ func _input(event):
 func _on_back_pressed():
 # warning-ignore:return_value_discarded
 	get_tree().change_scene("res://scenes/layout/Title.tscn")
+	pass
+	
+func _process(delta):
+	TimeDislay.text = str(floor(timer.time_left))
+	pass
+	
+func _on_Timer_timeout():
+	hand_speed = clicks/20
+	$Panel.show()
 	pass

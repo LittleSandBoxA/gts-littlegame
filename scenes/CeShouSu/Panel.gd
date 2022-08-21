@@ -1,24 +1,18 @@
 extends Panel
 
-var anim
-var clicks_display
-var hand_speed_display
-var root
-var timer
+onready var hand_speed_display = get_node("hand_speed")
+onready var root = get_parent()
+onready var timer = root.get_node("Timer")
+onready var ClickDisplay = get_node("clicks")
 
 func _ready():
-	root = find_parent("root")
-	timer = root.get_node("Timer")
-	anim = get_tree().current_scene.get_node("anim")
-	clicks_display = get_node("clicks")
-	hand_speed_display = get_node("hand_speed")
+	
 	pass 
 
 func _on_Panel_visibility_changed():
 	if self.visible == true:
-		clicks_display.text = clicks_display.text + str(root.clicks) + "次"
-		hand_speed_display.text = hand_speed_display.text + str(timer.hand_speed) + "次/秒"
-		anim.play("胜利")
+		ClickDisplay.text = ClickDisplay.text + str(root.clicks) + "次"
+		hand_speed_display.text = hand_speed_display.text + str(root.hand_speed) + "次/秒"
 		get_tree().paused = true
 	if self.visible == false:
 		get_tree().paused = false

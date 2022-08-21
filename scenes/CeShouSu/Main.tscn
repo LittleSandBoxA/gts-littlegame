@@ -1,0 +1,159 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://fonts/SIMLI.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://sounds/level/Juhani Junkala [Chiptune Adventures] 2. Stage 2.ogg" type="AudioStream" id=2]
+[ext_resource path="res://sounds/bigger.wav" type="AudioStream" id=3]
+[ext_resource path="res://resource/font/puhuiti-rgular-40.tres" type="DynamicFont" id=4]
+[ext_resource path="res://fonts/xolonium/Xolonium.tres" type="DynamicFont" id=5]
+[ext_resource path="res://ready_scene/models/character/rhea/rhea_spatial.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=7]
+[ext_resource path="res://ready_scene/models/city/building.obj" type="ArrayMesh" id=8]
+[ext_resource path="res://resource/style/Panel.tres" type="StyleBox" id=9]
+[ext_resource path="res://scenes/CeShouSu/Panel.gd" type="Script" id=11]
+[ext_resource path="res://scenes/CeShouSu/Main.gd" type="Script" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 36
+outline_color = Color( 0.964706, 0.964706, 0.964706, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="ProceduralSky" id=5]
+radiance_size = 1
+
+[sub_resource type="Environment" id=4]
+background_mode = 2
+background_sky = SubResource( 5 )
+
+[node name="Main" type="Spatial"]
+script = ExtResource( 12 )
+mulit_scale = 1.1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 20.0
+one_shot = true
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+margin_left = 420.0
+margin_top = 10.0
+margin_right = 480.0
+margin_bottom = 40.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "00:00"
+
+[node name="Panel" type="Panel" parent="."]
+pause_mode = 2
+visible = false
+margin_left = 292.827
+margin_top = 128.922
+margin_right = 962.827
+margin_bottom = 548.922
+custom_styles/panel = ExtResource( 9 )
+script = ExtResource( 11 )
+
+[node name="Label" type="Label" parent="Panel"]
+pause_mode = 2
+margin_left = 262.0
+margin_top = 3.0
+margin_right = 382.0
+margin_bottom = 58.0
+custom_fonts/font = ExtResource( 4 )
+text = "时间到"
+
+[node name="clicks" type="Label" parent="Panel"]
+margin_left = 102.0
+margin_top = 62.0
+margin_right = 302.0
+margin_bottom = 117.0
+custom_fonts/font = ExtResource( 4 )
+text = "点击次数："
+
+[node name="hand_speed" type="Label" parent="Panel"]
+margin_left = 100.0
+margin_top = 110.0
+margin_right = 300.0
+margin_bottom = 165.0
+custom_fonts/font = ExtResource( 4 )
+text = "手速："
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+margin_left = 219.0
+margin_top = 225.0
+margin_right = 387.0
+margin_bottom = 351.0
+
+[node name="Restart" type="Button" parent="Panel/VBoxContainer"]
+margin_right = 168.0
+margin_bottom = 61.0
+custom_fonts/font = ExtResource( 4 )
+text = "再来一次"
+
+[node name="MainMenu" type="Button" parent="Panel/VBoxContainer"]
+margin_top = 65.0
+margin_right = 168.0
+margin_bottom = 126.0
+custom_fonts/font = ExtResource( 4 )
+text = "主菜单"
+
+[node name="sound" parent="." instance=ExtResource( 7 )]
+
+[node name="back" type="Button" parent="."]
+margin_right = 130.0
+margin_bottom = 90.0
+custom_fonts/font = ExtResource( 5 )
+text = "back"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 4 )
+
+[node name="rhea" parent="." instance=ExtResource( 6 )]
+
+[node name="Camera" type="Camera" parent="rhea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00128, 1.74488 )
+far = 8192.0
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="big" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="bgm" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
+
+[node name="building" type="MeshInstance" parent="."]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, -1.45907, 2.43243, -0.131777 )
+mesh = ExtResource( 8 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="building2" type="MeshInstance" parent="."]
+transform = Transform( 5, 0, 0, 0, 5, 0, 0, 0, 5, -0.136611, 2.43243, -1.92607 )
+mesh = ExtResource( 8 )
+material/0 = null
+material/1 = null
+material/2 = null
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 786.327
+margin_top = 6.44276
+margin_right = 1026.33
+margin_bottom = 61.4428
+custom_fonts/font = ExtResource( 4 )
+text = "蕾雅的身高："
+
+[node name="height" type="Label" parent="."]
+margin_left = 1000.54
+margin_top = 14.9955
+margin_right = 1115.54
+margin_bottom = 55.9955
+custom_fonts/font = ExtResource( 5 )
+text = "1.5m"
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="visibility_changed" from="Panel" to="Panel" method="_on_Panel_visibility_changed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Restart" to="Panel" method="_on_Restart_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/MainMenu" to="Panel" method="_on_MainMenu_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
