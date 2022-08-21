@@ -68,8 +68,9 @@ __meta__ = {
 }
 
 [node name="RayCast" type="RayCast" parent="Player"]
-pause_mode = 1
+pause_mode = 2
 transform = Transform( 1, 0, 0, 0, 0.869538, -0.493866, 0, 0.493866, 0.869538, 0, 1.21977, 0 )
+enabled = true
 cast_to = Vector3( 0, 0, 8 )
 script = ExtResource( 31 )
 
@@ -216,7 +217,7 @@ light_energy = 0.706
 shadow_enabled = true
 
 [node name="kizunaAI2" parent="." instance=ExtResource( 11 )]
-transform = Transform( 0.164743, 0, 0.472741, 0, 0.5, 0, -0.472741, 0, 0.164743, -30.526, 0, 21.1476 )
+transform = Transform( 0.141655, 0, 0.480126, 0, 0.5, 0, -0.480126, 0, 0.141655, -30.526, 0, 21.1476 )
 
 [node name="ItemStack" parent="." instance=ExtResource( 24 )]
 position = Vector2( 350.327, 654.41 )
