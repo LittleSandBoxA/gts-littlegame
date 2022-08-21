@@ -10,9 +10,11 @@ func _ready():
 	if Input.is_action_pressed("walk"):
 		translate(walk)
 	if Input.is_action_pressed("rotate_left"):
-		rotate_y(1*delta)
+		#rotate_y(1*delta)
+		pass
 	if Input.is_action_pressed("rotate_right"):
-		rotate_y(-1*delta)
+		#rotate_y(-1*delta)
+		pass
 	#rotate_y(0.5)
 	pass
 """func playEat():

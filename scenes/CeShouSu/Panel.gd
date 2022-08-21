@@ -7,7 +7,7 @@ onready var ClickDisplay = get_node("clicks")
 
 func _ready():
 	
-	pass 
+	pass
 
 func _on_Panel_visibility_changed():
 	if self.visible == true:
