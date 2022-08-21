@@ -217,7 +217,7 @@ light_energy = 0.706
 shadow_enabled = true
 
 [node name="kizunaAI2" parent="." instance=ExtResource( 11 )]
-transform = Transform( 0.141655, 0, 0.480126, 0, 0.5, 0, -0.480126, 0, 0.141655, -30.526, 0, 21.1476 )
+transform = Transform( 0.229238, 0, 0.445023, 0, 0.5, 0, -0.445023, 0, 0.229238, -30.526, 0, 21.1476 )
 
 [node name="ItemStack" parent="." instance=ExtResource( 24 )]
 position = Vector2( 350.327, 654.41 )
