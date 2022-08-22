@@ -37,8 +37,10 @@ func _input(event):
 	if event.is_action_pressed("alt"):
 		if alt %2 == 0:
 			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+			$Player/CameraRoot.set_physics_process(false)
 		else:
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+			$Player/CameraRoot.set_physics_process(true)
 		alt += 1
 		
 func _on_Menu_pressed():
@@ -48,3 +50,8 @@ func _on_Menu_pressed():
 func _on_DebugCollisionButton_toggled(button_pressed):
 	get_tree().debug_collisions_hint = button_pressed
 	pass
+
+
+func _on_TouchScreenButton_pressed():
+	print_debug("h")
+	pass # Replace with function body.

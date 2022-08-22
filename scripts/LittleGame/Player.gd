@@ -118,6 +118,7 @@ func shunk(delta):
 	height = 1.5 * $rhea.scale.y
 	emit_signal("set_height",Utils.humanize_size(height))
 	pass
+	
 func _on_up_pressed():
 	mobile_control = true
 	direction = Vector3(0,0,1)
@@ -130,13 +131,11 @@ func _on_up_released():
 	direction = Vector3(0,0,0)
 	pass
 
-
-func _on_grow_pressed():
-	print_debug("grow")
-	grow(get_process_delta_time())
+func _on_grow_pressed(delta):
+	#print_debug("grow")
+	grow(delta)
 	pass
 
-
-func _on_shrunk_pressed():
-	shunk(get_process_delta_time())
+func _on_shrunk_pressed(delta):
+	shunk(delta)
 	pass
