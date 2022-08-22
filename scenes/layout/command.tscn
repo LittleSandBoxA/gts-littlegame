@@ -20,8 +20,9 @@ visible = false
 margin_top = 560.0
 margin_right = 66.0
 margin_bottom = 583.0
-custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
 text = "/time set [day,night,second(s)]"
+
 [connection signal="text_changed" from="LineEdit" to="LineEdit" method="_on_LineEdit_text_changed"]
 [connection signal="text_entered" from="LineEdit" to="LineEdit" method="_on_LineEdit_text_entered"]
