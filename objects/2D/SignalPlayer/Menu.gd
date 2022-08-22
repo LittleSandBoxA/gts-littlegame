@@ -29,3 +29,10 @@ func _on_Menu_visibility_changed():
 	else:
 		get_tree().paused = false
 	pass 
+
+func _on_MainMenu2_toggled(button_pressed):
+	if button_pressed:
+		$"../bgm".play()
+	else:
+		$"../bgm".stop()
+	pass # Replace with function body.

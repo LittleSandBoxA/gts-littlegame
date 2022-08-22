@@ -23,24 +23,32 @@ margin_right = 354.0
 margin_bottom = 415.0
 
 [node name="Resume" type="Button" parent="Panel/VBoxContainer"]
-margin_right = 226.0
+margin_right = 236.0
 margin_bottom = 61.0
 custom_fonts/font = ExtResource( 1 )
 text = "返回"
 
 [node name="Restart" type="Button" parent="Panel/VBoxContainer"]
 margin_top = 65.0
-margin_right = 226.0
+margin_right = 236.0
 margin_bottom = 126.0
 custom_fonts/font = ExtResource( 1 )
 text = "重启场景"
 
 [node name="MainMenu" type="Button" parent="Panel/VBoxContainer"]
 margin_top = 130.0
-margin_right = 226.0
+margin_right = 236.0
 margin_bottom = 191.0
 custom_fonts/font = ExtResource( 1 )
 text = "主菜单"
+
+[node name="MainMenu2" type="CheckButton" parent="Panel/VBoxContainer"]
+margin_top = 195.0
+margin_right = 236.0
+margin_bottom = 258.0
+custom_fonts/font = ExtResource( 1 )
+pressed = true
+text = "背景音乐"
 
 [node name="sound" parent="." instance=ExtResource( 5 )]
 
@@ -48,3 +56,4 @@ text = "主菜单"
 [connection signal="pressed" from="Panel/VBoxContainer/Resume" to="." method="_on_Resume_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/Restart" to="." method="_on_Restart_pressed"]
 [connection signal="pressed" from="Panel/VBoxContainer/MainMenu" to="." method="_on_MainMenu_pressed"]
+[connection signal="toggled" from="Panel/VBoxContainer/MainMenu2" to="." method="_on_MainMenu2_toggled"]
