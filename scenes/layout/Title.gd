@@ -1,10 +1,9 @@
 extends Node2D
 
-onready var EnterSound = $sound/EnterSound
-onready var cancelSound = $sound/CancelSound
-
+onready var EnterSound = $EnterSound
+onready var cancelSound = $CancelSound
+onready var titleSound = $TitleSound
 func _ready():
-	var titleSound = $"sound/title"
 	titleSound.play()
 	pass
 	

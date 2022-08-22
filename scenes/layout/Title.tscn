@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/layout/Title.gd" type="Script" id=1]
 [ext_resource path="res://assets/2D/images/title.jpg" type="Texture" id=2]
 [ext_resource path="res://fonts/font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://assets/2D/UI/city.png" type="Texture" id=4]
 [ext_resource path="res://fonts/SIMLI.TTF" type="DynamicFontData" id=5]
+[ext_resource path="res://sounds/abs-cancel-6-verbed.wav" type="AudioStream" id=6]
+[ext_resource path="res://sounds/abs-confirm-2.wav" type="AudioStream" id=7]
+[ext_resource path="res://sounds/med.ogg" type="AudioStream" id=8]
 [ext_resource path="res://scenes/layout/language/back.gd" type="Script" id=9]
-[ext_resource path="res://scenes/sounds/sound.tscn" type="PackedScene" id=10]
 [ext_resource path="res://resource/font/font_simi_40.tres" type="DynamicFont" id=18]
 
 [sub_resource type="DynamicFont" id=1]
@@ -181,7 +183,14 @@ shift+w -加速
 来弹琴
 高分排行榜还没做好"
 
-[node name="sound" parent="." instance=ExtResource( 10 )]
+[node name="EnterSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+
+[node name="CancelSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="TitleSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
 
 [connection signal="pressed" from="buttons/solo" to="." method="_on_solo_pressed"]
 [connection signal="pressed" from="buttons/mulit" to="." method="_on_mulit_pressed"]
