@@ -1,4 +1,3 @@
-tool
 extends Spatial
 
 var height = 1.56 #单位米

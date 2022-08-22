@@ -12,8 +12,6 @@ var sound_level
 var speed = 0
 var walk_speed = 2
 var run_speed = 5
-var distance_to_gts
-var command_box
 var height = 1.5
 
 var vel = Vector3(0,0,0)
@@ -38,8 +36,8 @@ func _ready():
 func _physics_process(delta):
 	# warning-ignore:return_value_discarded
 	if mobile_control:
-		var h_rot = $CameraRoot/h.global_transform.basis.get_euler().y
-		direction = direction.rotated(Vector3.UP, h_rot).normalized()
+		
+		#direction = direction.rotated(Vector3.UP, h_rot).normalized()
 		speed = walk_speed
 		$rhea/AnimationPlayer.play("女性走路气质001")
 		
@@ -56,9 +54,6 @@ func _physics_process(delta):
 		else:
 			speed = 0
 			$rhea/AnimationPlayer.stop()
-	else:
-		speed = 0
-		$rhea/AnimationPlayer.stop()
 	#vel = lerp(vel, direction * speed , delta * accel)
 	#使用此方法实现移动速度随缩放变化
 	speed = speed *$rhea.scale.x 
@@ -73,23 +68,13 @@ func _physics_process(delta):
 	pass
 	
 var sizeChangeRate = 0.7
-# warning-ignore:unused_argument
+
 func _process(delta):
-	#变小
-	#重构
-	if Input.is_action_pressed("z"):
-		$rhea.scale = $rhea.scale *(1 - sizeChangeRate * delta)
-		$CameraRoot.scale = $rhea.scale
-		$CollisionShape.scale = $rhea.scale
-		height = 1.5 * $rhea.scale.y
-		emit_signal("set_height",Utils.humanize_size(height))
-	#变大
 	if Input.is_action_pressed("x"):
-		$rhea.scale = $rhea.scale *(1 + sizeChangeRate * delta)
-		$CollisionShape.scale = $rhea.scale
-		$CameraRoot.scale = $rhea.scale
-		height = 1.5 * $rhea.scale.y
-		emit_signal("set_height",Utils.humanize_size(height))
+		grow(delta)
+	if Input.is_action_pressed("z"):
+		shunk(delta)
+	#print_debug(direction)
 	pass
 
 #func _input(event):
@@ -119,16 +104,13 @@ func shunk(delta):
 	emit_signal("set_height",Utils.humanize_size(height))
 	pass
 	
+#持续被触发，这里用于接收持续发出的信号
 func _on_up_pressed():
 	mobile_control = true
-	direction = Vector3(0,0,1)
+	var h_rot = $CameraRoot/h.global_transform.basis.get_euler().y
+	direction = Vector3(0,0,1).rotated(Vector3.UP, h_rot).normalized()
 	#print_debug("mobile_control:",mobile_control)
 	#print_debug(direction)
-	pass
-
-func _on_up_released():
-	mobile_control = false
-	direction = Vector3(0,0,0)
 	pass
 
 func _on_grow_pressed(delta):
@@ -139,3 +121,7 @@ func _on_grow_pressed(delta):
 func _on_shrunk_pressed(delta):
 	shunk(delta)
 	pass
+
+func _on_up_released():
+	mobile_control = false
+	pass 

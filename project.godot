@@ -34,7 +34,7 @@ _global_script_class_icons={
 
 config/name="gts"
 run/main_scene="res://scenes/layout/Title.tscn"
-config/icon="res://icon2.png"
+config/icon="res://icon2 256x.png"
 config/windows_native_icon="res://icon2.ico"
 
 [audio]
@@ -248,7 +248,6 @@ pointing/emulate_touch_from_mouse=true
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 quality/driver/fallback_to_gles2=true
 vram_compression/import_bptc=true
 vram_compression/import_etc=true

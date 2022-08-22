@@ -50,8 +50,3 @@ func _on_Menu_pressed():
 func _on_DebugCollisionButton_toggled(button_pressed):
 	get_tree().debug_collisions_hint = button_pressed
 	pass
-
-
-func _on_TouchScreenButton_pressed():
-	print_debug("h")
-	pass # Replace with function body.

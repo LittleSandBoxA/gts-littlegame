@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=32 format=2]
 
 [ext_resource path="res://objects/3D/CityStatic.tscn" type="PackedScene" id=1]
 [ext_resource path="res://ready_scene/models/character/rhea/rhea_spatial.tscn" type="PackedScene" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://objects/shrunk.gd" type="Script" id=15]
 [ext_resource path="res://resource/font/puhuiti-rgular-40.tres" type="DynamicFont" id=16]
 [ext_resource path="res://assets/2D/UI/TouchButton.png" type="Texture" id=17]
+[ext_resource path="res://objects/up.gd" type="Script" id=18]
 [ext_resource path="res://sounds/level/Juhani Junkala [Chiptune Adventures] 1. Stage 1.ogg" type="AudioStream" id=19]
 [ext_resource path="res://scripts/LittleGame/Player.gd" type="Script" id=22]
 [ext_resource path="res://scripts/LittleGame/SignlePlayer.gd" type="Script" id=23]
@@ -189,7 +190,7 @@ light_energy = 0.706
 shadow_enabled = true
 
 [node name="kizunaAI2" parent="." instance=ExtResource( 11 )]
-transform = Transform( 0.499282, 0, -0.00481201, 0, 0.5, 0, 0.00481201, 0, 0.499282, -30.526, 0, 21.1476 )
+transform = Transform( 0.235197, 0, -0.440455, 0, 0.5, 0, 0.440455, 0, 0.235197, -30.526, 0, 21.1476 )
 
 [node name="ItemStack" parent="." instance=ExtResource( 24 )]
 position = Vector2( 350.327, 654.41 )
@@ -234,6 +235,7 @@ position = Vector2( 95.6768, 620.665 )
 rotation = -1.5708
 normal = ExtResource( 12 )
 visibility_mode = 1
+script = ExtResource( 18 )
 
 [node name="growLabel" type="Label" parent="MobileControl"]
 margin_left = 996.761
@@ -252,17 +254,20 @@ custom_fonts/font = ExtResource( 14 )
 text = "变小"
 
 [node name="down" type="TouchScreenButton" parent="MobileControl"]
+visible = false
 position = Vector2( 150.707, 605.128 )
 normal = ExtResource( 12 )
 visibility_mode = 1
 
 [node name="left" type="TouchScreenButton" parent="MobileControl"]
+visible = false
 position = Vector2( 108.998, 671.072 )
 rotation = -3.14159
 normal = ExtResource( 12 )
 visibility_mode = 1
 
 [node name="right" type="TouchScreenButton" parent="MobileControl"]
+visible = false
 position = Vector2( 164.647, 655.67 )
 rotation = 1.5708
 normal = ExtResource( 12 )
@@ -284,7 +289,6 @@ script = ExtResource( 15 )
 [connection signal="pressed" from="MobileControl/MenuButton" to="." method="_on_Menu_pressed"]
 [connection signal="pressed" from="MobileControl/BagButton" to="Bag" method="_on_BagButton_pressed"]
 [connection signal="toggled" from="MobileControl/DebugCollisionButton" to="." method="_on_DebugCollisionButton_toggled"]
-[connection signal="pressed" from="MobileControl/up" to="Player" method="_on_up_pressed"]
 [connection signal="released" from="MobileControl/up" to="Player" method="_on_up_released"]
 
 [editable path="treeSceneRoot"]
