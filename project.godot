@@ -35,6 +35,7 @@ _global_script_class_icons={
 config/name="gts"
 run/main_scene="res://scenes/layout/Title.tscn"
 config/icon="res://icon2.png"
+config/windows_native_icon="res://icon2.ico"
 
 [audio]
 
