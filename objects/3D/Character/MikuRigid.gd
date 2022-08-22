@@ -15,8 +15,8 @@ func _process(delta):
 	#rotate_y(1*delta)
 	#print(self.translation)
 	if self.translation.x >rain.translation.x+5:
-		print("ssasasd")
-		print(size)
+		print_debug("ssasasd")
+		print_debug(size)
 		set_process(false)
 	pass
 func stop():
