@@ -3,12 +3,23 @@ extends Spatial
 var World_Enviroment_Anim
 onready var bag = $Bag
 onready var Menu = $Menu
+onready var MobileControl = $MobileControl
 signal show_menu
 
 func _ready():
 	connect("show_menu",$Menu,"_show_menu")
+	setup_android()
 	pass
 
+func setup_android():
+	var os:String = OS.get_name()
+	if os == "Windows":
+		MobileControl.hide()
+	elif os == "Android":
+		MobileControl.show()
+
+	pass
+	
 func _input(event):
 	if Input.is_action_just_pressed("E"):
 		bag.show()
