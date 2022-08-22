@@ -30,6 +30,4 @@ func _physics_process(delta):
 	cam_rot_v = clamp(cam_rot_v, cam_v_min, cam_v_max)
 	$h.rotation_degrees.y = lerp($h.rotation_degrees.y, cam_rot_h, delta * h_accel)
 	$h/v.rotation_degrees.x = lerp($h/v.rotation_degrees.x, cam_rot_v, delta * v_accel)
-	
-	
 	pass

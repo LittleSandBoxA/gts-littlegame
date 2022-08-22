@@ -5,6 +5,9 @@ onready var bag = $Bag
 onready var Menu = $Menu
 onready var MobileControl = $MobileControl
 signal show_menu
+var alt = 0
+#用于在pc上测试安卓触摸
+export var debug_touch = false
 
 func _ready():
 	connect("show_menu",$Menu,"_show_menu")
@@ -14,7 +17,10 @@ func _ready():
 func setup_android():
 	var os:String = OS.get_name()
 	if os == "Windows":
-		MobileControl.hide()
+		if debug_touch:
+			MobileControl.show()
+		else:
+			MobileControl.hide()
 	elif os == "Android":
 		MobileControl.show()
 
@@ -28,7 +34,13 @@ func _input(event):
 	if event.is_action_pressed("backToMenu"):
 		emit_signal("show_menu")
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-
+	if event.is_action_pressed("alt"):
+		if alt %2 == 0:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		alt += 1
+		
 func _on_Menu_pressed():
 	Menu.show()
 	pass
