@@ -9,6 +9,7 @@
 [ext_resource path="res://objects/3D/Piano.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/layout/zhunXin_root.tscn" type="PackedScene" id=8]
 [ext_resource path="res://objects/3D/Terrain/ShaMo.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/2D/default_grass.png" type="Texture" id=10]
 [ext_resource path="res://objects/3D/Character/kizunaAI.tscn" type="PackedScene" id=11]
 [ext_resource path="res://assets/2D/UI/right_64x.png" type="Texture" id=12]
 [ext_resource path="res://objects/3D/building.tscn" type="PackedScene" id=13]
@@ -22,7 +23,6 @@
 [ext_resource path="res://scripts/LittleGame/Camera.gd" type="Script" id=27]
 [ext_resource path="res://scripts/LittleGame/ScoreRoot.gd" type="Script" id=28]
 [ext_resource path="res://assets/2D/UI/music 32x32/piano.png" type="Texture" id=29]
-[ext_resource path="res://assets/2D/images/gts_background.jpg" type="Texture" id=30]
 [ext_resource path="res://scripts/LittleGame/RayCastCompent.gd" type="Script" id=31]
 
 [sub_resource type="CylinderShape" id=12]
@@ -96,8 +96,7 @@ __meta__ = {
 
 [node name="Sprite3D" type="Sprite3D" parent="Floor"]
 transform = Transform( 1000, 0, 0, 0, -4.37114e-05, -1000, 0, 1000, -4.37114e-05, -0.00437784, -0.00483245, -0.0378042 )
-visible = false
-texture = ExtResource( 30 )
+texture = ExtResource( 10 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Floor"]
 shape = SubResource( 10 )
@@ -194,7 +193,7 @@ light_energy = 0.706
 shadow_enabled = true
 
 [node name="kizunaAI2" parent="." instance=ExtResource( 11 )]
-transform = Transform( 0.0567112, 0, -0.496771, 0, 0.5, 0, 0.496771, 0, 0.0567112, -30.526, 0, 21.1476 )
+transform = Transform( -0.0368409, 0, -0.498665, 0, 0.5, 0, 0.498665, 0, -0.0368409, -30.526, 0, 21.1476 )
 
 [node name="ItemStack" parent="." instance=ExtResource( 24 )]
 position = Vector2( 350.327, 654.41 )
