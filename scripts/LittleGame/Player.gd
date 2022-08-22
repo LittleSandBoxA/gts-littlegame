@@ -28,10 +28,11 @@ signal set_height
 var mobile_control = false
 
 func _ready():
-	if get_tree().current_scene.name == "AITest":
+	if get_tree().current_scene.name == "SinglePlayer":
 		var err1 = connect("set_height",get_parent().get_node("ScoreRoot"),"_set_height")
 		if err1 != OK:
 			print_debug("链接set_height信号出错了",err1)
+		
 	pass
 # warning-ignore:unused_argument
 func _physics_process(delta):
