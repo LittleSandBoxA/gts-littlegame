@@ -41,16 +41,20 @@ func _physics_process(delta):
 		direction = direction.rotated(Vector3.UP, h_rot).normalized()
 		speed = walk_speed
 		$rhea/AnimationPlayer.play("女性走路气质001")
-#	if mobile_control == false:
-#		if Input.is_action_pressed("W") or Input.is_action_pressed("S") or Input.is_action_pressed("A") or Input.is_action_pressed("D"):
-#			var h_rot = $CameraRoot/h.global_transform.basis.get_euler().y
-#			direction = Vector3(0,0,Input.get_action_strength("W") - Input.get_action_strength("S")).rotated(Vector3.UP, h_rot).normalized()
-#			if Input.is_action_pressed("run_faster"):
-#				speed = run_speed
-#				$rhea/AnimationPlayer.play("有力的女性跑步")
-#			else:
-#				speed = walk_speed
-#				$rhea/AnimationPlayer.play("女性走路气质001")
+		
+	if mobile_control == false:
+		if Input.is_action_pressed("W") or Input.is_action_pressed("S") or Input.is_action_pressed("A") or Input.is_action_pressed("D"):
+			var h_rot = $CameraRoot/h.global_transform.basis.get_euler().y
+			direction = Vector3(0,0,Input.get_action_strength("W") - Input.get_action_strength("S")).rotated(Vector3.UP, h_rot).normalized()
+			if Input.is_action_pressed("run_faster"):
+				speed = run_speed
+				$rhea/AnimationPlayer.play("有力的女性跑步")
+			else:
+				speed = walk_speed
+				$rhea/AnimationPlayer.play("女性走路气质001")
+		else:
+			speed = 0
+			$rhea/AnimationPlayer.stop()
 	else:
 		speed = 0
 		$rhea/AnimationPlayer.stop()
@@ -71,20 +75,17 @@ var sizeChangeRate = 0.7
 # warning-ignore:unused_argument
 func _process(delta):
 	#变小
+	#重构
 	if Input.is_action_pressed("z"):
-		#self.scale = self.scale *(1 - sizeChangeRate * delta)
 		$rhea.scale = $rhea.scale *(1 - sizeChangeRate * delta)
 		$CameraRoot.scale = $rhea.scale
 		$CollisionShape.scale = $rhea.scale
 		height = 1.5 * $rhea.scale.y
-		#print_debug("变化后的速度",vel)
 		emit_signal("set_height",Utils.humanize_size(height))
 	#变大
 	if Input.is_action_pressed("x"):
-		#self.scale = self.scale *(1 + sizeChangeRate * delta)
 		$rhea.scale = $rhea.scale *(1 + sizeChangeRate * delta)
 		$CollisionShape.scale = $rhea.scale
-		#print_debug("变化后的速度",vel)
 		$CameraRoot.scale = $rhea.scale
 		height = 1.5 * $rhea.scale.y
 		emit_signal("set_height",Utils.humanize_size(height))
@@ -101,7 +102,21 @@ func _process(delta):
 ##		thirdCamera.make_current()
 ##		pass
 #	pass
-
+func grow(delta):
+	$rhea.scale = $rhea.scale *(1 + sizeChangeRate * delta)
+	$CollisionShape.scale = $rhea.scale
+	$CameraRoot.scale = $rhea.scale
+	height = 1.5 * $rhea.scale.y
+	emit_signal("set_height",Utils.humanize_size(height))
+	pass
+	
+func shunk(delta):
+	$rhea.scale = $rhea.scale *(1 - sizeChangeRate * delta)
+	$CameraRoot.scale = $rhea.scale
+	$CollisionShape.scale = $rhea.scale
+	height = 1.5 * $rhea.scale.y
+	emit_signal("set_height",Utils.humanize_size(height))
+	pass
 func _on_up_pressed():
 	mobile_control = true
 	direction = Vector3(0,0,1)
@@ -112,4 +127,15 @@ func _on_up_pressed():
 func _on_up_released():
 	mobile_control = false
 	direction = Vector3(0,0,0)
+	pass
+
+
+func _on_grow_pressed():
+	print_debug("grow")
+	grow(get_process_delta_time())
+	pass
+
+
+func _on_shrunk_pressed():
+	shunk(get_process_delta_time())
 	pass
