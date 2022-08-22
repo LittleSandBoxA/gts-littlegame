@@ -285,11 +285,20 @@ normal = ExtResource( 17 )
 pressed = ExtResource( 17 )
 script = ExtResource( 15 )
 
+[node name="changeModel" type="CheckButton" parent="."]
+margin_left = 522.483
+margin_top = 19.8183
+margin_right = 602.483
+margin_bottom = 59.8183
+custom_fonts/font = ExtResource( 14 )
+text = "切换模型"
+
 [connection signal="visibility_changed" from="Menu" to="Menu" method="_on_Menu_visibility_changed"]
 [connection signal="pressed" from="MobileControl/MenuButton" to="." method="_on_Menu_pressed"]
 [connection signal="pressed" from="MobileControl/BagButton" to="Bag" method="_on_BagButton_pressed"]
 [connection signal="toggled" from="MobileControl/DebugCollisionButton" to="." method="_on_DebugCollisionButton_toggled"]
 [connection signal="released" from="MobileControl/up" to="Player" method="_on_up_released"]
+[connection signal="toggled" from="changeModel" to="Player" method="_on_changeModel_toggled"]
 
 [editable path="treeSceneRoot"]
 [editable path="ItemStack"]

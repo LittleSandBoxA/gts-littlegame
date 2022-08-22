@@ -4,5 +4,5 @@
 [ext_resource path="res://objects/3D/Character/kizunaAI.gd" type="Script" id=2]
 
 [node name="kizunaAI" instance=ExtResource( 1 )]
-transform = Transform( -0.733424, 0, 0.679764, 0, 1, 0, -0.679764, 0, -0.733424, 0, 0, 0 )
+transform = Transform( 0.999995, 0, 0, 0, 1, 0, 0, 0, 0.999995, 0, 0, 0 )
 script = ExtResource( 2 )

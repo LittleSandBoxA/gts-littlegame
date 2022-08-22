@@ -24,8 +24,13 @@ var gravity = 20
 var angular_accel = 7
 signal set_height
 var mobile_control = false
+onready var mesh = $"rhea/レアV1 12/レアV1 12_arm/Skeleton/レアV1 12_mesh"
+onready var rhea = load("res://ready_scene/models/character/rhea/rhea_spatial.tscn")
+onready var KizunaAI = load("res://objects/3D/Character/kizunaAI.tscn")
+var currentModel
 
 func _ready():
+	currentModel = $rhea
 	if get_tree().current_scene.name == "SinglePlayer":
 		var err1 = connect("set_height",get_parent().get_node("ScoreRoot"),"_set_height")
 		if err1 != OK:
@@ -36,10 +41,9 @@ func _ready():
 func _physics_process(delta):
 	# warning-ignore:return_value_discarded
 	if mobile_control:
-		
 		#direction = direction.rotated(Vector3.UP, h_rot).normalized()
 		speed = walk_speed
-		$rhea/AnimationPlayer.play("女性走路气质001")
+		currentModel.get_node("AnimationPlayer").play("女性走路气质001")
 		
 	if mobile_control == false:
 		if Input.is_action_pressed("W") or Input.is_action_pressed("S") or Input.is_action_pressed("A") or Input.is_action_pressed("D"):
@@ -47,23 +51,22 @@ func _physics_process(delta):
 			direction = Vector3(0,0,Input.get_action_strength("W") - Input.get_action_strength("S")).rotated(Vector3.UP, h_rot).normalized()
 			if Input.is_action_pressed("run_faster"):
 				speed = run_speed
-				$rhea/AnimationPlayer.play("有力的女性跑步")
+				currentModel.get_node("AnimationPlayer").play("有力的女性跑步")
 			else:
 				speed = walk_speed
-				$rhea/AnimationPlayer.play("女性走路气质001")
+				currentModel.get_node("AnimationPlayer").play("女性走路气质001")
 		else:
 			speed = 0
-			$rhea/AnimationPlayer.stop()
+			currentModel.get_node("AnimationPlayer").stop()
 	#vel = lerp(vel, direction * speed , delta * accel)
 	#使用此方法实现移动速度随缩放变化
-	speed = speed *$rhea.scale.x 
+	speed = speed * currentModel.scale.x 
 	vel = lerp(vel, direction * speed , delta * accel)
 	move_and_slide(vel + Vector3.DOWN * vertical_vel, Vector3.UP)
 	if not is_on_floor():
 		vertical_vel += gravity * delta
 	else:
 		vertical_vel = 0
-	var mesh = $"rhea/レアV1 12/レアV1 12_arm/Skeleton/レアV1 12_mesh"
 	mesh.rotation.y = lerp_angle(mesh.rotation.y, atan2(direction.x, direction.z), delta * angular_accel)
 	pass
 	
@@ -89,18 +92,18 @@ func _process(delta):
 ##		pass
 #	pass
 func grow(delta):
-	$rhea.scale = $rhea.scale *(1 + sizeChangeRate * delta)
-	$CollisionShape.scale = $rhea.scale
-	$CameraRoot.scale = $rhea.scale
-	height = 1.5 * $rhea.scale.y
+	currentModel.scale = currentModel.scale *(1 + sizeChangeRate * delta)
+	$CollisionShape.scale = currentModel.scale
+	$CameraRoot.scale = currentModel.scale
+	height = 1.5 * currentModel.scale.y
 	emit_signal("set_height",Utils.humanize_size(height))
 	pass
 	
 func shunk(delta):
-	$rhea.scale = $rhea.scale *(1 - sizeChangeRate * delta)
-	$CameraRoot.scale = $rhea.scale
-	$CollisionShape.scale = $rhea.scale
-	height = 1.5 * $rhea.scale.y
+	currentModel.scale = currentModel.scale *(1 - sizeChangeRate * delta)
+	$CameraRoot.scale = currentModel.scale
+	$CollisionShape.scale = currentModel.scale
+	height = 1.5 * currentModel.scale.y
 	emit_signal("set_height",Utils.humanize_size(height))
 	pass
 	
@@ -125,3 +128,22 @@ func _on_shrunk_pressed(delta):
 func _on_up_released():
 	mobile_control = false
 	pass 
+
+
+func _on_changeModel_toggled(button_pressed):
+	if button_pressed:
+		$rhea.queue_free()
+		var kiz = KizunaAI.instance()
+		kiz.scale = Vector3(0.05,0.05,0.05)
+		currentModel = kiz
+		mesh = currentModel.get_node("Kizunaai/Kizunaai_arm/Skeleton/Kizunaai_mesh")
+		add_child(kiz)
+		pass
+	else:
+		$kizunaAI.queue_free()
+		var rheaInstance = rhea.instance()
+		currentModel = rheaInstance
+		mesh = currentModel.get_node("レアV1 12/レアV1 12_arm/Skeleton/レアV1 12_mesh")
+		add_child(rheaInstance)
+		pass
+	pass
