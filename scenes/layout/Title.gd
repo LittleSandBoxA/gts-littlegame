@@ -47,7 +47,7 @@ func _on_sand_box_pressed():
 
 func _on_ta_fang_pressed():
 	EnterSound.play()
-	get_tree().change_scene("res://scenes/ta_fang_mode/TaFang.tscn")
+	get_tree().change_scene("res://scenes/TaFangMode/TaFang.tscn")
 	pass
 
 func _on_hand_pressed():
